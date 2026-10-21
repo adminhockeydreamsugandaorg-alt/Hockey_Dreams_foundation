@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hockey Dreams Foundation | Little Sticks 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,Arial;background:#fff;color:#0A2342}
+.header{background:#0A2342;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99}
+.logo{display:flex;align-items:center;gap:10px;color:white}
+.logo b{color:#7EC8FF;font-size:18px;display:block} .logo span{color:#7EC8FF;font-size:11px;letter-spacing:2px}
+.nav a{color:white;text-decoration:none;font-size:12px;margin-left:14px}
+.donate{background:#E30613;color:white;padding:7px 16px;border-radius:20px;text-decoration:none;font-weight:bold;font-size:12px}
+.hero{background:linear-gradient(90deg,#3AA0FF 10%,#7EC8FF 50%,rgba(255,255,255,0) 85%),url('https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=1600') center/cover;height:340px;display:flex;align-items:center;padding:0 28px}
+.hero h1{font-size:32px;font-weight:900;line-height:1.05;text-transform:uppercase} .hero h1 span{color:white} .hero p{color:#E30613;font-weight:bold;margin:8px 0;font-size:13px}
+.btn{padding:9px 18px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:13px;display:inline-block;margin-right:8px}
+.btn-red{background:#E30613;color:white} .btn-out{border:2px solid #0A2342;color:#0A2342}
+.comps{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px;background:#F0F6FF}
+.card{border-radius:12px;padding:16px;min-height:300px} .card-little{background:white;border:3px solid #7EC8FF} .card-week{background:#0A2342;color:white}
+.red-head{background:#E30613;color:white;padding:5px 12px;border-radius:6px;font-weight:900;font-size:13px;display:inline-block}
+#teams-live{margin:10px 0;display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;font-size:11px}
+.live-box{margin-top:12px;background:#f4f8ff;border-radius:8px;padding:10px}
+.live-box table{width:100%;border-collapse:collapse;font-size:12px} .live-box th{background:#0A2342;color:white;padding:6px;text-align:left} .live-box td{padding:6px;border-bottom:1px solid #ddd}
+.badge-reg{background:#E30613;color:white;text-align:center;padding:7px;border-radius:20px;font-weight:bold;font-size:12px;margin-top:10px}
+.footer{background:#071A33;color:white;padding:18px 24px;display:flex;justify-content:space-between;font-size:11px;flex-wrap:wrap;gap:12px}
+@media(max-width:800px){.comps{grid-template-columns:1fr} .hero{height:auto;padding:24px 16px} .hero h1{font-size:24px} .header{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="logo"><div style="width:42px;height:42px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center">🌍</div><div><b>HOCKEY DREAMS</b><span>FOUNDATION</span></div></div>
+<div><a class="nav" href="#">Home</a><a class="nav" href="#">Competitions</a><a class="donate" href="#">Donate</a></div>
+</div>
+
+<div class="hero">
+<div><h1>EMPOWERING YOUTH<br><span>THROUGH HOCKEY</span></h1><p>Building dreams, teamwork, and community across Africa</p>
+<div style="margin:12px 0"><a class="btn btn-red" href="#comps">Register Now</a><a class="btn btn-out" href="#">Learn More</a></div>
+<div style="background:rgba(255,255,255,0.9);padding:5px 12px;border-radius:20px;font-size:11px;display:inline-block">Impacting 500+ Young Players Across Uganda</div>
+</div>
+</div>
+
+<div style="text-align:center;padding:14px 0 0;color:#E30613;font-size:11px;font-weight:bold">2026 / 2027 SEASON</div>
+<div style="text-align:center;font-size:24px;font-weight:900;padding-bottom:12px">OUR COMPETITIONS</div>
+
+<div class="comps" id="comps">
+<div class="card card-little">
+<div class="red-head">🏑 LITTLE STICKS CHAMPIONSHIP</div>
+<div style="margin:8px 0 4px;font-weight:800">Primary Schools • First Edition</div>
+<div style="font-size:11px;opacity:0.7">📅 23 October 2026 • Kampala, Uganda</div>
+<div style="font-size:10px;font-weight:bold;margin:10px 0 4px">PARTICIPATING TEAMS — LIVE FROM YOUR GOOGLE SHEET</div>
+<div id="teams-live">Loading your 8 teams from Google Sheet...</div>
+<div class="badge-reg">REGISTRATION OPEN NOW</div>
+<div class="live-box"><b>Live Table - Auto-updates from your Sheet</b><div id="table-live" style="margin-top:8px">Loading...</div><p style="font-size:9px;margin-top:6px;color:#666">Connected to: Your Google Sheet ✅ Any change you make in Sheet appears here instantly</p></div>
+</div>
+
+<div class="card card-week">
+<div style="text-align:center;color:#7EC8FF;font-weight:bold;font-size:14px">⚽ WEEKEND LEAGUE 2027</div>
+<div style="text-align:center;color:#7EC8FF;font-size:10px">COMING SOON</div>
+<div style="font-size:11px;text-align:center;margin:6px 0">📅 Launching January 2027 • Weekly Matches</div>
+<p style="font-size:11px;line-height:1.5;margin:10px 0">A new youth weekend league for ages 10-15. Stay tuned for sign-ups.</p>
+<div style="text-align:center;margin:16px 0"><a style="background:#E30613;color:white;padding:8px 18px;border-radius:20px;font-weight:bold;font-size:12px;text-decoration:none" href="#">Notify Me →</a></div>
+<div style="background:rgba(255,255,255,0.08);padding:10px;border-radius:8px;font-size:10px;margin-top:20px"><b>How this lasts years (free):</b><ul style="margin:6px 0 0 12px;line-height:1.6"><li>Your Sheet tab = website data</li><li>2026: LittleSticks_2026_Teams</li><li>2027: Add new tab, website archives old</li><li>No developer ever needed again</li></ul></div>
+</div>
+</div>
+
+<div class="footer"><div><b>HOCKEY DREAMS FOUNDATION</b>Empowering youth through hockey, education, and community.</div><div>contact@hockeydreamsfoundation.org<br>📍 Kampala, Uganda</div><div>© 2026 Hockey Dreams Foundation</div></div>
+
+<script>
+const SHEET_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQvOnePs7n1K6IYwdL-9jg0Q7dZBaMWgD03ghhDz5W9ySaamIz1aT_fCdS2Ctgi8KWE5cmwTVLtw77U/pub?output=csv";
+async function loadSheet(){
+ try{
+  const res = await fetch(SHEET_CSV);
+  const text = await res.text();
+  const rows = text.trim().split("\n").map(r=>r.split(","));
+  const data = rows.slice(1);
+  let html = "";
+  data.forEach(row=>{
+    if(row[0] && row[0].trim()) html += `<div>• ${row[0]}</div>`;
+  });
+  document.getElementById("teams-live").innerHTML = html || "No teams yet - add in Sheet";
+  let tableHtml = `<table><tr><th>#</th><th>School</th><th>Status</th></tr>`;
+  data.forEach((row,i)=>{
+    if(row[0]) tableHtml += `<tr><td>${i+1}</td><td>${row[0]}</td><td>${row[3]||'Registered'}</td></tr>`;
+  });
+  tableHtml += "</table>";
+  document.getElementById("table-live").innerHTML = tableHtml;
+ }catch(e){
+  document.getElementById("teams-live").innerHTML = "⚠️ Sheet not public yet - Go to File > Share > Publish to Web > CSV > Publish";
+ }
+}
+loadSheet();
+</script>
+</body>
+</html>
