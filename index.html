@@ -24,7 +24,9 @@ body{background:#EAF3FF}
 .btn-outline{border:2px solid #0A2342;color:#0A2342}
 .box{max-width:900px;margin:24px auto;background:white;padding:28px;border-radius:14px;line-height:1.6}
 .comp-title{text-align:center;font-size:26px;font-weight:900;color:#0A2342;margin:20px 0;border-bottom:4px solid #E30613;display:inline-block;position:relative;left:50%;transform:translateX(-50%)}
+.small-img{width:100%;max-width:280px;border-radius:12px;float:right;margin:0 0 12px 16px}
 .footer{background:#061A35;color:white;text-align:center;padding:12px;font-size:11px}
+@media(max-width:600px){.small-img{float:none;max-width:100%;margin:12px 0}}
 </style>
 </head>
 <body>
@@ -43,32 +45,31 @@ body{background:#EAF3FF}
 </div>
 </div>
 
-<!-- HOME -->
+<!-- HOME WITH SMALL PHOTO -->
 <div id="page-home" class="page active">
 <div class="hero"><div class="hero-left"><h1>EMPOWERING YOUTH<br>THROUGH HOCKEY</h1><p style="color:#B00010;font-weight:700;font-size:13px;margin:10px 0">Building dreams, teamwork, and community across Africa</p><div><a class="btn btn-red" onclick="openPage('competitions')">Register Now</a><a class="btn btn-outline" onclick="openPage('about')">Learn More</a></div><span style="background:#CDE6FF;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:700;margin-top:14px;display:inline-block">Impacting 500+ Young Players Across Uganda</span></div><div class="hero-right"></div></div>
-<div style="text-align:center"><div class="comp-title">OUR COMPETITIONS - Preview</div></div>
-<div class="box"><p>🏑 Little Sticks 2026 - 23 Oct 2026 - 8 Schools - LIVE Teams: <span id="teams-home">Loading...</span><br>⚽ Weekend League 2027 - Coming Soon</p><br><a style="color:#E30613;font-weight:800;cursor:pointer" onclick="openPage('competitions')">View All Competitions →</a></div>
+
+<div class="box">
+<img src="community_small.jpg" class="small-img">
+<h3 style="color:#0A2342">Community Outreach in Kampala</h3>
+<p style="margin-top:8px"><b>Powerful mentorship moment captured</b> — our coach sharing orange drinks and life lessons with youth. This is the heart of Hockey Dreams: more than hockey, it's family.<br><br>🏑 Little Sticks 2026 - 23 Oct 2026 - LIVE Teams: <span id="teams-home" style="font-weight:700">Loading...</span></p>
+<div style="clear:both"></div>
+<br>
+<a style="color:#E30613;font-weight:800;cursor:pointer" onclick="openPage('competitions')">View All Competitions →</a>
+</div>
 </div>
 
-<!-- COMPETITIONS - FULL PAGE -->
+<!-- COMPETITIONS -->
 <div id="page-competitions" class="page">
 <div style="text-align:center"><div class="comp-title">OUR COMPETITIONS</div></div>
-<div class="box"><h3>🏑 LITTLE STICKS CHAMPIONSHIP 2026</h3><p style="margin-top:10px"><b>Primary Schools • First Edition</b><br>📅 23 October 2026 • Kampala, Uganda<br><br><b>Participating Teams — LIVE from Google Sheet:</b><br><span id="teams-full" style="font-weight:700">Loading teams...</span><br><br><span style="background:#E30613;color:white;padding:6px 12px;border-radius:6px;font-weight:800">REGISTRATION OPEN NOW</span></p><hr style="margin:24px 0"><h3>⚽ WEEKEND LEAGUE 2027</h3><p>COMING SOON - Launching Jan 2027 • Weekly Matches • Ages 10-15 • Join waitlist on Get Involved page.</p></div>
+<div class="box"><h3>🏑 LITTLE STICKS CHAMPIONSHIP 2026</h3><p><b>Primary Schools • First Edition</b><br>📅 23 October 2026 • Kampala<br><br><b>Participating Teams — LIVE from Google Sheet:</b><br><span id="teams-full" style="font-weight:700">Loading teams...</span><br><br><span style="background:#E30613;color:white;padding:6px 12px;border-radius:6px;font-weight:800">REGISTRATION OPEN NOW</span></p><hr style="margin:24px 0"><h3>⚽ WEEKEND LEAGUE 2027</h3><p>COMING SOON - Launching Jan 2027 • Weekly Matches • Ages 10-15 • Join waitlist on Get Involved page.</p></div>
 </div>
 
-<!-- ABOUT -->
+<!-- OTHER PAGES -->
 <div id="page-about" class="page"><div class="box"><h2>About Hockey Dreams Foundation</h2><p style="margin-top:12px">We empower youth across Uganda through hockey, education, and community development. Since 2016, 500+ players impacted. Based in Kampala.<br><br><b>Mission:</b> Building dreams, teamwork, and community across Africa.</p></div></div>
-
-<!-- PROGRAMS -->
 <div id="page-programs" class="page"><div class="box"><h2>Our Programs</h2><p>🏑 Little Sticks Championship<br>⚽ Weekend League 2027<br>📚 Education Clinics<br>🥅 Equipment Support & Coaching<br>🤝 Mentorship & Community Outreach</p></div></div>
-
-<!-- GET INVOLVED -->
 <div id="page-get" class="page"><div class="box"><h2>Get Involved</h2><p>• Register school for Little Sticks 2026<br>• Join Weekend League waitlist<br>• Volunteer as coach<br>• Partner / Sponsor<br><br>Contact: contact@hockeydreamsfoundation.org<br>Kampala, Uganda<br><br><a class="btn btn-red" onclick="openPage('competitions')">Register Now</a></p></div></div>
-
-<!-- NEWS -->
 <div id="page-news" class="page"><div class="box"><h2>News & Stories</h2><p><b>Oct 2026:</b> Little Sticks First Edition - 8 schools!<br><b>Sep 2026:</b> Community outreach Kampala - mentorship + orange drinks<br><b>Jan 2027:</b> Weekend League launching soon</p></div></div>
-
-<!-- DONATE -->
 <div id="page-donate" class="page"><div class="box" style="text-align:center"><h2>Support the Next Generation</h2><p style="margin:14px 0">Your donation provides equipment, coaching, and opportunities.<br><b>$20 = Equipment for 1 child</b></p><a class="btn btn-red">Donate Today</a><a class="btn btn-outline" onclick="openPage('get')">Partner With Us</a><p style="margin-top:18px;font-size:12px;color:#666">contact@hockeydreamsfoundation.org<br>Kampala, Uganda</p></div></div>
 
 <div class="footer">© 2026 Hockey Dreams Foundation</div>
@@ -86,8 +87,8 @@ const CSV="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvOnePs7n1K6IYwdL-9j
 fetch(CSV).then(r=>r.text()).then(t=>{
 let rows=t.trim().split("\n").slice(1);
 let html=""; rows.forEach(r=>{let c=r.split(",")[0]; if(c) html+=c+"<br>"});
-document.getElementById('teams-home').innerHTML=html;
-document.getElementById('teams-full').innerHTML=html;
+if(document.getElementById('teams-home')) document.getElementById('teams-home').innerHTML=html;
+if(document.getElementById('teams-full')) document.getElementById('teams-full').innerHTML=html;
 });
 </script>
 </body>
