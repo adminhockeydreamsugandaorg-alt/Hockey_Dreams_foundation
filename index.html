@@ -1,63 +1,115 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hockey Dreams</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}body{background:#E6F0FA}
-.header{background:#0A2342;padding:10px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:999}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0A2342}
+.header{background:rgba(10,35,66,0.92);backdrop-filter:blur(10px);padding:10px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:999}
 .logo{font-weight:900;color:#5BA4E5;font-size:16px;line-height:1}.logo span{color:white;font-size:11px}
 .nav a{color:white;text-decoration:none;font-size:11px;font-weight:700;margin:0 5px;cursor:pointer}.nav a.active{color:#5BA4E5}
 .donate{background:#D32F2F;color:white;padding:6px 14px;border-radius:14px;font-weight:900;font-size:11px}
 .page{display:none}.page.active{display:block}
 
-/* HERO = community_small.jpg FULL WIDTH */
-.hero{width:100%;height:460px;background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.55)),url('community_small.jpg');background-size:cover;background-position:center top;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:white;padding:20px}
-.hero h1{font-size:34px;font-weight:900;text-shadow:0 3px 15px rgba(0,0,0,0.8);line-height:1.1}
-.hero .sub{margin:10px 0 18px;font-size:15px;font-weight:600;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
-.btn{padding:12px 26px;border-radius:6px;font-weight:800;font-size:13px;border:none;cursor:pointer}
-.btn-red{background:#D32F2F;color:white;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
-.btn-light{background:rgba(255,255,255,0.9);color:#0A2342}
-.tag{margin-top:16px;background:rgba(199,227,245,0.9);color:#0A2342;padding:6px 14px;border-radius:14px;font-size:11px;font-weight:800;display:inline-block}
+/* FULL PAGE HERO BACKGROUND */
+#page-home{
+width:100%;
+min-height:100vh;
+background:linear-gradient(rgba(10,35,66,0.25),rgba(10,35,66,0.55)),url('community_small.jpg');
+background-size:cover;
+background-position:center top;
+background-attachment:fixed;
+}
 
-.title{text-align:center;padding:14px 0 8px;background:#E6F0FA}.title small{color:#D32F2F;font-weight:800;font-size:10px}.title h2{color:#0A2342;font-weight:900;font-size:19px;border-bottom:3px solid #D32F2F;display:inline-block;padding-bottom:3px}
-.cards{max-width:1100px;margin:0 auto;padding:12px;display:flex;gap:14px;flex-wrap:wrap;background:#E6F0FA}
-.c1{flex:1.2;min-width:300px;background:white;border:4px solid #8AC6F0;border-radius:12px;overflow:hidden}
-.c1h{background:#D32F2F;color:white;padding:9px 12px;font-weight:900;font-size:12px}
-.c1b{padding:12px;font-size:11px;color:#0A2342;text-align:center}
-.teams{display:flex;gap:10px;justify-content:center;text-align:left;font-size:10px;margin:8px 0}
-.open{background:#D32F2F;color:white;padding:5px;border-radius:5px;font-weight:900;font-size:10px;margin:8px 30px}
-.c2{flex:0.9;min-width:280px;background:#0A2342;border-radius:12px;color:white;padding:14px;text-align:center}
-.c2 h3{color:#8AC6F0;font-size:13px}
-.stats{max-width:1100px;margin:10px auto;display:flex;gap:8px;padding:0 10px;text-align:center;background:#E6F0FA;flex-wrap:wrap}
-.stat{flex:1;min-width:120px;padding:8px;border-right:1px solid #cbd5e1}.stat:last-child{border:none}.stat b{color:#D32F2F;font-size:20px;display:block}.stat span{font-size:10px;font-weight:700;color:#0A2342}
-.support{background:#0A2342;color:white;text-align:center;padding:16px}
+/* Transparent hero text */
+.hero-full{
+width:100%;
+height:55vh;
+min-height:320px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px
+}
+.hero-full h1{font-size:38px;font-weight:900;text-shadow:0 4px 20px rgba(0,0,0,0.9);line-height:1.05;letter-spacing:-0.5px}
+.hero-full .sub{margin:12px 0 20px;font-size:16px;font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,0.8)}
+.btn{padding:12px 28px;border-radius:6px;font-weight:900;font-size:13px;border:none;cursor:pointer}
+.btn-red{background:#D32F2F;color:white;box-shadow:0 6px 20px rgba(0,0,0,0.4)}
+.btn-light{background:rgba(255,255,255,0.95);color:#0A2342}
+.tag{margin-top:18px;background:rgba(199,227,245,0.9);color:#0A2342;padding:6px 16px;border-radius:14px;font-size:11px;font-weight:800;display:inline-block;backdrop-filter:blur(5px)}
+
+/* TRANSPARENT CARDS - GLASS EFFECT */
+.title-transparent{text-align:center;padding:20px 0 10px}
+.title-transparent small{color:#FFD0D0;font-weight:800;font-size:11px;text-shadow:0 1px 5px rgba(0,0,0,0.8)}
+.title-transparent h2{color:white;font-weight:900;font-size:22px;border-bottom:3px solid #D32F2F;display:inline-block;padding-bottom:4px;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
+
+.cards-transparent{max-width:1100px;margin:0 auto;padding:12px;display:flex;gap:16px;flex-wrap:wrap}
+.c1-transparent{flex:1.2;min-width:320px;background:rgba(255,255,255,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.5);border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.c1h{background:#D32F2F;color:white;padding:10px 12px;font-weight:900;font-size:12px}
+.c1b{padding:14px;font-size:11px;color:#0A2342;text-align:center}
+.teams{display:flex;gap:12px;justify-content:center;text-align:left;font-size:10px;margin:8px 0}
+.open{background:#D32F2F;color:white;padding:6px;border-radius:6px;font-weight:900;font-size:10px;margin:10px 40px}
+.c2-transparent{flex:0.9;min-width:300px;background:rgba(10,35,66,0.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);border-radius:14px;color:white;padding:16px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.c2-transparent h3{color:#8AC6F0;font-size:13px}
+
+.stats-transparent{max-width:1100px;margin:16px auto;display:flex;gap:10px;padding:0 14px;text-align:center;flex-wrap:wrap}
+.stat-transparent{flex:1;min-width:120px;padding:12px;background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);border-radius:12px;border:1px solid rgba(255,255,255,0.4);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.stat-transparent b{color:#D32F2F;font-size:22px;display:block}.stat-transparent span{font-size:10px;font-weight:700;color:#0A2342}
+
+.support-transparent{background:rgba(10,35,66,0.88);backdrop-filter:blur(10px);color:white;text-align:center;padding:20px;margin-top:14px;border-top:1px solid rgba(255,255,255,0.15)}
 .footer{background:#061A35;color:#8A9BAE;padding:12px;font-size:9px;display:flex;flex-wrap:wrap;justify-content:space-between}
 </style></head><body>
+
 <div class="header">
 <div class="logo">🏑 HOCKEY DREAMS<br><span>FOUNDATION</span></div>
 <div class="nav"><a id="link-home" class="active" onclick="showPage('home')">Home</a> | <a id="link-competitions" onclick="showPage('competitions')">Competitions</a> | <a id="link-about" onclick="showPage('about')">About</a> | <a id="link-programs" onclick="showPage('programs')">Programs</a> | <a id="link-get" onclick="showPage('get')">Get Involved</a> | <a id="link-news" onclick="showPage('news')">News</a> | <a id="link-donate" onclick="showPage('donate')">Donate</a> <span class="donate" onclick="showPage('donate')">Donate</span></div>
 </div>
 
 <div id="page-home" class="page active">
-<div class="hero">
+<div class="hero-full">
 <h1>EMPOWERING YOUTH<br>THROUGH HOCKEY</h1>
 <div class="sub">Building dreams, teamwork, and community across Africa</div>
 <div><button class="btn btn-red" onclick="showPage('competitions')">View Competitions</button> <button class="btn btn-light" onclick="showPage('about')">Learn More</button></div>
 <span class="tag">Impacting 500+ Young Players Across Uganda</span>
 </div>
 
-<div class="title"><small>2026 / 2027 SEASON</small><br><h2>OUR COMPETITIONS</h2></div>
-<div class="cards">
-<div class="c1"><div class="c1h">🏑 LITTLE STICKS CHAMPIONSHIP</div><div class="c1b"><b>Primary Schools • First Edition</b><br>📅 23 October 2026 • Kampala, Uganda<br><small>PARTICIPATING TEAMS — 8 TEAMS</small><div class="teams"><ul><li>Naguru Infant Primary</li><li>Shimon Demonstration</li><li>East Kololo Primary</li><li>Hands For Hope</li></ul><ul><li>Hill Preparatory</li><li>St. Jude Primary</li><li>The Bright School</li><li>TBC</li></ul></div><div class="open">REGISTRATION OPEN NOW</div><button class="btn" style="border:1px solid #0A2342;border-radius:12px;font-size:10px;background:white" onclick="showPage('competitions')">View Tournament Details →</button></div></div>
-<div class="c2"><h3>⚽ WEEKEND LEAGUE 2027<br><small>COMING SOON</small><br>Launching January 2027 • Weekly Matches</h3><br><p style="font-size:11px;line-height:1.4">A new youth weekend league designed to develop skills, foster healthy competition, and build lasting camaraderie among young players aged 10-15.<br><br>JOIN THE WAITLIST — GET NOTIFIED</p><br><button class="btn btn-red" style="border-radius:12px" onclick="showPage('competitions')">Notify Me →</button></div>
+<div class="title-transparent"><small>2026 / 2027 SEASON</small><br><h2>OUR COMPETITIONS</h2></div>
+
+<div class="cards-transparent">
+<div class="c1-transparent">
+<div class="c1h">🏑 LITTLE STICKS CHAMPIONSHIP</div>
+<div class="c1b">
+<b>Primary Schools • First Edition</b><br>📅 23 October 2026 • Kampala, Uganda<br><small style="font-weight:800">PARTICIPATING TEAMS — 8 TEAMS</small>
+<div class="teams"><ul><li>Naguru Infant Primary</li><li>Shimon Demonstration</li><li>East Kololo Primary</li><li>Hands For Hope</li></ul><ul><li>Hill Preparatory</li><li>St. Jude Primary</li><li>The Bright School</li><li>TBC</li></ul></div>
+<div class="open">REGISTRATION OPEN NOW</div>
+<button class="btn" style="border:1px solid #0A2342;border-radius:12px;font-size:10px;background:white" onclick="showPage('competitions')">View Tournament Details →</button>
+</div></div>
+
+<div class="c2-transparent">
+<h3>⚽ WEEKEND LEAGUE 2027<br><small>COMING SOON</small><br>Launching January 2027 • Weekly Matches</h3><br>
+<p style="font-size:11px;line-height:1.5">A new youth weekend league designed to develop skills, foster healthy competition, and build lasting camaraderie among young players aged 10-15.<br><br>JOIN THE WAITLIST — GET NOTIFIED</p><br>
+<button class="btn btn-red" style="border-radius:12px" onclick="showPage('competitions')">Notify Me →</button>
 </div>
-<div class="stats"><div class="stat"><b>8</b><span>8 SCHOOLS<br>Competing</span></div><div class="stat"><b>500+</b><span>YOUTH PLAYERS<br>Empowered</span></div><div class="stat"><b>1</b><span>Building Future<br>Through Sport</span></div></div>
-<div class="support"><h3 style="color:#D32F2F">SUPPORT THE NEXT GENERATION</h3><p style="font-size:10px;color:#A8D4F0">Help us provide equipment, coaching, and opportunities.</p><br><button class="btn btn-red" onclick="showPage('donate')">Donate Today</button></div>
-<div class="footer"><div>🏑 HOCKEY DREAMS FOUNDATION</div><div>contact@hockeydreamsfoundation.org</div><div>Kampala, Uganda</div></div>
 </div>
 
-<div id="page-competitions" class="page"><div style="background:white;padding:12px;text-align:center"><h2 style="color:#0A2342">COMPETITIONS</h2><button onclick="showComp('ls')" id="btn-ls" style="background:#0A2342;color:white;padding:6px 12px;border-radius:12px">Little Sticks 2026</button> <button onclick="showComp('wl')" id="btn-wl" style="padding:6px 12px;border-radius:12px">Weekend League</button></div><div id="comp-ls" style="min-height:70vh;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)),url('community_small.jpg');background-size:cover;background-position:center;padding:16px;color:white"><h3>Little Sticks 2026 - 8 Schools</h3><p style="font-size:11px">23 Oct 2026 • Lugogo • Registration Open</p></div><div id="comp-wl" style="display:none;padding:20px;background:white;min-height:70vh"><h3>Weekend League 2027</h3><p>Launching Jan 2027</p></div></div>
-<div id="page-about" class="page"><div style="padding:20px;background:white;min-height:70vh"><h2>About</h2><p>Empowering youth through hockey.</p></div></div>
-<div id="page-programs" class="page"><div style="padding:20px;background:white;min-height:70vh"><h2>Programs</h2><p>Little Sticks, Weekend League, Outreach</p></div></div>
-<div id="page-get" class="page"><div style="padding:20px;background:white;min-height:70vh"><h2>Get Involved</h2><p>contact@hockeydreamsfoundation.org</p></div></div>
-<div id="page-news" class="page"><div style="padding:20px;background:white;min-height:70vh"><h2>News</h2><p>8 Schools joined!</p></div></div>
+<div class="stats-transparent">
+<div class="stat-transparent"><b>8</b><span>8 SCHOOLS<br>Competing</span></div>
+<div class="stat-transparent"><b>500+</b><span>YOUTH PLAYERS<br>Empowered</span></div>
+<div class="stat-transparent"><b>1</b><span>Building Future<br>Through Sport</span></div>
+</div>
+
+<div class="support-transparent"><h3 style="color:#FF6B6B">SUPPORT THE NEXT GENERATION</h3><p style="font-size:11px;color:#A8D4F0;margin-top:4px">Help us provide equipment, coaching, and opportunities for more children to chase their hockey dreams.</p><br><button class="btn btn-red" onclick="showPage('donate')">Donate Today</button></div>
+
+<div class="footer"><div>🏑 HOCKEY DREAMS FOUNDATION</div><div>contact@hockeydreamsfoundation.org</div><div>Kampala, Uganda</div></div>
+<div style="background:#061A35;text-align:center;color:#5A6D80;font-size:8px;padding:6px">© 2026 Hockey Dreams Foundation</div>
+</div>
+
+<!-- OTHER PAGES KEEP WHITE BACKGROUND -->
+<div id="page-competitions" class="page"><div style="background:white;padding:14px;text-align:center"><h2 style="color:#0A2342">COMPETITIONS</h2><button onclick="showComp('ls')" id="btn-ls" style="background:#0A2342;color:white;padding:7px 14px;border-radius:14px;font-weight:800">Little Sticks 2026</button> <button onclick="showComp('wl')" id="btn-wl" style="padding:7px 14px;border-radius:14px;font-weight:800">Weekend League</button></div><div id="comp-ls" style="min-height:75vh;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)),url('community_small.jpg');background-size:cover;padding:18px;color:white"><h3>Little Sticks 2026 - 8 Schools • 23 Oct 2026</h3></div><div id="comp-wl" style="display:none;padding:20px;background:white;min-height:70vh"><h3>Weekend League 2027</h3><p>Launching Jan 2027</p></div></div>
+<div id="page-about" class="page"><div style="padding:24px;background:white;min-height:70vh"><h2>About</h2><p>Empowering youth through hockey.</p></div></div>
+<div id="page-programs" class="page"><div style="padding:24px;background:white;min-height:70vh"><h2>Programs</h2><p>Little Sticks, Weekend League, Outreach</p></div></div>
+<div id="page-get" class="page"><div style="padding:24px;background:white;min-height:70vh"><h2>Get Involved</h2><p>contact@hockeydreamsfoundation.org</p></div></div>
+<div id="page-news" class="page"><div style="padding:24px;background:white;min-height:70vh"><h2>News</h2><p>8 Schools joined!</p></div></div>
 <div id="page-donate" class="page"><div style="padding:40px;background:#0A2342;color:white;text-align:center;min-height:70vh"><h2>Support Our Mission</h2><br><button class="btn btn-red">Donate Today</button></div></div>
 
 <script>
