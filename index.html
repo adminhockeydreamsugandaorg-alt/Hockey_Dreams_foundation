@@ -71,7 +71,12 @@ body{background:#f5f7fa}
 
 <div id="page-competitions" class="page"><div style="background:white;padding:15px;text-align:center"><h2 style="font-weight:900;color:#0A2342">COMPETITIONS</h2><div class="comp-nav"><button id="btn-ls" class="active" onclick="showComp('ls')">Little Sticks 2026</button><button id="btn-wl" onclick="showComp('wl')">Weekend League 2027</button></div></div>
 <div id="comp-ls"><div class="ls-inner"><h3>🏑 Little Sticks 2026</h3><div class="sub-nav"><button id="sbtn-teams" class="active" onclick="showSub('teams')">Teams</button><button id="sbtn-fixtures" onclick="showSub('fixtures')">Fixtures</button><button id="sbtn-table" onclick="showSub('table')">Table</button><button id="sbtn-results" onclick="showSub('results')">Results</button></div>
-<div id="tab-teams" class="tab active"><h4>Teams</h4><p>City Lions<br>Kampala Tigers</p></div>
+<!-- Replace ONLY your tab-teams div with this improved version -->
+<div id="tab-teams" class="tab active">
+<h4>Teams - Live from Google Sheets</h4>
+<div id="teams-loading" style="padding:10px;font-size:12px">Loading teams from Google Sheets...</div>
+<div id="teams-list"></div>
+</div>
 <div id="tab-fixtures" class="tab"><h4>Fixtures</h4><table><tr><th>Date</th><th>Match</th><th>Time</th></tr><tr><td>23 Oct</td><td>City vs Kampala</td><td>9AM</td></tr></table></div>
 <div id="tab-table" class="tab"><h4>RESULTS TABLE</h4><table><tr><th>TEAM</th><th>P</th><th>W</th><th>D</th><th>L</th><th>PTS</th><th>GOALS</th></tr><tr><td>Lions Club</td><td>5</td><td>4</td><td>0</td><td>1</td><td>12</td><td>14-3</td></tr><tr><td>Consertnators</td><td>5</td><td>3</td><td>0</td><td>2</td><td>12</td><td>12-11</td></tr></table></div>
 <div id="tab-results" class="tab"><h4>Results</h4><table><tr><th>Date</th><th>Match</th><th>Score</th></tr><tr><td>22 Oct</td><td>City 2-1 Kampala</td><td>FT</td></tr></table></div>
@@ -88,4 +93,31 @@ function showPage(n){var all=document.querySelectorAll('.page');for(var i=0;i<al
 function showComp(c){document.getElementById('comp-ls').style.display=(c=='ls')?'block':'none';document.getElementById('comp-wl').style.display=(c=='wl')?'block':'none';document.getElementById('btn-ls').classList.toggle('active',c=='ls');document.getElementById('btn-wl').classList.toggle('active',c=='wl');}
 function showSub(s){document.querySelectorAll('#comp-ls .tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('#comp-ls .sub-nav button').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+s).classList.add('active');document.getElementById('sbtn-'+s).classList.add('active');}
 showPage('home');
+async function loadTeamsFromSheet(){
+  const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQvOnePs7n1K6IYwdL-9jg0Q7dZBaMWgD03ghhDz5W9ySaamIz1aT_fCdS2Ctgi8KWE5cmwTVLtw77U/pub?output=csv';
+  try{
+    const res = await fetch(sheetUrl);
+    const csv = await res.text();
+    const lines = csv.split('\n').filter(l=>l.trim()!=='');
+    // Skip header row
+    const rows = lines.slice(1);
+    
+    let html = '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">';
+    rows.forEach(line=>{
+      // Simple CSV parse - handles quoted commas
+      const cols = line.split(',').map(c=>c.replace(/^"|"$/g,'').trim());
+      const teamName = cols[0] || '';
+      if(!teamName) return;
+      html += `<div style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);padding:8px 12px;border-radius:6px;font-size:13px;min-width:160px">🏑 ${teamName}</div>`;
+    });
+    html += '</div>';
+    document.getElementById('teams-loading').style.display='none';
+    document.getElementById('teams-list').innerHTML = html + `<p style="margin-top:10px;font-size:11px;opacity:0.7">Total: ${rows.length} teams - auto-updates from Google Sheets</p>`;
+  }catch(e){
+    document.getElementById('teams-loading').innerHTML = 'Failed to load. Check Sheet sharing is Public.';
+    console.error(e);
+  }
+}
+// Load on page start
+loadTeamsFromSheet();  
 </script></body></html>
