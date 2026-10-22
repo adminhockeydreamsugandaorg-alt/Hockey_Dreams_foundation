@@ -1,11 +1,36 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hockey Dreams Uganda</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,system-ui}body{background:#EAF3FF}.header{background:#0A2342;color:white;padding:12px;display:flex;justify-content:space-between;flex-wrap:wrap;position:sticky;top:0;z-index:999}.nav{display:flex;gap:8px;flex-wrap:wrap;font-size:11px;font-weight:800}.nav a{color:white;padding:6px 10px;border-radius:6px;cursor:pointer;text-decoration:none;display:inline-block}.nav a.active{background:#1a4a8a}.page{display:none}.page.active{display:block}.hero{background:linear-gradient(120deg,#2A93FF,#6FC0FF);padding:30px;color:white}.box{max-width:900px;margin:20px auto;background:white;padding:20px;border-radius:12px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,system-ui}
+body{background:#f5f7fa}
+.header{background:#123F4A;color:white;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:999}
+.logo{font-weight:900;color:#7EC8FF;font-size:13px}
+.nav{display:flex;gap:4px;flex-wrap:wrap;font-size:11px;font-weight:700}
+.nav a{color:white;padding:7px 10px;border-radius:6px;cursor:pointer;text-decoration:none}
+.nav a.active{background:rgba(255,255,255,0.15)}
+.page{display:none}.page.active{display:block}
+.hero-main{position:relative;width:100%;height:460px;background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.55)),url('community_small.jpg');background-size:cover;background-position:center top;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:white;padding:20px}
+.hero-main h1{font-size:34px;font-weight:900;text-shadow:0 3px 15px rgba(0,0,0,0.8);line-height:1.1}
+.hero-main p{margin:10px 0 18px;font-size:15px;font-weight:500;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
+.btn-hero{background:#7A1F2A;color:white;border:none;padding:12px 26px;border-radius:6px;font-weight:800;cursor:pointer;font-size:13px;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+.section{max-width:1100px;margin:0 auto;padding:22px 18px;background:white}
+.section-title{text-align:center;font-weight:900;font-size:13px;color:#0A2342;margin-bottom:14px}
+.impact-grid{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.impact-card{background:white;border:1px solid #e5e7eb;border-radius:10px;padding:16px 12px;width:155px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.impact-card b{font-size:11px;color:#0A2342;display:block;line-height:1.3}
+.programs-grid{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+.prog-card{flex:1;min-width:280px;background:white;border-radius:10px;overflow:hidden;display:flex;box-shadow:0 2px 10px rgba(0,0,0,0.08);border:1px solid #e5e7eb}
+.prog-card-left{width:45%;background:#123F4A;color:white;padding:14px}
+.prog-card-right{width:55%}
+.prog-card img{width:100%;height:100%;object-fit:cover}
+.prog-card h4{font-size:13px;margin-bottom:4px}
+.prog-card p{font-size:11px;line-height:1.4;opacity:0.9}
+.link-red{color:#7A1F2A;font-size:11px;font-weight:800;margin-top:8px;display:inline-block;cursor:pointer}
 #comp-ls{width:100%;min-height:85vh;background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.6)),url('little_sticks_bg.jpg');background-size:cover;background-position:center;padding:20px}
 .ls-inner{max-width:950px;margin:0 auto;background:rgba(0,0,0,0.4);padding:20px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);color:white}
 .ls-inner h3,.ls-inner h4{color:white}table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}th{background:rgba(255,255,255,0.2);color:white;padding:8px;border-bottom:2px solid white}td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.4);color:white;text-align:center}td:first-child{text-align:left}.sub-nav{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.3)}.sub-nav button{padding:6px 12px;border:1px solid rgba(255,255,255,0.5);background:rgba(255,255,255,0.15);color:white;border-radius:5px;font-weight:700;cursor:pointer}.sub-nav button.active{background:white;color:#0A2342}.tab{display:none}.tab.active{display:block}.comp-nav{display:flex;gap:8px;justify-content:center;margin:10px}.comp-nav button{padding:8px 16px;border-radius:20px;border:2px solid #0A2342;font-weight:800;cursor:pointer}.comp-nav button.active{background:#0A2342;color:white}
+.footer{background:#061A35;color:white;text-align:center;padding:12px;font-size:11px;margin-top:20px}
 </style></head><body>
-<div class="header"><div style="font-weight:900;color:#7EC8FF">HOCKEY DREAMS</div><div class="nav">
+<div class="header"><div class="logo">HOCKEY DREAMS</div><div class="nav">
 <a id="link-home" class="active" onclick="showPage('home')">Home</a>
 <a id="link-competitions" onclick="showPage('competitions')">Competitions</a>
 <a id="link-about" onclick="showPage('about')">About</a>
@@ -15,50 +40,45 @@
 <a id="link-donate" onclick="showPage('donate')">Donate</a>
 </div></div>
 
-<div id="page-home" class="page active"><div class="hero"><h1>EMPOWERING YOUTH THROUGH HOCKEY</h1><p>Building dreams across Africa</p><br><button onclick="showPage('competitions')" style="padding:10px 20px;background:#E30613;color:white;border:none;border-radius:8px;font-weight:800">View Competitions</button></div><div class="box"><h3>Welcome</h3><p>Community Outreach in Kampala - More than hockey, it's family.</p></div></div>
-
-<div id="page-competitions" class="page"><div style="background:white;padding:15px;text-align:center"><h2>COMPETITIONS</h2><div class="comp-nav"><button id="btn-ls" class="active" onclick="showComp('ls')">Little Sticks 2026</button><button id="btn-wl" onclick="showComp('wl')">Weekend League 2027</button></div></div>
-<div id="comp-ls"><div class="ls-inner"><h3>🏑 Little Sticks 2026</h3><div class="sub-nav"><button id="sbtn-teams" class="active" onclick="showSub('teams')">Teams</button><button id="sbtn-fixtures" onclick="showSub('fixtures')">Fixtures</button><button id="sbtn-table" onclick="showSub('table')">Table</button><button id="sbtn-results" onclick="showSub('results')">Results</button></div>
-<div id="tab-teams" class="tab active"><h4>Teams</h4><p>City Lions<br>Kampala Tigers<br>Nakawa Stars</p></div>
-<div id="tab-fixtures" class="tab"><h4>Fixtures</h4><table><tr><th>Date</th><th>Match</th><th>Time</th></tr><tr><td>23 Oct</td><td>City vs Kampala</td><td>9AM</td></tr></table></div>
-<div id="tab-table" class="tab"><h4>RESULTS TABLE</h4><table><tr><th>TEAM</th><th>P</th><th>W</th><th>D</th><th>L</th><th>PTS</th><th>GOALS</th></tr><tr><td>Lions Club</td><td>5</td><td>4</td><td>0</td><td>1</td><td>12</td><td>14-3</td></tr><tr><td>Consertnators</td><td>5</td><td>3</td><td>0</td><td>2</td><td>12</td><td>12-11</td></tr><tr><td>Baitorn</td><td>5</td><td>2</td><td>1</td><td>3</td><td>10</td><td>9-8</td></tr><tr><td>Servinys</td><td>5</td><td>1</td><td>1</td><td>4</td><td>9</td><td>7-2</td></tr></table></div>
-<div id="tab-results" class="tab"><h4>Results</h4><table><tr><th>Date</th><th>Match</th><th>Score</th></tr><tr><td>22 Oct</td><td>City 2-1 Kampala</td><td>FT</td></tr></table></div>
+<div id="page-home" class="page active">
+<div class="hero-main">
+<h1>EMPOWERING YOUTH THROUGH HOCKEY</h1>
+<p>Building dreams across Africa</p>
+<button class="btn-hero" onclick="showPage('competitions')">View Competitions</button>
+</div>
+<div class="section">
+<div class="section-title">IMPACT AT A GLANCE</div>
+<div class="impact-grid">
+<div class="impact-card"><div style="font-size:26px">👥</div><b>500+ YOUTH<br>EMPOWERED</b></div>
+<div class="impact-card"><div style="font-size:26px">🏑</div><b>EQUIPMENT<br>DONATED</b></div>
+<div class="impact-card"><div style="font-size:26px">📢</div><b>COACHES<br>TRAINED</b></div>
+<div class="impact-card"><div style="font-size:26px">🥅</div><b>PITCHES<br>IMPROVED</b></div>
+</div>
+<div style="margin-top:24px"><div class="section-title" style="text-align:left">OUR PROGRAMS</div>
+<div class="programs-grid">
+<div class="prog-card"><div class="prog-card-left"><h4>Community Outreach</h4><p>More than hockey, it's family.</p></div><div class="prog-card-right" style="background:#123F4A;display:flex;align-items:center;justify-content:center;color:white">Family</div></div>
+<div class="prog-card"><div class="prog-card-right"><img src="community_small.jpg"></div><div class="prog-card-left" style="background:white;color:#0A2342;width:60%"><h4 style="color:#0A2342">Competitions</h4><p style="color:#555">Little Sticks and Weekend League.</p><span class="link-red" onclick="showPage('competitions')">View Competitions →</span></div></div>
 </div></div>
-<div id="comp-wl" style="display:none"><div class="box"><h3>Weekend League 2027</h3><p>Coming March 2027</p></div></div></div>
+</div>
+</div>
 
-<div id="page-about" class="page"><div class="box"><h2>About Us</h2><p>We empower youth across Uganda through hockey.</p></div></div>
-<div id="page-programs" class="page"><div class="box"><h2>Programs</h2><p>Little Sticks, Weekend League, Clinics</p></div></div>
-<div id="page-get" class="page"><div class="box"><h2>Get Involved</h2><p>contact@hockeydreamsfoundation.org</p></div></div>
-<div id="page-news" class="page"><div class="box"><h2>News</h2><p>Oct 2026: 8 schools joined!</p></div></div>
-<div id="page-donate" class="page"><div class="box" style="text-align:center"><h2>Support</h2><p>$20 = Equipment for 1 child</p></div></div>
+<div id="page-competitions" class="page"><div style="background:white;padding:15px;text-align:center"><h2 style="font-weight:900;color:#0A2342">COMPETITIONS</h2><div class="comp-nav"><button id="btn-ls" class="active" onclick="showComp('ls')">Little Sticks 2026</button><button id="btn-wl" onclick="showComp('wl')">Weekend League 2027</button></div></div>
+<div id="comp-ls"><div class="ls-inner"><h3>🏑 Little Sticks 2026</h3><div class="sub-nav"><button id="sbtn-teams" class="active" onclick="showSub('teams')">Teams</button><button id="sbtn-fixtures" onclick="showSub('fixtures')">Fixtures</button><button id="sbtn-table" onclick="showSub('table')">Table</button><button id="sbtn-results" onclick="showSub('results')">Results</button></div>
+<div id="tab-teams" class="tab active"><h4>Teams</h4><p>City Lions<br>Kampala Tigers</p></div>
+<div id="tab-fixtures" class="tab"><h4>Fixtures</h4><table><tr><th>Date</th><th>Match</th><th>Time</th></tr><tr><td>23 Oct</td><td>City vs Kampala</td><td>9AM</td></tr></table></div>
+<div id="tab-table" class="tab"><h4>RESULTS TABLE</h4><table><tr><th>TEAM</th><th>P</th><th>W</th><th>D</th><th>L</th><th>PTS</th><th>GOALS</th></tr><tr><td>Lions Club</td><td>5</td><td>4</td><td>0</td><td>1</td><td>12</td><td>14-3</td></tr><tr><td>Consertnators</td><td>5</td><td>3</td><td>0</td><td>2</td><td>12</td><td>12-11</td></tr></table></div>
+<div id="tab-results" class="tab"><h4>Results</h4><table><tr><th>Date</th><th>Match</th><th>Score</th></tr><tr><td>22 Oct</td><td>City 2-1 Kampala</td><td>FT</td></tr></table></div>
+</div></div><div id="comp-wl" style="display:none"><div class="section"><h3>Weekend League 2027</h3><p>Coming March 2027</p></div></div></div>
 
+<div id="page-about" class="page"><div class="section"><h2>About Us</h2><p>We empower youth across Uganda through hockey.</p></div></div>
+<div id="page-programs" class="page"><div class="section"><h2>Programs</h2><p>Little Sticks, Weekend League, Clinics</p></div></div>
+<div id="page-get" class="page"><div class="section"><h2>Get Involved</h2><p>contact@hockeydreamsfoundation.org</p></div></div>
+<div id="page-news" class="page"><div class="section"><h2>News</h2><p>Oct 2026: 8 schools joined!</p></div></div>
+<div id="page-donate" class="page"><div class="section" style="text-align:center"><h2>Support</h2><p>$20 = Equipment for 1 child</p><br><button class="btn-hero">Donate Today</button></div></div>
+<div class="footer">© 2026 Hockey Dreams Foundation Uganda</div>
 <script>
-function showPage(n){
-  var all=document.querySelectorAll('.page');
-  for(var i=0;i<all.length;i++) all[i].style.display='none';
-  for(var i=0;i<all.length;i++) all[i].classList.remove('active');
-  var p=document.getElementById('page-'+n);
-  if(p){p.style.display='block'; p.classList.add('active');}
-  var links=document.querySelectorAll('.nav a');
-  for(var j=0;j<links.length;j++) links[j].classList.remove('active');
-  var l=document.getElementById('link-'+n);
-  if(l) l.classList.add('active');
-  window.scrollTo(0,0);
-}
-function showComp(c){
-  document.getElementById('comp-ls').style.display=(c=='ls')?'block':'none';
-  document.getElementById('comp-wl').style.display=(c=='wl')?'block':'none';
-  document.getElementById('btn-ls').classList.toggle('active',c=='ls');
-  document.getElementById('btn-wl').classList.toggle('active',c=='wl');
-}
-function showSub(s){
-  var tabs=document.querySelectorAll('#comp-ls .tab');
-  for(var i=0;i<tabs.length;i++) tabs[i].classList.remove('active');
-  var btns=document.querySelectorAll('#comp-ls .sub-nav button');
-  for(var i=0;i<btns.length;i++) btns[i].classList.remove('active');
-  document.getElementById('tab-'+s).classList.add('active');
-  document.getElementById('sbtn-'+s).classList.add('active');
-}
-// init
+function showPage(n){var all=document.querySelectorAll('.page');for(var i=0;i<all.length;i++){all[i].style.display='none';all[i].classList.remove('active');}var p=document.getElementById('page-'+n);if(p){p.style.display='block';p.classList.add('active');}var links=document.querySelectorAll('.nav a');for(var j=0;j<links.length;j++) links[j].classList.remove('active');var l=document.getElementById('link-'+n);if(l) l.classList.add('active');window.scrollTo(0,0);}
+function showComp(c){document.getElementById('comp-ls').style.display=(c=='ls')?'block':'none';document.getElementById('comp-wl').style.display=(c=='wl')?'block':'none';document.getElementById('btn-ls').classList.toggle('active',c=='ls');document.getElementById('btn-wl').classList.toggle('active',c=='wl');}
+function showSub(s){document.querySelectorAll('#comp-ls .tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('#comp-ls .sub-nav button').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+s).classList.add('active');document.getElementById('sbtn-'+s).classList.add('active');}
 showPage('home');
 </script></body></html>
