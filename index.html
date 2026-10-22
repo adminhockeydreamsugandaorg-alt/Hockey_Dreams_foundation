@@ -1,105 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hockey Dreams Uganda</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hockey Dreams Uganda</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;color:#1a1a2e;background:#fafafa;line-height:1.6}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-:root{--green-900:#0b3d2e;--green-700:#1b7a52;--green-500:#28a745}
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);height:72px;display:flex;align-items:center}
-.navbar .container{display:flex;align-items:center;justify-content:space-between;width:100%}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--green-900);cursor:pointer}
-.logo-img{width:48px;height:48px;background:white;border-radius:50%;padding:2px;object-fit:contain;border:1px solid #e5e7eb;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-.nav-links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.nav-links a{font-size:0.85rem;font-weight:600;padding:8px 14px;border-radius:20px;cursor:pointer;transition:0.2s}
-.nav-links a:hover{background:#e8f5e9;color:var(--green-700)}
-.nav-links a.active{background:var(--green-700);color:white}
-.page{display:none;padding-top:72px;min-height:100vh}.page.active{display:block}
-.hero{min-height:82vh;display:flex;align-items:center;position:relative;background:linear-gradient(135deg,rgba(11,61,46,0.85),rgba(27,122,82,0.6)),url('community_small.jpg');background-size:cover;background-position:center top;color:white}
-.hero h1{font-size:3.1rem;font-weight:900;line-height:1.05;text-shadow:0 3px 20px rgba(0,0,0,0.5);max-width:700px}
-.hero p{margin:12px 0 20px;font-size:1.1rem}
-.btn{padding:12px 26px;border-radius:8px;font-weight:800;border:none;cursor:pointer}
-.btn-white{background:white;color:var(--green-900)}.btn-green{background:var(--green-700);color:white}
-.section{padding:40px 0}.section-title{text-align:center;font-weight:900;font-size:1.3rem;color:var(--green-900);margin-bottom:22px}
-.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.impact-card{background:white;border-radius:14px;padding:20px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.05);border:1px solid #e5e7eb}
-.programs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.prog-card{background:white;border-radius:14px;overflow:hidden;display:flex;box-shadow:0 8px 24px rgba(0,0,0,0.06);border:1px solid #e5e7eb}
-.prog-left{width:55%;padding:18px}.prog-right{width:45%}.prog-right img{width:100%;height:100%;object-fit:cover}
-.comp-header{text-align:center;padding:30px 0 10px}
-.comp-nav{display:flex;gap:10px;justify-content:center;margin:10px}
-.comp-nav button{padding:10px 20px;border-radius:30px;border:2px solid var(--green-900);font-weight:800;cursor:pointer;background:white}
-.comp-nav button.active{background:var(--green-900);color:white}
-#comp-ls{width:100%;min-height:80vh;background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.55)),url('little_sticks_bg.jpg');background-size:cover;background-position:center;padding:24px}
-.ls-inner{max-width:900px;margin:0 auto;background:rgba(0,0,0,0.45);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);color:white}
-.sub-nav{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.3)}
-.sub-nav button{padding:7px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.5);background:rgba(255,255,255,0.15);color:white;font-weight:700;cursor:pointer}
-.sub-nav button.active{background:white;color:var(--green-900)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#fafafa}
+:root{--green:#0b3d2e;--green2:#1b7a52}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:white;border-bottom:1px solid #eee;height:64px;display:flex;align-items:center}
+.navbar .container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;width:100%}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--green);cursor:pointer}
+.logo-img{width:44px;height:44px;border-radius:50%;border:1px solid #ddd;object-fit:contain}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:7px 12px;border-radius:20px;font-size:0.82rem;font-weight:700;cursor:pointer}
+.nav-links a.active{background:var(--green);color:white}
+.page{display:none;padding-top:64px;min-height:100vh}.page.active{display:block}
+/* HOME = ONLY HERO NO SCROLL */
+.hero-home{height:calc(100vh - 64px);width:100%;background:linear-gradient(rgba(11,61,46,0.7),rgba(11,61,46,0.4)),url('community_small.jpg');background-size:cover;background-position:center top;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:20px}
+.hero-home h1{font-size:2.8rem;font-weight:900;line-height:1.1;text-shadow:0 3px 20px rgba(0,0,0,0.6)}
+.hero-home p{margin:12px 0 18px;font-size:1.05rem}
+.btn{padding:12px 24px;border-radius:8px;font-weight:800;border:none;cursor:pointer}
+.btn-white{background:white;color:var(--green)}
+.section{padding:30px 20px;max-width:1100px;margin:0 auto}
+#comp-ls{min-height:calc(100vh - 64px);background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)),url('little_sticks_bg.jpg');background-size:cover;background-position:center;padding:20px}
+.ls-inner{max-width:900px;margin:0 auto;background:rgba(0,0,0,0.45);padding:18px;border-radius:12px;color:white}
+.sub-nav{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.sub-nav button{padding:6px 12px;border-radius:16px;border:1px solid rgba(255,255,255,0.5);background:rgba(255,255,255,0.15);color:white;font-weight:700;cursor:pointer}.sub-nav button.active{background:white;color:var(--green)}
 .tab{display:none}.tab.active{display:block}
-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
-th{background:rgba(255,255,255,0.2);color:white;padding:8px;text-align:left}td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.3);color:white}
-.footer{background:#061A35;color:white;text-align:center;padding:18px;font-size:0.85rem}
-@media(max-width:768px){.hero h1{font-size:2rem}.impact-grid{grid-template-columns:1fr 1fr}.programs-grid{grid-template-columns:1fr}.nav-links{gap:2px}.nav-links a{padding:6px 8px;font-size:0.75rem}}
-</style>
-</head>
-<body>
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}th{background:rgba(255,255,255,0.2);color:white;padding:8px}td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.3);color:white}
+.comp-top{text-align:center;padding:20px;background:white}
+.comp-top button{padding:8px 18px;border-radius:20px;border:2px solid var(--green);font-weight:800;margin:0 4px;cursor:pointer;background:white}
+.comp-top button.active{background:var(--green);color:white}
+.footer{background:#061A35;color:white;text-align:center;padding:14px;font-size:0.8rem}
+@media(max-width:600px){.hero-home h1{font-size:1.9rem}.nav-links a{padding:5px 7px;font-size:0.7rem}}
+</style></head><body>
 
 <div class="navbar"><div class="container">
-<div class="logo" onclick="showPage('home')"><img src="logo.png" class="logo-img"> HOCKEY DREAMS UGANDA</div>
+<div class="logo" onclick="showPage('home')"><img src="logo.png" class="logo-img"> HOCKEY DREAMS</div>
 <div class="nav-links">
 <a id="link-home" class="active" onclick="showPage('home')">Home</a>
 <a id="link-competitions" onclick="showPage('competitions')">Competitions</a>
 <a id="link-programs" onclick="showPage('programs')">Programs</a>
 <a id="link-about" onclick="showPage('about')">About</a>
-<a id="link-news" onclick="showPage('news')">News</a>
 <a id="link-donate" onclick="showPage('donate')">Donate</a>
 </div>
 </div></div>
 
-<!-- HOME INDEPENDENT -->
+<!-- HOME - NO SCROLL - ONLY YOUR PHOTO -->
 <div id="page-home" class="page active">
-<div class="hero"><div class="container"><div>
-<h1>EMPOWERING YOUTH THROUGH HOCKEY</h1>
-<p>Building dreams across Africa — Community outreach with your real photo full width!</p>
+<div class="hero-home">
+<div>
+<h1>EMPOWERING YOUTH<br>THROUGH HOCKEY</h1>
+<p>Building dreams across Africa</p>
 <button class="btn btn-white" onclick="showPage('competitions')">View Competitions</button>
-</div></div></div>
-<div class="section" style="background:white"><div class="container">
-<div class="section-title">IMPACT AT A GLANCE</div>
-<div class="impact-grid">
-<div class="impact-card"><div style="font-size:28px">👥</div><b>500+ YOUTH<br>EMPOWERED</b></div>
-<div class="impact-card"><div style="font-size:28px">🏑</div><b>EQUIPMENT<br>DONATED</b></div>
-<div class="impact-card"><div style="font-size:28px">📢</div><b>COACHES<br>TRAINED</b></div>
-<div class="impact-card"><div style="font-size:28px">🥅</div><b>PITCHES<br>IMPROVED</b></div>
 </div>
-<div style="margin-top:30px"><div class="section-title" style="text-align:left">OUR PROGRAMS</div>
-<div class="programs-grid">
-<div class="prog-card"><div class="prog-left"><h4>Community Outreach</h4><p style="font-size:0.9rem;color:#6b7280">More than hockey, it's family.</p></div><div class="prog-right"><img src="community_small.jpg"></div></div>
-<div class="prog-card"><div class="prog-left"><h4>Competitions</h4><p style="font-size:0.9rem;color:#6b7280">Little Sticks and Weekend League.</p><b style="color:var(--green-700);cursor:pointer" onclick="showPage('competitions')">View →</b></div><div class="prog-right" style="background:var(--green-900);display:flex;align-items:center;justify-content:center;color:white;font-weight:800">LITTLE STICKS</div></div>
-</div></div>
-</div></div>
+</div>
 </div>
 
-<!-- COMPETITIONS INDEPENDENT -->
+<!-- COMPETITIONS - OWN PAGE -->
 <div id="page-competitions" class="page">
-<div class="comp-header"><h2 style="font-weight:900;color:var(--green-900)">🏑 COMPETITIONS</h2>
-<div class="comp-nav"><button id="btn-ls" class="active" onclick="showComp('ls')">Little Sticks 2026</button><button id="btn-wl" onclick="showComp('wl')">Weekend League 2027</button></div></div>
+<div class="comp-top"><h2 style="color:var(--green);font-weight:900">COMPETITIONS</h2>
+<button id="btn-ls" class="active" onclick="showComp('ls')">Little Sticks 2026</button>
+<button id="btn-wl" onclick="showComp('wl')">Weekend League 2027</button>
+</div>
 <div id="comp-ls"><div class="ls-inner">
 <h3>Little Sticks 2026</h3>
-<div class="sub-nav"><button id="sbtn-teams" class="active" onclick="showSub('teams')">Teams</button><button id="sbtn-fixtures" onclick="showSub('fixtures')">Fixtures</button><button id="sbtn-table" onclick="showSub('table')">Table</button><button id="sbtn-results" onclick="showSub('results')">Results</button></div>
-<div id="tab-teams" class="tab active"><p>City Lions<br>Kampala Tigers<br>Nakawa Stars<br>Bwaise Rockets</p></div>
-<div id="tab-fixtures" class="tab"><table><tr><th>Date</th><th>Match</th><th>Time</th></tr><tr><td>23 Oct</td><td>City vs Kampala</td><td>9AM - Lugogo</td></tr></table></div>
+<div class="sub-nav">
+<button id="sbtn-teams" class="active" onclick="showSub('teams')">Teams</button>
+<button id="sbtn-fixtures" onclick="showSub('fixtures')">Fixtures</button>
+<button id="sbtn-table" onclick="showSub('table')">Table</button>
+<button id="sbtn-results" onclick="showSub('results')">Results</button>
+</div>
+<div id="tab-teams" class="tab active">City Lions<br>Kampala Tigers<br>Nakawa Stars<br>Bwaise Rockets</div>
+<div id="tab-fixtures" class="tab"><table><tr><th>Date</th><th>Match</th><th>Time</th></tr><tr><td>23 Oct</td><td>City vs Kampala</td><td>9AM Lugogo</td></tr></table></div>
 <div id="tab-table" class="tab"><table><tr><th>TEAM</th><th>P</th><th>W</th><th>PTS</th><th>GOALS</th></tr><tr><td>Lions Club</td><td>5</td><td>4</td><td>12</td><td>14-3</td></tr><tr><td>Consertnators</td><td>5</td><td>3</td><td>10</td><td>12-11</td></tr></table></div>
 <div id="tab-results" class="tab"><table><tr><th>Date</th><th>Match</th><th>Score</th></tr><tr><td>22 Oct</td><td>City 2-1 Kampala</td><td>FT</td></tr></table></div>
 </div></div>
-<div id="comp-wl" style="display:none"><div class="container"><h3>Weekend League 2027</h3><p>Coming March 2027 — 12 teams at Lugogo Hockey Stadium.</p></div></div>
+<div id="comp-wl" style="display:none" class="section"><h3>Weekend League 2027</h3><p>Coming March 2027 - 12 teams at Lugogo</p></div>
 </div>
 
-<!-- OTHER INDEPENDENT PAGES -->
-<div id="page-programs" class="page"><div class="section"><div class="container"><div class="section-title">Our Programs</div><p>Community Outreach, Little Sticks, Weekend League, Coach Training — all empowering youth through hockey.</p></div></div></div>
-<div id="page-about" class="page"><div class="section" style="background:white"><div class="container"><div class="section-title">About Hockey Dreams Uganda</div><p style="max-width:700px;margin:0 auto;color:#6b7280;text-align:center">We empower youth across Uganda through hockey. Coaches and kids from challenging circumstances come together through shared passion. Together they play, share, learn and grow.</p></div></div></div>
-<div id="page-news" class="page"><div class="section"><div class="container"><div class="section-title">News</div><p>Oct 2026: 8 schools joined Little Sticks! 500+ youth empowered.</p></div></div></div>
-<div id="page-donate" class="page"><div class="section" style="background:linear-gradient(135deg,#0b3d2e,#1b7a52);color:white;text-align:center;padding:80px 0"><div class="container"><h2 style="font-weight:900;font-size:2rem">Support Our Mission</h2><p style="margin:12px 0 20px">$20 = Equipment for 1 child • $75 = Coaching course</p><button class="btn btn-white">Donate Today</button></div></div></div>
+<div id="page-programs" class="page"><div class="section"><h2>Our Programs</h2><p>Community Outreach, Little Sticks, Weekend League, Coach Training</p></div></div>
+<div id="page-about" class="page"><div class="section"><h2>About</h2><p>Hockey Dreams Uganda empowers youth through hockey.</p></div></div>
+<div id="page-donate" class="page"><div class="section" style="text-align:center"><h2>Donate</h2><p>$20 = Equipment for 1 child</p><br><button class="btn" style="background:var(--green);color:white">Donate Today</button></div></div>
 
-<div class="footer
+<div class="footer">© 2026 Hockey Dreams Uganda</div>
+
+<script>
+function showPage(n){
+var pages=document.querySelectorAll('.page');
+for(var i=0;i<pages.length;i++){pages[i].classList.remove('active');pages[i].style.display='none'}
+var p=document.getElementById('page-'+n);
+if(p){p.classList.add('active');p.style.display='block'}
+var links=document.querySelectorAll('.nav-links a');
+for(var j=0;j<links.length;j++) links[j].classList.remove('active');
+var l=document.getElementById('link-'+n);
+if(l) l.classList.add('active');
+window.scrollTo(0,0);
+}
+function showComp(c){
+document.getElementById('comp-ls').style.display=(c=='ls')?'block':'none';
+document.getElementById('comp-wl').style.display=(c=='wl')?'block':'none';
+document.getElementById('btn-ls').classList.toggle('active',c=='ls');
+document.getElementById('btn-wl').classList.toggle('active',c=='wl');
+}
+function showSub(s){
+document.querySelectorAll('#comp-ls .tab').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('#comp-ls .sub-nav button').forEach(b=>b.classList.remove('active'));
+document.getElementById('tab-'+s).classList.add('active');
+document.getElementById('sbtn-'+s).classList.add('active');
+}
+showPage('home');
+</script>
+</body></html>
