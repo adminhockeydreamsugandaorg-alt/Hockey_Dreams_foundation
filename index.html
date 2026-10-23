@@ -1,74 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hockey Dreams Uganda</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#000;color:#fff}
-header{background:#000;padding:10px 12px;position:sticky;top:0;z-index:20;border-bottom:3px solid #ffcc00}
-nav{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-nav button{background:none;border:1px solid #444;color:#fff;padding:6px 8px;border-radius:12px;font-size:10px;cursor:pointer}
-nav button.active{background:#ffcc00;color:#000;border-color:#ffcc00;font-weight:bold}
-.hero{height:42vh;min-height:240px;position:relative;background:#111}
-.hero img{width:100%;height:100%;object-fit:cover}
-.hero-text{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,0.75);padding:10px 14px;border-left:4px solid #ffcc00;border-radius:4px}
+:root{
+  --navy:#06285b;
+  --blue:#159bd0;
+  --sky:#7bd0f3;
+  --red:#d7192d;
+  --ink:#08254c;
+}
+body{font-family:Arial,sans-serif;background:#f4f7fb;color:#14233b}
+header{
+  background:var(--navy);padding:12px clamp(16px,5vw,72px);
+  position:sticky;top:0;z-index:20;display:flex;
+  align-items:center;justify-content:space-between;gap:22px;
+}
+header>div{color:#fff!important;font-size:clamp(17px,2vw,25px);font-weight:bold;line-height:1.05}
+nav{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+nav button{
+  background:none;border:0;color:#fff;padding:9px 10px;
+  border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;
+}
+nav button:hover,nav button.active{background:#ffffff20;color:#fff}
+nav button#nav-donate{background:var(--red);border-radius:20px;padding-inline:18px}
+
+.page{display:none}
+.page.active{display:block}
+.hero{height:clamp(250px,28vw,360px);min-height:250px;position:relative;background:#126ca3;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 43%;display:block}
+.hero:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(4,40,91,.91),rgba(4,40,91,.72) 34%,rgba(4,40,91,.08) 76%);
+  pointer-events:none;
+}
+.hero-text{
+  position:absolute;left:clamp(18px,7.2vw,100px);top:50%;
+  transform:translateY(-50%);z-index:2;background:transparent;
+  border:0;padding:0;max-width:530px;
+}
+.hero-text h2{
+  color:#fff;font-size:clamp(27px,3.5vw,44px);
+  font-weight:900;line-height:1.03;text-shadow:0 2px 5px #001a39;
+}
+.hero-text p{font-size:clamp(13px,1.35vw,17px);font-weight:700;color:#ffb7bf;margin-top:9px}
+.home-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.home-actions a{
+  display:inline-block;text-decoration:none;padding:11px 19px;
+  border-radius:9px;font-size:14px;font-weight:800;
+  box-shadow:0 3px 8px #001a3940;
+}
+.home-actions .primary{background:var(--red);color:#fff}
+.home-actions .secondary{border:1px solid #fff;background:#06285b80;color:#fff}
+.impact-pill{
+  display:inline-block;margin-top:13px;background:var(--sky);color:var(--navy);
+  padding:7px 12px;border-radius:18px;font-size:12px;font-weight:800;
+}
+
+.home-competitions{
+  padding:16px clamp(14px,7.5vw,100px) 14px;
+  background:linear-gradient(#f7f9fc 0 76%,#dceefa 76% 100%);
+}
+.season-label{text-align:center;color:#b91c2c;font-size:13px;font-weight:900;margin-top:3px}
+.section-heading{
+  text-align:center;color:var(--navy);font-size:clamp(23px,2.4vw,31px);
+  font-weight:900;text-transform:uppercase;text-decoration:underline;
+  text-decoration-color:var(--red);text-decoration-thickness:3px;
+  text-underline-offset:6px;margin:0 0 22px;
+}
+.competition-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:22px;align-items:stretch}
+.feature-card{border-radius:13px;overflow:hidden;box-shadow:0 5px 18px #05244c18;min-width:0}
+.little-card{background:#fff;border:9px solid #79c8ee;padding:0 0 12px}
+.card-title{background:var(--red);color:#fff;font-size:clamp(17px,2vw,23px);font-weight:900;padding:10px 14px;line-height:1.2}
+.little-content{padding:12px 16px 0;text-align:center;color:var(--ink)}
+.little-content h4{font-size:16px;margin-bottom:5px}
+.event-meta{font-size:13px;font-weight:700;margin-bottom:10px}
+.little-content h5{font-size:11px;margin-bottom:7px}
+.school-list{
+  display:grid;grid-template-columns:1fr 1fr;gap:3px 15px;
+  text-align:left;list-style:none;font-size:12px;font-weight:600;
+  margin:0 auto 12px;max-width:550px;
+}
+.school-list li:before{content:"• ";font-weight:900}
+.home-cta{
+  display:inline-block;text-decoration:none;background:var(--red);color:#fff;
+  padding:8px 17px;border-radius:7px;font-size:12px;font-weight:900;margin:2px;
+}
+.home-cta.outline{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+.weekend-card{
+  background:var(--navy);color:#fff;text-align:center;
+  padding:20px clamp(15px,2.5vw,30px);display:flex;
+  flex-direction:column;align-items:center;justify-content:center;
+}
+.weekend-card h3{font-size:clamp(20px,2.2vw,27px);color:var(--sky);font-weight:900}
+.weekend-card h4{font-size:13px;margin:2px 0 10px}
+.weekend-card p{font-size:13px;line-height:1.45;max-width:450px}
+.weekend-card .home-cta{margin-top:12px;min-width:130px}
+
+.stats-row{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  margin:0 clamp(14px,7.5vw,100px);padding:10px 0 14px;
+  text-align:center;color:var(--navy);
+}
+.stat{padding:0 12px;border-right:1px solid #b6d4e6}
+.stat:last-child{border-right:0}
+.stat strong{display:block;color:var(--red);font-size:clamp(23px,2.5vw,31px);line-height:1}
+.stat span{display:block;font-size:12px;font-weight:800;margin-top:3px}
+
+.support-band{background:var(--navy);color:#fff;text-align:center;padding:13px 16px 16px}
+.support-band h3{color:#ff3448;font-size:clamp(17px,2vw,23px);font-weight:900}
+.support-band p{font-size:14px;color:#d7eafa;margin:3px auto 10px;max-width:900px}
+.support-band .home-cta{margin:0 4px}
+
+.home-footer{
+  background:#031a3b;color:#fff;padding:18px clamp(16px,8vw,110px) 10px;
+  display:grid;grid-template-columns:1.1fr 1.5fr 1.5fr .8fr;
+  gap:22px;font-size:12px;align-items:center;
+}
+.home-footer h4{font-size:12px;margin-bottom:5px}
+.home-footer p{color:#d7e3f1;line-height:1.45}
+.footer-brand{font-weight:900;font-size:13px}
+.footer-bottom{background:#02142e;color:#a9c5e3;text-align:center;padding:8px 12px;font-size:11px}
+
+/* Other website pages and competition controls */
 .board{margin:10px;padding:14px;border-radius:8px;position:relative;overflow:hidden}
 .board.white{background:#fff;color:#111;border:1px solid #ddd}
-.board.black{background:#151515;border:1px solid #333}
+.board.black{background:#151515;color:#fff;border:1px solid #333}
 .board.little-bg{background:#fff;color:#111;border:2px solid #ffcc00}
-.board.little-bg::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:url('community_small.jpg') center/cover no-repeat;opacity:0.18;z-index:0}
-.board.little-bg > *{position:relative;z-index:1}
-.page{display:none}.page.active{display:block}
+.board.little-bg:before{
+  content:"";position:absolute;inset:0;background:url('community_small.jpg') center/cover no-repeat;opacity:.18;z-index:0
+}
+.board.little-bg>*{position:relative;z-index:1}
 .sub-nav{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
-.sub-nav button{padding:6px 12px;border-radius:16px;border:1px solid #ffcc00;background:transparent;color:#ffcc00;font-size:11px;cursor:pointer}
+.sub-nav button{
+  padding:6px 12px;border-radius:16px;border:1px solid #ffcc00;
+  background:transparent;color:#ffcc00;font-size:11px;cursor:pointer;
+}
 .sub-nav button.active{background:#ffcc00;color:#000}
 table{width:100%;border-collapse:collapse;font-size:11px;margin-top:8px}
-th{background:#ffcc00;color:#000;padding:6px 4px} td{padding:5px 4px;border-bottom:1px solid #333;text-align:center} td.team-name{text-align:left;font-weight:bold}
+th{background:#ffcc00;color:#000;padding:6px 4px}
+td{padding:5px 4px;border-bottom:1px solid #333;text-align:center}
+td.team-name{text-align:left;font-weight:bold}
+
+@media(max-width:760px){
+  header{display:block;padding:12px 14px}
+  header>div{white-space:normal}
+  header nav{justify-content:flex-start;margin-top:10px;gap:4px}
+  header nav button{font-size:11px;padding:7px 8px}
+  .hero{height:330px}
+  .hero img{object-position:58% center}
+  .hero:after{background:linear-gradient(90deg,rgba(4,40,91,.88),rgba(4,40,91,.48) 72%,rgba(4,40,91,.18))}
+  .hero-text{left:18px;right:16px;max-width:470px}
+  .competition-grid{grid-template-columns:1fr;gap:14px}
+  .home-competitions{padding:16px 12px 10px}
+  .stats-row{margin:0 12px;gap:0}
+  .stat{padding:0 5px}
+  .stat span{font-size:10px}
+  .school-list{font-size:11px;gap:4px 8px}
+  .home-footer{grid-template-columns:1fr 1fr;gap:15px;padding:18px}
+}
+@media(max-width:420px){
+  .hero{height:310px}
+  .hero-text h2{font-size:27px}
+  .school-list{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr;gap:9px;padding:12px}
+  .stat{border-right:0;border-bottom:1px solid #b6d4e6;padding:7px}
+  .stat:last-child{border-bottom:0}
+  .home-footer{grid-template-columns:1fr}
+}
 </style>
 </head>
+
 <body>
 <header>
-<div style="color:#ffcc00;font-weight:bold">🏑 Hockey Dreams Uganda</div>
-<nav>
-<button id="nav-home" class="active" onclick="showPage('home')">Home</button>
-<button id="nav-about" onclick="showPage('about')">About</button>
-<button id="nav-competition" onclick="showPage('competition')">Competition</button>
-<button id="nav-programs" onclick="showPage('programs')">Programs</button>
-<button id="nav-involved" onclick="showPage('involved')">Get Involved</button>
-<button id="nav-news" onclick="showPage('news')">News</button>
-<button id="nav-donate" onclick="showPage('donate')">Donate</button>
-</nav>
+  <div>🌐 HOCKEY DREAMS<br>FOUNDATION</div>
+  <nav>
+    <button id="nav-home" class="active" onclick="showPage('home')">Home</button>
+    <button id="nav-competition" onclick="showPage('competition')">Competitions</button>
+    <button id="nav-about" onclick="showPage('about')">About</button>
+    <button id="nav-programs" onclick="showPage('programs')">Programs</button>
+    <button id="nav-involved" onclick="showPage('involved')">Get Involved</button>
+    <button id="nav-news" onclick="showPage('news')">News</button>
+    <button id="nav-donate" onclick="showPage('donate')">Donate</button>
+  </nav>
 </header>
 
+<!-- HOMEPAGE -->
 <div id="page-home" class="page active">
-<div class="hero"><img src="community_small.jpg"><div class="hero-text"><h2 style="color:#ffcc00">Uganda Hockey Community</h2><p>Growing the game</p></div></div>
-<div class="board white"><h3>Welcome</h3><p style="font-size:13px">Hockey Dreams Foundation</p></div>
+  <section class="hero">
+    <img src="community_small.jpg" alt="Young players enjoying field hockey">
+    <div class="hero-text">
+      <h2>EMPOWERING YOUTH<br>THROUGH HOCKEY</h2>
+      <p>Building dreams, teamwork, and community across Africa</p>
+      <div class="home-actions">
+        <a class="primary" href="#competitions" onclick="showPage('competition')">Register Now</a>
+        <a class="secondary" href="#about" onclick="showPage('about')">Learn More</a>
+      </div>
+      <span class="impact-pill">Impacting 500+ Young Players Across Uganda</span>
+    </div>
+  </section>
+
+  <section class="home-competitions" id="competitions">
+    <div class="season-label">2026 / 2027 SEASON</div>
+    <h2 class="section-heading">OUR COMPETITIONS</h2>
+
+    <div class="competition-grid">
+      <article class="feature-card little-card">
+        <div class="card-title">🏑 LITTLE STICKS CHAMPIONSHIP</div>
+        <div class="little-content">
+          <h4>Primary Schools • First Edition</h4>
+          <p class="event-meta">▦ 23 October 2026 • Kampala, Uganda</p>
+          <h5>PARTICIPATING TEAMS — 8 TEAMS</h5>
+          <ul class="school-list">
+            <li>Naguru Infant Primary School</li>
+            <li>Hill Preparatory School</li>
+            <li>Shimon Demonstration School</li>
+            <li>St. Jude Primary School</li>
+            <li>East Kololo Primary School</li>
+            <li>The Bright School</li>
+            <li>Hands For Hope Primary School</li>
+            <li>TBC</li>
+          </ul>
+          <a class="home-cta" href="#register" onclick="showPage('competition');showComp('little')">REGISTRATION OPEN NOW</a><br>
+          <a class="home-cta outline" href="#details" onclick="showPage('competition');showComp('little')">View Tournament Details →</a>
+        </div>
+      </article>
+
+      <article class="feature-card weekend-card">
+        <h3>◉ WEEKEND LEAGUE 2027</h3>
+        <h4>COMING SOON</h4>
+        <p>▦ Launching January 2027 • Weekly Matches</p>
+        <p>A new youth weekend league designed to develop skills, foster healthy competition, and build lasting camaraderie among players aged 10–15. Stay tuned for team sign-ups, venues, and fixtures.</p>
+        <p style="margin-top:8px;font-weight:800">JOIN THE WAITLIST — GET NOTIFIED</p>
+        <a class="home-cta" href="#notify" onclick="showPage('competition');showComp('weekend')">Notify Me →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="stats-row" aria-label="HDF impact">
+    <div class="stat"><strong>8</strong><span>SCHOOLS<br>Competing in First Edition</span></div>
+    <div class="stat"><strong>500+</strong><span>YOUTH PLAYERS<br>Empowered &amp; Trained</span></div>
+    <div class="stat"><strong>1</strong><span>Building Africa's Future<br>Through Sport</span></div>
+  </section>
+
+  <section class="support-band">
+    <h3>SUPPORT THE NEXT GENERATION OF HOCKEY STARS</h3>
+    <p>Help us provide equipment, coaching, and opportunities for more children to chase their hockey dreams.</p>
+    <a class="home-cta" href="#donate" onclick="showPage('donate')">Donate Today</a>
+    <a class="home-cta outline" href="#partner" onclick="showPage('involved')">Partner With Us</a>
+  </section>
+
+  <footer class="home-footer">
+    <div class="footer-brand">🌐 HOCKEY DREAMS<br>FOUNDATION</div>
+    <p>Empowering youth through hockey, education, and community development.</p>
+    <div>
+      <h4>Contact</h4>
+      <p>✉ contact@hockeydreamsfoundation.org<br>⌖ Kampala, Uganda</p>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <p style="color:#ed3347;font-weight:900;font-size:17px">f ◎ in</p>
+    </div>
+  </footer>
+  <div class="footer-bottom">© 2026 Hockey Dreams Foundation • All Rights Reserved • Privacy Policy • Terms</div>
 </div>
 
+<!-- EXISTING WEBSITE PAGES -->
 <div id="page-about" class="page"><div class="board white"><h3>About</h3></div></div>
 
 <div id="page-competition" class="page">
-<div class="board white little-bg">
-<h3>Competitions</h3>
-<div class="sub-nav">
-<button id="btn-little" class="active" onclick="showComp('little')">Little Sticks Championship 2026</button>
-<button id="btn-weekend" onclick="showComp('weekend')">Weekend League 2027</button>
-</div>
-<div id="comp-little">
-<div class="sub-nav">
-<button id="btn-l-teams" class="active" onclick="showLittle('teams')">Teams</button>
-<button id="btn-l-fixtures" onclick="showLittle('fixtures')">Fixtures</button>
-<button id="btn-l-results" onclick="showLittle('results')">Results</button>
-<button id="btn-l-table" onclick="showLittle('table')">Table</button>
-</div>
-<div id="little-teams"><div class="board black"><div id="teams-list"></div></div></div>
-<div id="little-fixtures" style="display:none"><div class="board black"><div id="fixtures-list"></div></div></div>
-<div id="little-results" style="display:none"><div class="board black"><div id="results-list"></div></div></div>
-<div id="little-table" style="display:none"><div class="board black"><h4 style="color:#ffcc00">Points Table - W3 D1 | GD>H2H>GF>GA</h4><div id="table-list"></div></div></div>
-</div>
-<div id="comp-weekend" style="display:none"><div class="board black"><h4>Coming Soon</h4></div></div>
-</div>
+  <div class="board white little-bg">
+    <h3>Competitions</h3>
+    <div class="sub-nav">
+      <button id="btn-little" class="active" onclick="showComp('little')">Little Sticks Championship 2026</button>
+      <button id="btn-weekend" onclick="showComp('weekend')">Weekend League 2027</button>
+    </div>
+
+    <div id="comp-little">
+      <div class="sub-nav">
+        <button id="btn-l-teams" class="active" onclick="showLittle('teams')">Teams</button>
+        <button id="btn-l-fixtures" onclick="showLittle('fixtures')">Fixtures</button>
+        <button id="btn-l-results" onclick="showLittle('results')">Results</button>
+        <button id="btn-l-table" onclick="showLittle('table')">Table</button>
+      </div>
+      <div id="little-teams"><div class="board black"><div id="teams-list"></div></div></div>
+      <div id="little-fixtures" style="display:none"><div class="board black"><div id="fixtures-list"></div></div></div>
+      <div id="little-results" style="display:none"><div class="board black"><div id="results-list"></div></div></div>
+      <div id="little-table" style="display:none">
+        <div class="board black">
+          <h4 style="color:#ffcc00">Points Table - W3 D1 | GD&gt;H2H&gt;GF&gt;GA</h4>
+          <div id="table-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="comp-weekend" style="display:none">
+      <div class="board black"><h4>Coming Soon</h4></div>
+    </div>
+  </div>
 </div>
 
 <div id="page-programs" class="page"><div class="board white"><h3>Programs</h3></div></div>
@@ -83,31 +316,36 @@ function showPage(n){
   document.getElementById('page-'+n).classList.add('active');
   document.getElementById('nav-'+n).classList.add('active');
 }
+
 function showComp(c){
   document.getElementById('comp-little').style.display=c==='little'?'block':'none';
   document.getElementById('comp-weekend').style.display=c==='weekend'?'block':'none';
   document.getElementById('btn-little').classList.toggle('active',c==='little');
   document.getElementById('btn-weekend').classList.toggle('active',c==='weekend');
 }
+
 function showLittle(t){
   ['teams','fixtures','results','table'].forEach(x=>{
     document.getElementById('little-'+x).style.display=x===t?'block':'none';
     document.getElementById('btn-l-'+x).classList.toggle('active',x===t);
   });
 }
-showPage('home'); showComp('little'); showLittle('teams');
+
+showPage('home');
+showComp('little');
+showLittle('teams');
 
 const TEAMS_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQvOnePs7n1K6IYwdL-9jg0Q7dZBaMWgD03ghhDz5W9ySaamIz1aT_fCdS2Ctgi8KWE5cmwTVLtw77U/pub?gid=0&single=true&output=csv';
 const HDF_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQvOnePs7n1K6IYwdL-9jg0Q7dZBaMWgD03ghhDz5W9ySaamIz1aT_fCdS2Ctgi8KWE5cmwTVLtw77U/pub?gid=71633465&single=true&output=csv';
 let allResultsData=[];
 
 function splitCSVLine(line){
-  // Handles "Team, Name" inside quotes
-  let result=[], cur='', inQuote=false;
+  let result=[],cur='',inQuote=false;
   for(let i=0;i<line.length;i++){
     let c=line[i];
-    if(c==='"'){inQuote=!inQuote; continue;}
-    if(c===',' && !inQuote){result.push(cur.trim()); cur='';} else cur+=c;
+    if(c==='"'){inQuote=!inQuote;continue;}
+    if(c===','&&!inQuote){result.push(cur.trim());cur='';}
+    else cur+=c;
   }
   result.push(cur.trim());
   return result;
@@ -115,91 +353,160 @@ function splitCSVLine(line){
 
 async function loadAll(){
   try{
-    const r=await fetch(TEAMS_CSV); const t=await r.text();
+    const r=await fetch(TEAMS_CSV);
+    const t=await r.text();
     const rows=t.split('\n').filter(l=>l.trim()!=='').slice(1);
     let h='<div style="display:flex;flex-wrap:wrap;gap:6px">';
-    rows.forEach(l=>{let cols=splitCSVLine(l); let n=cols[0]; if(n&&!n.toLowerCase().includes('team')&&n.length>1) h+=`<div style="background:#222;border:1px solid #ffcc00;color:#fff;padding:6px 10px;border-radius:14px;font-size:11px">🏑 ${n}</div>`;});
-    h+='</div>'; document.getElementById('teams-list').innerHTML=h;
+    rows.forEach(l=>{
+      let cols=splitCSVLine(l);
+      let n=cols[0];
+      if(n&&!n.toLowerCase().includes('team')&&n.length>1){
+        h+=`<div style="background:#222;border:1px solid #ffcc00;color:#fff;padding:6px 10px;border-radius:14px;font-size:11px">🏑 ${n}</div>`;
+      }
+    });
+    h+='</div>';
+    document.getElementById('teams-list').innerHTML=h;
   }catch(e){}
 
   try{
-    const r2=await fetch(HDF_CSV); const t2=await r2.text();
+    const r2=await fetch(HDF_CSV);
+    const t2=await r2.text();
     let lines=t2.split('\n').filter(l=>l.trim()!=='');
-    if(lines.length<2) return;
+    if(lines.length<2)return;
+
     let header=splitCSVLine(lines[0]).map(h=>h.toLowerCase());
-    console.log('HEADER FOUND:', header);
+    let dateIdx=header.findIndex(h=>h.includes('date'));
+    let timeIdx=header.findIndex(h=>h.includes('time'));
+    let teamAIdx=header.findIndex(h=>h.includes('team a'));
+    let teamBIdx=header.findIndex(h=>h.includes('team b'));
+    let matchIdx=header.findIndex(h=>h.includes('match')||h.includes('fixture')||h.includes('game'));
+    let venueIdx=header.findIndex(h=>h.includes('venue')||h.includes('ground')||h.includes('pitch'));
+    let resultIdx=header.findIndex(h=>h.includes('result')||h.includes('score'));
 
-    // Auto-find column indexes - VERY FLEXIBLE
-    let dateIdx = header.findIndex(h=>h.includes('date'));
-    let timeIdx = header.findIndex(h=>h.includes('time'));
-    let teamAIdx = header.findIndex(h=>h.includes('team a'));
-    let teamBIdx = header.findIndex(h=>h.includes('team b'));
-    let matchIdx = header.findIndex(h=>h.includes('match')||h.includes('fixture')||h.includes('game'));
-    let venueIdx = header.findIndex(h=>h.includes('venue')||h.includes('ground')||h.includes('pitch'));
-    let resultIdx = header.findIndex(h=>h.includes('result')||h.includes('score'));
+    if(dateIdx===-1)dateIdx=0;
+    if(resultIdx===-1)resultIdx=header.length-1;
 
-    // Fallbacks if header names are missing
-    if(dateIdx===-1) dateIdx=0;
-    if(resultIdx===-1) resultIdx=header.length-1; // last column usually score
-
-    let teamsStats={}; let fH='<table><tr><th>DATE</th><th>MATCH</th><th>TIME</th><th>VENUE</th></tr>'; let rH='<table><tr><th>DATE</th><th>MATCH</th><th>SCORE</th><th>VENUE</th></tr>'; let fc=0,rc=0; allResultsData=[];
+    let teamsStats={};
+    let fH='<table><tr><th>DATE</th><th>MATCH</th><th>TIME</th><th>VENUE</th></tr>';
+    let rH='<table><tr><th>DATE</th><th>MATCH</th><th>SCORE</th><th>VENUE</th></tr>';
+    let fc=0,rc=0;
+    allResultsData=[];
 
     for(let i=1;i<lines.length;i++){
       let cols=splitCSVLine(lines[i]);
-      if(cols.length<2) continue;
-      let date = cols[dateIdx]||'';
-      let time = timeIdx>=0?cols[timeIdx]||'':'';
-      let teamA='', teamB='', venue=venueIdx>=0?cols[venueIdx]||'':'', result=resultIdx>=0?cols[resultIdx]||'':'';
+      if(cols.length<2)continue;
 
-      if(teamAIdx>=0 && teamBIdx>=0){
-        teamA=cols[teamAIdx]||''; teamB=cols[teamBIdx]||'';
-      } else if(matchIdx>=0){
-        // Parse "Naguru vs Shimon" or "Naguru - Shimon"
+      let date=cols[dateIdx]||'';
+      let time=timeIdx>=0?cols[timeIdx]||'':'';
+      let teamA='',teamB='';
+      let venue=venueIdx>=0?cols[venueIdx]||'':'';
+      let result=resultIdx>=0?cols[resultIdx]||'':'';
+
+      if(teamAIdx>=0&&teamBIdx>=0){
+        teamA=cols[teamAIdx]||'';
+        teamB=cols[teamBIdx]||'';
+      }else if(matchIdx>=0){
         let matchStr=cols[matchIdx]||'';
         let parts=matchStr.split(/\s+vs\s+|\s+v\s+|\s*-\s+|\s+vs\.\s+/i);
-        if(parts.length>=2){teamA=parts[0].trim(); teamB=parts[1].trim();}
-        else {teamA=matchStr; teamB='';}
-      } else {
-        // Last resort: guess columns 1 and 2 are teams
-        if(cols.length>=4){teamA=cols[1]||''; teamB=cols[2]||'';}
+        if(parts.length>=2){
+          teamA=parts[0].trim();
+          teamB=parts[1].trim();
+        }else{
+          teamA=matchStr;
+          teamB='';
+        }
+      }else if(cols.length>=4){
+        teamA=cols[1]||'';
+        teamB=cols[2]||'';
       }
 
-      if(!teamA && !teamB) continue;
-      if(teamA.toLowerCase().includes('team a')) continue;
+      if(!teamA&&!teamB)continue;
+      if(teamA.toLowerCase().includes('team a'))continue;
 
-      if(!teamsStats[teamA]) teamsStats[teamA]={team:teamA,P:0,W:0,D:0,L:0,GF:0,GA:0,GD:0,Pts:0};
-      if(teamB && !teamsStats[teamB]) teamsStats[teamB]={team:teamB,P:0,W:0,D:0,L:0,GF:0,GA:0,GD:0,Pts:0};
+      if(!teamsStats[teamA])teamsStats[teamA]={team:teamA,P:0,W:0,D:0,L:0,GF:0,GA:0,GD:0,Pts:0};
+      if(teamB&&!teamsStats[teamB])teamsStats[teamB]={team:teamB,P:0,W:0,D:0,L:0,GF:0,GA:0,GD:0,Pts:0};
 
-      let isResult = result && result.trim()!=='' && result!=='-' && /[0-9]/.test(result);
+      let isResult=result&&result.trim()!==''&&result!=='-'&&/[0-9]/.test(result);
+
       if(isResult){
         let sp=result.split(/[-:]/).map(s=>parseInt(s.trim()));
-        if(sp.length>=2 && !isNaN(sp[0])){
-          let ga=sp[0], gb=sp[1];
-          if(teamA && teamB){ allResultsData.push({teamA,teamB,ga,gb}); teamsStats[teamA].P++; teamsStats[teamB].P++; teamsStats[teamA].GF+=ga; teamsStats[teamA].GA+=gb; teamsStats[teamB].GF+=gb; teamsStats[teamB].GA+=ga;
-          if(ga>gb){teamsStats[teamA].W++; teamsStats[teamA].Pts+=3; teamsStats[teamB].L++;} else if(gb>ga){teamsStats[teamB].W++; teamsStats[teamB].Pts+=3; teamsStats[teamA].L++;} else {teamsStats[teamA].D++; teamsStats[teamB].D++; teamsStats[teamA].Pts++; teamsStats[teamB].Pts++;}}
+        if(sp.length>=2&&!isNaN(sp[0])){
+          let ga=sp[0],gb=sp[1];
+          if(teamA&&teamB){
+            allResultsData.push({teamA,teamB,ga,gb});
+            teamsStats[teamA].P++;
+            teamsStats[teamB].P++;
+            teamsStats[teamA].GF+=ga;
+            teamsStats[teamA].GA+=gb;
+            teamsStats[teamB].GF+=gb;
+            teamsStats[teamB].GA+=ga;
+
+            if(ga>gb){
+              teamsStats[teamA].W++;
+              teamsStats[teamA].Pts+=3;
+              teamsStats[teamB].L++;
+            }else if(gb>ga){
+              teamsStats[teamB].W++;
+              teamsStats[teamB].Pts+=3;
+              teamsStats[teamA].L++;
+            }else{
+              teamsStats[teamA].D++;
+              teamsStats[teamB].D++;
+              teamsStats[teamA].Pts++;
+              teamsStats[teamB].Pts++;
+            }
+          }
         }
-        rH+=`<tr><td>${date}</td><td>${teamA} vs ${teamB}</td><td style="color:#ffcc00;font-weight:bold">${result}</td><td>${venue}</td></tr>`; rc++;
-      } else {
-        // Fixture
-        if(teamA && teamB){
-          fH+=`<tr><td>${date}</td><td>${teamA} vs ${teamB}</td><td>${time}</td><td>${venue}</td></tr>`; fc++;
-        }
+        rH+=`<tr><td>${date}</td><td>${teamA} vs ${teamB}</td><td style="color:#ffcc00;font-weight:bold">${result}</td><td>${venue}</td></tr>`;
+        rc++;
+      }else if(teamA&&teamB){
+        fH+=`<tr><td>${date}</td><td>${teamA} vs ${teamB}</td><td>${time}</td><td>${venue}</td></tr>`;
+        fc++;
       }
     }
 
     Object.values(teamsStats).forEach(s=>s.GD=s.GF-s.GA);
     let tableArr=Object.values(teamsStats).filter(s=>s.team);
-    tableArr.sort((a,b)=>{if(b.Pts!==a.Pts) return b.Pts-a.Pts; if(b.GD!==a.GD) return b.GD-a.GD; let h2h=getH2H(a.team,b.team); if(h2h!==0) return h2h; if(b.GF!==a.GF) return b.GF-a.GF; return a.GA-b.GA;});
-    fH+='</table>'; rH+='</table>';
+
+    tableArr.sort((a,b)=>{
+      if(b.Pts!==a.Pts)return b.Pts-a.Pts;
+      if(b.GD!==a.GD)return b.GD-a.GD;
+      let h2h=getH2H(a.team,b.team);
+      if(h2h!==0)return h2h;
+      if(b.GF!==a.GF)return b.GF-a.GF;
+      return a.GA-b.GA;
+    });
+
+    fH+='</table>';
+    rH+='</table>';
     document.getElementById('fixtures-list').innerHTML=fc>0?fH:'No fixtures - all rows have scores. Clear RESULT column to make fixture.';
     document.getElementById('results-list').innerHTML=rc>0?rH:'No results yet';
+
     let tH='<table><tr><th>#</th><th style="text-align:left">Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>';
-    tableArr.forEach((s,i)=>{tH+=`<tr><td>${i+1}</td><td class="team-name">${s.team}</td><td>${s.P}</td><td>${s.W}</td><td>${s.D}</td><td>${s.L}</td><td>${s.GF}</td><td>${s.GA}</td><td>${s.GD}</td><td style="color:#ffcc00;font-weight:bold">${s.Pts}</td></tr>`;});
+    tableArr.forEach((s,i)=>{
+      tH+=`<tr><td>${i+1}</td><td class="team-name">${s.team}</td><td>${s.P}</td><td>${s.W}</td><td>${s.D}</td><td>${s.L}</td><td>${s.GF}</td><td>${s.GA}</td><td>${s.GD}</td><td style="color:#ffcc00;font-weight:bold">${s.Pts}</td></tr>`;
+    });
     tH+='</table>';
     document.getElementById('table-list').innerHTML=tableArr.length?tH:'No table data';
   }catch(e){console.error(e)}
 }
-function getH2H(a,b){let pa=0,pb=0; allResultsData.forEach(m=>{if((m.teamA===a&&m.teamB===b)||(m.teamA===b&&m.teamB===a)){let ga=m.teamA===a?m.ga:m.gb, gb=m.teamA===a?m.gb:m.ga; if(ga>gb) pa+=3; else if(gb>ga) pb+=3; else {pa++; pb++;}}}); if(pa>pb) return -1; if(pb>pa) return 1; return 0;}
+
+function getH2H(a,b){
+  let pa=0,pb=0;
+  allResultsData.forEach(m=>{
+    if((m.teamA===a&&m.teamB===b)||(m.teamA===b&&m.teamB===a)){
+      let ga=m.teamA===a?m.ga:m.gb;
+      let gb=m.teamA===a?m.gb:m.ga;
+      if(ga>gb)pa+=3;
+      else if(gb>ga)pb+=3;
+      else{pa++;pb++;}
+    }
+  });
+  if(pa>pb)return -1;
+  if(pb>pa)return 1;
+  return 0;
+}
+
 loadAll();
 </script>
 </body>
