@@ -2,74 +2,100 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uganda Hockey Community</title>
+<title>Hockey Dreams Uganda</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial,sans-serif;background:#000;color:#fff}
-header{background:#000;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;border-bottom:2px solid #ffcc00;z-index:10}
-.logo{color:#ffcc00;font-weight:bold}
-nav button{background:none;border:1px solid #ffcc00;color:#ffcc00;padding:6px 10px;margin-left:4px;border-radius:4px;cursor:pointer;font-size:11px}
-nav button.active{background:#ffcc00;color:#000}
-.hero{height:40vh;min-height:260px;position:relative;background:#111}
+header{background:#000;padding:10px 12px;position:sticky;top:0;z-index:20;border-bottom:3px solid #ffcc00}
+.top-row{display:flex;justify-content:space-between;align-items:center}
+.logo{color:#ffcc00;font-weight:bold;font-size:14px}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+nav button{background:none;border:1px solid #444;color:#fff;padding:6px 8px;border-radius:12px;font-size:10px;cursor:pointer}
+nav button.active{background:#ffcc00;color:#000;border-color:#ffcc00;font-weight:bold}
+.hero{height:42vh;min-height:240px;position:relative;background:#111}
 .hero img{width:100%;height:100%;object-fit:cover}
-.hero-text{position:absolute;bottom:12px;left:12px;background:rgba(0,0,0,0.7);padding:10px 14px;border-left:4px solid #ffcc00;border-radius:4px}
-.hero-text h1{font-size:18px;color:#ffcc00}
-.hero-text p{font-size:12px}
-.board{margin:12px;padding:12px;border-radius:8px}
-.board.white{background:#fff;color:#000;border:2px solid #eee}
-.board.black{background:#151515;border:1px solid rgba(255,204,0,0.3)}
+.hero-text{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,0.75);padding:10px 14px;border-left:4px solid #ffcc00;border-radius:4px}
+.board{margin:10px;padding:14px;border-radius:8px}
+.board.white{background:#fff;color:#111;border:1px solid #ddd}
+.board.black{background:#151515;border:1px solid #333}
 .page{display:none}.page.active{display:block}
-.sub-tabs{display:flex;gap:6px;margin:8px 0}
-.sub-tabs button{padding:5px 10px;font-size:11px;border-radius:12px;border:1px solid #ffcc00;background:transparent;color:#ffcc00;cursor:pointer}
-.sub-tabs button.active{background:#ffcc00;color:#000}
+.sub-nav{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
+.sub-nav button{padding:6px 12px;border-radius:16px;border:1px solid #ffcc00;background:transparent;color:#ffcc00;font-size:11px;cursor:pointer}
+.sub-nav button.active{background:#ffcc00;color:#000}
 table{width:100%;border-collapse:collapse;font-size:11px;margin-top:8px}
 th{background:#ffcc00;color:#000;padding:6px 4px} td{padding:5px 4px;border-bottom:1px solid #333;text-align:center} td.team-name{text-align:left;font-weight:bold}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">🏑 Uganda Hockey</div>
+<div class="top-row"><div class="logo">🏑 Hockey Dreams Uganda</div></div>
 <nav>
 <button id="nav-home" class="active" onclick="showPage('home')">Home</button>
-<button id="nav-teams" onclick="showPage('teams')">Teams</button>
-<button id="nav-fixtures" onclick="showPage('fixtures')">Fixtures</button>
-<button id="nav-results" onclick="showPage('results')">Results</button>
-<button id="nav-table" onclick="showPage('table')">Table</button>
+<button id="nav-about" onclick="showPage('about')">About</button>
+<button id="nav-competition" onclick="showPage('competition')">Competition</button>
+<button id="nav-programs" onclick="showPage('programs')">Programs</button>
+<button id="nav-involved" onclick="showPage('involved')">Get Involved</button>
+<button id="nav-news" onclick="showPage('news')">News</button>
+<button id="nav-donate" onclick="showPage('donate')">Donate</button>
 </nav>
 </header>
 
-<!-- HOME PAGE - OPENS FIRST -->
+<!-- HOME -->
 <div id="page-home" class="page active">
-<div class="hero">
-<img src="community_small.jpg" onerror="this.style.background='#111'">
-<div class="hero-text">
-<h1>Uganda Hockey Community</h1>
-<p>Growing the game - Schools, Clubs, Future Stars</p>
+<div class="hero"><img src="community_small.jpg" onerror="this.style.background='#222'"><div class="hero-text"><h2 style="color:#ffcc00">Uganda Hockey Community</h2><p style="font-size:12px">Growing the game - Schools, Clubs, Future Stars</p></div></div>
+<div class="board white"><h3>Welcome</h3><p style="font-size:13px;margin-top:6px">Hockey Dreams Foundation creates a better future through hockey. Coaches, schools and communities working together.</p></div>
 </div>
-</div>
+
+<!-- ABOUT -->
+<div id="page-about" class="page"><div class="board white"><h3>About Us</h3><p style="font-size:13px;margin-top:6px">Hockey Dreams Uganda is the local NGO continuing the work of Hockey Dreams Foundation Netherlands. Empowering coaches through education and community hockey.</p></div></div>
+
+<!-- COMPETITION - THIS IS WHERE LITTLE STICKS LIVES -->
+<div id="page-competition" class="page">
 <div class="board white">
 <h3>Competitions</h3>
-<div class="sub-tabs">
-<button id="btn-little" class="active" onclick="showComp('little')">Little Sticks 2026</button>
-<button id="btn-weekend" onclick="showComp('weekend')">Weekend League 2027</button>
+<div class="sub-nav">
+<button id="btn-little" class="active" onclick="showComp('little')">Little Sticks Championship 2026</button>
+<button id="btn-weekend" onclick="showComp('weekend')">Upcoming Weekend League 2027</button>
 </div>
-<div id="comp-little"><p style="font-size:12px;color:#333">Click Teams / Fixtures / Results / Table above to see live data from Google Sheets. Everything auto-updates!</p></div>
-<div id="comp-weekend" style="display:none"><p style="font-size:12px;color:#333">Weekend League Coming Soon</p></div>
+
+<!-- LITTLE STICKS -->
+<div id="comp-little">
+<div class="sub-nav">
+<button id="btn-l-teams" class="active" onclick="showLittle('teams')">Teams</button>
+<button id="btn-l-fixtures" onclick="showLittle('fixtures')">Fixtures</button>
+<button id="btn-l-results" onclick="showLittle('results')">Results</button>
+<button id="btn-l-table" onclick="showLittle('table')">Table</button>
+</div>
+<div id="little-teams"><div class="board black"><div id="teams-list">Loading teams...</div></div></div>
+<div id="little-fixtures" style="display:none"><div class="board black"><div id="fixtures-list">Loading fixtures...</div></div></div>
+<div id="little-results" style="display:none"><div class="board black"><div id="results-list">Loading results...</div></div></div>
+<div id="little-table" style="display:none"><div class="board black"><h4 style="color:#ffcc00">Points Table - W3 D1 | GD>H2H>GF>GA</h4><div id="table-list">Loading table...</div></div></div>
+</div>
+
+<!-- WEEKEND LEAGUE -->
+<div id="comp-weekend" style="display:none"><div class="board black"><h4 style="color:#ffcc00">Weekend League 2027 - Coming Soon</h4><p style="font-size:12px;margin-top:8px">Fixture will be announced. Stay tuned!</p></div></div>
 </div>
 </div>
 
-<!-- OTHER PAGES -->
-<div id="page-teams" class="page"><div class="board black"><h4>Teams - Live</h4><div id="teams-list"></div></div></div>
-<div id="page-fixtures" class="page"><div class="board black"><h4>Fixtures - Live</h4><div id="fixtures-list"></div></div></div>
-<div id="page-results" class="page"><div class="board black"><h4>Results - Live</h4><div id="results-list"></div></div></div>
-<div id="page-table" class="page"><div class="board black"><h4>Points Table - Auto (W3 D1 | GD>H2H>GF>GA)</h4><div id="table-list"></div></div></div>
+<!-- PROGRAMS -->
+<div id="page-programs" class="page"><div class="board white"><h3>Programs</h3><p style="font-size:13px">Coach Academy, Schools Program, Girls Empowerment, Community Training</p></div></div>
+
+<!-- GET INVOLVED -->
+<div id="page-involved" class="page"><div class="board white"><h3>Get Involved</h3><p style="font-size:13px">Volunteer, Partner, Donate Equipment, Become a Coach</p></div></div>
+
+<!-- NEWS -->
+<div id="page-news" class="page"><div class="board white"><h3>News</h3><p style="font-size:13px">Latest updates from the community coming soon.</p></div></div>
+
+<!-- DONATE -->
+<div id="page-donate" class="page"><div class="board white"><h3>Donate</h3><p style="font-size:13px">Support coaches scholarships and equipment. Contact us to donate.</p></div></div>
 
 <script>
 function showPage(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('header nav button').forEach(b=>b.classList.remove('active'));
   document.getElementById('page-'+n).classList.add('active');
   document.getElementById('nav-'+n).classList.add('active');
+  window.scrollTo(0,0);
 }
 function showComp(c){
   document.getElementById('comp-little').style.display=c==='little'?'block':'none';
@@ -77,7 +103,13 @@ function showComp(c){
   document.getElementById('btn-little').classList.toggle('active',c==='little');
   document.getElementById('btn-weekend').classList.toggle('active',c==='weekend');
 }
-showPage('home'); showComp('little');
+function showLittle(t){
+  ['teams','fixtures','results','table'].forEach(x=>{
+    document.getElementById('little-'+x).style.display=x===t?'block':'none';
+    document.getElementById('btn-l-'+x).classList.toggle('active',x===t);
+  });
+}
+showPage('home'); showComp('little'); showLittle('teams');
 
 const TEAMS_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQvOnePs7n1K6IYwdL-9jg0Q7dZBaMWgD03ghhDz5W9ySaamIz1aT_fCdS2Ctgi8KWE5cmwTVLtw77U/pub?gid=0&single=true&output=csv';
 const HDF_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQvOnePs7n1K6IYwdL-9jg0Q7dZBaMWgD03ghhDz5W9ySaamIz1aT_fCdS2Ctgi8KWE5cmwTVLtw77U/pub?gid=71633465&single=true&output=csv';
@@ -87,8 +119,8 @@ async function loadAll(){
   try{
     const r=await fetch(TEAMS_CSV); const t=await r.text();
     const rows=t.split('\n').filter(l=>l.trim()!=='').slice(1);
-    let h='<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">';
-    rows.forEach(l=>{let n=l.split(',')[0].replace(/"/g,'').trim(); if(n&&!n.toLowerCase().includes('team')&&n.length>1) h+=`<div style="background:#222;border:1px solid #ffcc00;padding:6px 10px;border-radius:14px;font-size:11px">🏑 ${n}</div>`;});
+    let h='<div style="display:flex;flex-wrap:wrap;gap:6px">';
+    rows.forEach(l=>{let n=l.split(',')[0].replace(/"/g,'').trim(); if(n&&!n.toLowerCase().includes('team')&&n.length>1) h+=`<div style="background:#222;border:1px solid #ffcc00;color:#fff;padding:6px 10px;border-radius:14px;font-size:11px">🏑 ${n}</div>`;});
     h+='</div>'; document.getElementById('teams-list').innerHTML=h;
   }catch(e){}
   try{
@@ -118,12 +150,12 @@ async function loadAll(){
     let tableArr=Object.values(teamsStats);
     tableArr.sort((a,b)=>{if(b.Pts!==a.Pts) return b.Pts-a.Pts; if(b.GD!==a.GD) return b.GD-a.GD; let h2h=getH2H(a.team,b.team); if(h2h!==0) return h2h; if(b.GF!==a.GF) return b.GF-a.GF; return a.GA-b.GA;});
     fH+='</table>'; rH+='</table>';
-    document.getElementById('fixtures-list').innerHTML=fc?fH:'No fixtures yet';
+    document.getElementById('fixtures-list').innerHTML=fc?fH:'No fixtures yet - add rows with empty RESULT in sheet';
     document.getElementById('results-list').innerHTML=rc?rH:'No results yet';
     let tH='<table><tr><th>#</th><th style="text-align:left">Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>';
     tableArr.forEach((s,i)=>{tH+=`<tr><td>${i+1}</td><td class="team-name">${s.team}</td><td>${s.P}</td><td>${s.W}</td><td>${s.D}</td><td>${s.L}</td><td>${s.GF}</td><td>${s.GA}</td><td>${s.GD}</td><td style="color:#ffcc00;font-weight:bold">${s.Pts}</td></tr>`;});
     tH+='</table>';
-    document.getElementById('table-list').innerHTML=tableArr.length?tH:'Table will appear after you add scores';
+    document.getElementById('table-list').innerHTML=tableArr.length?tH:'Table will appear after you add scores like 2-1';
   }catch(e){}
 }
 function getH2H(a,b){let pa=0,pb=0; allResultsData.forEach(m=>{if((m.teamA===a&&m.teamB===b)||(m.teamA===b&&m.teamB===a)){let ga=m.teamA===a?m.ga:m.gb, gb=m.teamA===a?m.gb:m.ga; if(ga>gb) pa+=3; else if(gb>ga) pb+=3; else {pa++; pb++;}}}); if(pa>pb) return -1; if(pb>pa) return 1; return 0;}
