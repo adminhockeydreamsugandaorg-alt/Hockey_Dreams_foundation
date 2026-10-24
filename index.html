@@ -1013,16 +1013,22 @@ function showComp(c){
   );
 }
 
-function showLittle(t){
-  ['teams','fixtures','results','table'].forEach(x=>{
-    document.getElementById('little-'+x).style.display=
-      x===t?'block':'none';
 
-    document.getElementById('btn-l-'+x).classList.toggle(
-      'active',x===t
-    );
+function showLittle(t){
+  ['teams','fixtures','results','table','gallery'].forEach(x=>{
+    const section = document.getElementById('little-'+x);
+    const button = document.getElementById('btn-l-'+x);
+
+    if(section){
+      section.style.display = x===t?'block':'none';
+    }
+
+    if(button){
+      button.classList.toggle('active',x===t);
+    }
   });
 }
+
 
 showPage('home');
 showComp('little');
