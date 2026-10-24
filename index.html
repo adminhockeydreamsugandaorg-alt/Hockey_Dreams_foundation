@@ -1084,17 +1084,22 @@ async function loadGallery(category='All'){
     const categories=['All',...new Set(photos.map(p=>p.category).filter(Boolean))];
 
     
-filters.innerHTML=categories.map(c=>
+filters.innerHTML = categories.map(c =>
   `<button type="button"
-    onclick="loadGallery(${JSON.stringify(c)})"
-    style="cursor:pointer;padding:8px 14px;margin:4px;border-radius:6px;
-    border:1px solid #fff;
-    background:${c===category?'#fff':'transparent'};
-    color:${c===category?'#000':'#fff'}">
+    data-gallery-category="${c.replace(/"/g, '&quot;')}"
+    style="cursor:pointer;padding:8px 14px;margin:4px;
+    border-radius:6px;border:1px solid #fff;
+    background:${c === category ? '#fff' : 'transparent'};
+    color:${c === category ? '#000' : '#fff'}">
     ${c}
   </button>`
 ).join('');
 
+filters.querySelectorAll('button[data-gallery-category]').forEach(button => {
+  button.addEventListener('click', () => {
+    loadGallery(button.dataset.galleryCategory);
+  });
+});
 
     const shown=category==='All'
       ?photos
