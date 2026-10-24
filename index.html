@@ -1083,9 +1083,18 @@ async function loadGallery(category='All'){
 
     const categories=['All',...new Set(photos.map(p=>p.category).filter(Boolean))];
 
-    filters.innerHTML=categories.map(c=>
-      `<button type="button" onclick="loadGallery(${JSON.stringify(c)})">${c}</button>`
-    ).join(' ');
+    
+filters.innerHTML=categories.map(c=>
+  `<button type="button"
+    onclick="loadGallery(${JSON.stringify(c)})"
+    style="cursor:pointer;padding:8px 14px;margin:4px;border-radius:6px;
+    border:1px solid #fff;
+    background:${c===category?'#fff':'transparent'};
+    color:${c===category?'#000':'#fff'}">
+    ${c}
+  </button>`
+).join('');
+
 
     const shown=category==='All'
       ?photos
