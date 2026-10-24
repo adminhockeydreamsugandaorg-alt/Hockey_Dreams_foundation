@@ -1030,6 +1030,65 @@ function showLittle(t){
 }
 
 
+async function loadGallery(category='All'){
+  const list=document.getElementById('gallery-list');
+  const filters=document.getElementById('gallery-filters');
+  const status=document.getElementById('gallery-status');
+
+  try{
+    status.textContent='Loading gallery photos...';
+
+    const response=await fetch(GALLERY_CSV);
+    if(!response.ok) throw new Error('Could not load gallery sheet');
+
+    const csv=await response.text();
+    const lines=csv.split(/\r?\n/).filter(line=>line.trim());
+
+    const rows=lines.slice(1).map(line=>splitCSVLine(line));
+
+    const photos=rows
+      .filter(row=>row[0] && row[0].trim())
+      .map(row=>({
+        url:row[0].trim(),
+        caption:(row[1]||'').trim(),
+        category:(row[2]||'').trim(),
+        order:Number(row[3])||9999
+      }))
+      .sort((a,b)=>a.order-b.order);
+
+    if(!photos.length){
+      list.innerHTML='';
+      filters.innerHTML='';
+      status.textContent='No gallery photos have been added yet.';
+      return;
+    }
+
+    const categories=['All',...new Set(photos.map(p=>p.category).filter(Boolean))];
+
+    filters.innerHTML=categories.map(c=>
+      `<button type="button" onclick="loadGallery(${JSON.stringify(c)})">${c}</button>`
+    ).join(' ');
+
+    const shown=category==='All'
+      ?photos
+      :photos.filter(p=>p.category===category);
+
+    list.innerHTML=shown.map(p=>`
+      <figure style="margin:12px 0;display:inline-block;vertical-align:top;width:min(100%,320px)">
+        <img src="${p.url}" alt="${p.caption.replace(/"/g,'&quot;')}"
+          loading="lazy"
+          style="width:100%;height:230px;object-fit:cover;border-radius:8px">
+        <figcaption style="color:#fff;padding:6px">${p.caption}</figcaption>
+      </figure>
+    `).join('');
+
+    status.textContent=`Showing ${shown.length} photo(s).`;
+  }catch(error){
+    console.error('Gallery error:',error);
+    status.textContent='Gallery could not load. Please check the published spreadsheet and photo sharing settings.';
+  }
+}
+
 showPage('home');
 showComp('little');
 showLittle('teams');
@@ -1041,6 +1100,9 @@ const TEAMS_CSV =
 
 const HDF_CSV =
 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQvOnePs7n1K6IYwdL-9jg0Q7dZBaMWgD03ghhDz5W9ySaamIz1aT_fCdS2Ctgi8KWE5cmwTVLtw77U/pub?gid=71633465&single=true&output=csv';
+
+const GALLERY_CSV =
+'https://docs.google.com/spreadsheets/d/e/2PACX-1vQvOnePs7n1K6IYwdL-9jg0Q7dZBaMWgD03ghhDz5W9ySaamIz1aT_fCdS2Ctgi8KWE5cmwTVLtw77U/pub?gid=1445225367&single=true&output=csv';
 
 let allResultsData=[];
 
