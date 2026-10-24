@@ -470,12 +470,15 @@ nav button#nav-donate{
   min-height:500px;
 }
 
-.board.little-bg::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:url('community_small.jpg') center center/cover no-repeat;
-  z-index:-2;
+.board.little-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('little-sticks-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
 }
 
 .board.little-bg::after{
