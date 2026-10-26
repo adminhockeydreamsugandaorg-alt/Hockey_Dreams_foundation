@@ -776,23 +776,28 @@ td.team-name{
   #page-about .about-tagline { font-size: 18px; }
 }
 
+
 /* HDF ABOUT PAGE IMAGE */
 #page-about .about-image {
-  max-width: 850px;
-  margin: 24px auto;
-  text-align: center;
+  margin: 20px 0;
+  text-align: left;
 }
 
 #page-about .about-image img {
   display: block;
-  width: 100%;
-  max-width: 650px;
-  height: 320px;
+  width: 185px;
+  height: 140px;
   object-fit: cover;
   object-position: center;
-  margin: 0 auto;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 600px) {
+  #page-about .about-image img {
+    width: 150px;
+    height: 115px;
+  }
 }
 
   </style>
