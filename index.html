@@ -978,28 +978,40 @@ td.team-name{
   }
 }
 
-/* HEADER OVER ABOUT HERO */
-body:has(#page-about.active) header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background: transparent;
-  z-index: 100;
-  box-sizing: border-box;
+
+/* TRANSPARENT HEADER ON ALL TABS */
+header {
+  background: transparent !important;
+  box-shadow: none;
+}
+
+/* KEEP LOGO AND BRAND VISIBLE */
+header .hdf-brand,
+header .hdf-brand-text,
+header .hdf-brand-text strong {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 /* KEEP NAVIGATION VISIBLE */
-body:has(#page-about.active) header nav button {
+header nav button {
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+header nav button:hover,
+header nav button.active {
+  background: rgba(0, 0, 0, 0.18);
   color: #ffffff;
 }
 
-body:has(#page-about.active) header nav button:hover,
-body:has(#page-about.active) header nav button.active {
-  background: rgba(255, 255, 255, 0.15);
+/* KEEP DONATE BUTTON RED */
+header nav button#nav-donate {
+  background: var(--hdf-red);
   color: #ffffff;
+  text-shadow: none;
 }
+
   </style>
 </head>
 
