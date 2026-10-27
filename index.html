@@ -911,6 +911,62 @@ td.team-name{
   }
 }
 
+/* ABOUT PAGE FULL-WIDTH HERO */
+#page-about .about-hero {
+  position: relative;
+  width: 100vw;
+  min-height: 380px;
+  left: 50%;
+  margin-left: -50vw;
+  margin-bottom: 32px;
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.05) 75%
+    ),
+    url("images/hdf-children-playing-hockey.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+/* SLOGAN AT BOTTOM LEFT */
+#page-about .about-hero-slogan {
+  color: #ffffff;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: 800px;
+  padding: 32px 48px 36px;
+  border-left: 5px solid #28a9e0;
+  margin: 0 0 28px 48px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
+}
+
+/* WHO WE ARE SPACING */
+#page-about .about-hero + h2 {
+  margin-top: 0;
+}
+
+/* MOBILE HERO */
+@media (max-width: 600px) {
+  #page-about .about-hero {
+    min-height: 280px;
+    background-position: center;
+    margin-bottom: 24px;
+  }
+
+  #page-about .about-hero-slogan {
+    font-size: 25px;
+    padding: 18px 16px;
+    margin: 0 16px 20px;
+  }
+}
+
   </style>
 </head>
 
@@ -1120,23 +1176,32 @@ td.team-name{
     <p class="about-tagline">
       Developing young people. Growing hockey. Creating opportunities through sport.
     </p>
-    <h2>Who We Are</h2>
-    <p>
-      Hockey Dreams Uganda (HDFU) is a youth-focused non-governmental organisation
-      that uses field hockey to promote sports development, personal growth, and
-      inclusive opportunities for children and young people.
-    </p>
-    <p>
-      We believe every child deserves the opportunity to discover their abilities,
-      develop confidence, learn valuable life skills, and experience the benefits
-      of participating in sport.
-    </p>
-    <p>
-      Through structured hockey training, school programmes, holiday training
-      camps, tournaments, and community activities, we create opportunities for
-      young people to learn the game, develop their potential, and build positive
-      relationships.
-    </p>
+  
+<div class="about-hero">
+  <div class="about-hero-slogan">
+    Developing young people.<br>
+    Growing hockey. Creating opportunities<br>
+    through sport.
+  </div>
+</div>
+
+<h2>Who We Are</h2>
+<p>
+  Hockey Dreams Uganda (HDFU) is a youth-focused non-governmental organisation
+  that uses field hockey to promote sports development, personal growth, and
+  inclusive opportunities for children and young people.
+</p>
+<p>
+  We believe every child deserves the opportunity to discover their abilities,
+  develop confidence, learn valuable life skills, and experience the benefits
+  of participating in sport.
+</p>
+<p>
+  Through structured hockey training, school programmes, holiday training
+  camps, tournaments, and community activities, we create opportunities for
+  young people to learn the game, develop their potential, and build positive
+  relationships.
+</p>
 
   </div>
 
