@@ -978,7 +978,28 @@ td.team-name{
   }
 }
 
+/* HEADER OVER ABOUT HERO */
+body:has(#page-about.active) header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 100;
+  box-sizing: border-box;
+}
 
+/* KEEP NAVIGATION VISIBLE */
+body:has(#page-about.active) header nav button {
+  color: #ffffff;
+}
+
+body:has(#page-about.active) header nav button:hover,
+body:has(#page-about.active) header nav button.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
   </style>
 </head>
 
