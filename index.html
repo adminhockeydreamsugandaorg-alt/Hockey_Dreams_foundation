@@ -911,59 +911,68 @@ td.team-name{
   }
 }
 
-/* ABOUT PAGE FULL-WIDTH HERO */
+/* FULL-WIDTH ABOUT HERO */
 #page-about .about-hero {
   position: relative;
   width: 100vw;
-  min-height: 380px;
+  min-height: 480px;
   left: 50%;
   margin-left: -50vw;
+  margin-top: -32px;
   margin-bottom: 32px;
+
   background-image:
     linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.65),
       rgba(0, 0, 0, 0.05) 75%
     ),
     url("images/hdf-children-playing-hockey.jpeg");
+
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;
 }
 
-/* SLOGAN AT BOTTOM LEFT */
+/* SLOGAN — BOTTOM LEFT, FULLY VISIBLE */
 #page-about .about-hero-slogan {
   color: #ffffff;
   font-size: clamp(24px, 3vw, 40px);
   font-weight: 700;
   line-height: 1.25;
-  max-width: 800px;
-  padding: 32px 48px 36px;
+
+  width: auto;
+  max-width: 760px;
+  padding: 0 0 0 24px;
+  margin: 0 0 36px 48px;
+
   border-left: 5px solid #28a9e0;
-  margin: 0 0 28px 48px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
 }
 
-/* WHO WE ARE SPACING */
+/* HEADING AFTER THE HERO */
 #page-about .about-hero + h2 {
   margin-top: 0;
 }
 
-/* MOBILE HERO */
+/* MOBILE */
 @media (max-width: 600px) {
   #page-about .about-hero {
-    min-height: 280px;
-    background-position: center;
-    margin-bottom: 24px;
+    min-height: 360px;
+    margin-top: -24px;
+    background-position: center center;
   }
 
   #page-about .about-hero-slogan {
-    font-size: 25px;
-    padding: 18px 16px;
-    margin: 0 16px 20px;
+    font-size: 24px;
+    max-width: calc(100% - 32px);
+    padding-left: 14px;
+    margin: 0 16px 24px;
   }
 }
 
