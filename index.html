@@ -924,13 +924,13 @@ td.team-name{
   background-image:
     linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.05) 75%
+      rgba(0, 0, 0, 0.62),
+      rgba(0, 0, 0, 0.02) 75%
     ),
     url("images/hdf-about-hero.jpeg");
 
   background-size: cover;
-  background-position: center;
+  background-position: center 45%;
   background-repeat: no-repeat;
 
   display: flex;
@@ -938,7 +938,7 @@ td.team-name{
   box-sizing: border-box;
 }
 
-/* SLOGAN — BOTTOM LEFT, FULLY VISIBLE */
+/* SLOGAN AT BOTTOM LEFT */
 #page-about .about-hero-slogan {
   color: #ffffff;
   font-size: clamp(24px, 3vw, 40px);
@@ -947,7 +947,7 @@ td.team-name{
 
   width: auto;
   max-width: 760px;
-  padding: 0 0 0 24px;
+  padding-left: 20px;
   margin: 0 0 36px 48px;
 
   border-left: 5px solid #28a9e0;
@@ -955,12 +955,12 @@ td.team-name{
   box-sizing: border-box;
 }
 
-/* HEADING AFTER THE HERO */
+/* WHO WE ARE SPACING */
 #page-about .about-hero + h2 {
   margin-top: 0;
 }
 
-/* MOBILE */
+/* MOBILE HERO */
 @media (max-width: 600px) {
   #page-about .about-hero {
     min-height: 360px;
@@ -975,6 +975,7 @@ td.team-name{
     margin: 0 16px 24px;
   }
 }
+
 
   </style>
 </head>
