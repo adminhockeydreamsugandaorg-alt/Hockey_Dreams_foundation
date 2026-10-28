@@ -924,7 +924,7 @@ td.team-name{
 #page-about .about-hero {
   position: relative;
   width: 100vw;
-  min-height: 480px;
+  min-height: clamp(480px, 75vh, 850px);
   left: 50%;
   margin-left: -50vw;
   margin-top: -32px;
@@ -939,7 +939,7 @@ td.team-name{
     url("images/hdf-about-hero.jpeg");
 
   background-size: cover;
-  background-position: center 45%;
+  background-position: center center;
   background-repeat: no-repeat;
 
   display: flex;
