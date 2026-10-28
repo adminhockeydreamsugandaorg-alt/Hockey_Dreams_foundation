@@ -1129,7 +1129,36 @@ header .hdf-logo {
   max-height: 58px !important;
   object-fit: contain;
 }
+/* HOME PAGE: TRANSPARENT HEADER OVER HERO PHOTO */
+body:has(#page-home.active) header {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: transparent !important;
+  box-shadow: none !important;
+  z-index: 100;
+}
 
+/* KEEP LOGO AND HEADING VISIBLE */
+body:has(#page-home.active) header .hdf-brand,
+body:has(#page-home.active) header .hdf-brand-text {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body:has(#page-home.active) header .hdf-brand-text,
+body:has(#page-home.active) header .hdf-brand-text strong {
+  color: #ffffff !important;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* KEEP THE MENU VISIBLE */
+body:has(#page-home.active) header .menu-toggle {
+  position: relative;
+  z-index: 101;
+}
   </style>
 </head>
 
