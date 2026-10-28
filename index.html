@@ -1105,6 +1105,30 @@ body:has(#page-about.active) header nav button.active {
   border-radius: 6px;
 }
 
+/* REMOVE WHITE BOARD BEHIND LOGO AND HEADING */
+header,
+header .hdf-brand,
+header .hdf-brand-text {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* KEEP BRAND TEXT VISIBLE OVER THE IMAGE */
+header .hdf-brand-text,
+header .hdf-brand-text strong {
+  color: #ffffff !important;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* KEEP LOGO AT NORMAL SIZE */
+header .hdf-logo {
+  width: 58px !important;
+  height: 58px !important;
+  max-width: 58px !important;
+  max-height: 58px !important;
+  object-fit: contain;
+}
+
   </style>
 </head>
 
