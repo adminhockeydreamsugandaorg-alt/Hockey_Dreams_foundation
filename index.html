@@ -1566,6 +1566,226 @@ header .menu-container {
   }
 }
 
+/* ===== HDF NEWS PAGE ===== */
+
+#page-news {
+  background: #f4f7fa;
+  color: #17334d;
+  padding-bottom: 40px;
+}
+
+#page-news .news-hero {
+  background: #102e49;
+  color: #ffffff;
+  padding: 60px 7%;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+}
+
+#page-news .news-hero-content {
+  max-width: 760px;
+}
+
+#page-news .news-eyebrow,
+#page-news .news-label {
+  display: inline-block;
+  color: #d8a944;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+#page-news .news-hero h1 {
+  color: #ffffff;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+#page-news .news-hero p {
+  color: #e1eaf1;
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+#page-news .news-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 25px;
+}
+
+#page-news .news-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+#page-news .news-heading h2 {
+  color: #102e49;
+  font-size: clamp(27px, 4vw, 36px);
+  margin: 0 0 12px;
+}
+
+#page-news .news-heading p {
+  color: #586574;
+  line-height: 1.8;
+}
+
+#page-news .news-featured {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: #ffffff;
+  border: 1px solid #e0e7ed;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(16, 46, 73, 0.06);
+  margin-bottom: 55px;
+}
+
+#page-news .news-featured-image {
+  min-height: 320px;
+  background: #dce6ed;
+}
+
+#page-news .news-featured-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+#page-news .news-featured-content {
+  padding: 35px;
+  align-self: center;
+}
+
+#page-news .news-category {
+  display: inline-block;
+  color: #a57a24;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+#page-news .news-featured-content h3 {
+  color: #102e49;
+  font-size: clamp(23px, 3vw, 30px);
+  line-height: 1.35;
+  margin: 0 0 15px;
+}
+
+#page-news .news-featured-content p,
+#page-news .news-card-content p {
+  color: #586574;
+  line-height: 1.8;
+  margin: 0 0 22px;
+}
+
+#page-news .news-featured-content button,
+#page-news .news-back-button {
+  background: #102e49;
+  color: #ffffff;
+  border: 0;
+  border-radius: 7px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#page-news .news-featured-content button:hover,
+#page-news .news-back-button:hover {
+  background: #245779;
+}
+
+#page-news .news-more-heading {
+  margin-bottom: 28px;
+}
+
+#page-news .news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+#page-news .news-card {
+  background: #ffffff;
+  border: 1px solid #e0e7ed;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(16, 46, 73, 0.05);
+}
+
+#page-news .news-card-placeholder {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf0f4;
+  font-size: 48px;
+}
+
+#page-news .news-card-content {
+  padding: 24px;
+}
+
+#page-news .news-card-content h3 {
+  color: #173f5f;
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+#page-news #news-story-details {
+  background: #ffffff;
+  border: 1px solid #e0e7ed;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 35px;
+}
+
+#page-news .news-back-button {
+  margin-bottom: 20px;
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+  #page-news .news-featured {
+    grid-template-columns: 1fr;
+  }
+
+  #page-news .news-featured-image,
+  #page-news .news-featured-image img {
+    min-height: 240px;
+  }
+
+  #page-news .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  #page-news .news-hero {
+    padding: 42px 24px;
+  }
+
+  #page-news .news-section {
+    padding: 38px 16px;
+  }
+
+  #page-news .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #page-news .news-featured-content {
+    padding: 25px;
+  }
+}
+
   </style>
 </head>
 
