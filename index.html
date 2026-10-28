@@ -2149,6 +2149,14 @@ header .menu-container {
   border-radius: 5px;
   padding: 10px 12px;
 }
+  /* FIX LITTLE STICKS DROPDOWN VISIBILITY */
+#page-competition #comp-little > .little-dropdown:not([open]) .sub-nav {
+  display: none;
+}
+
+#page-competition #comp-little > .little-dropdown[open] .sub-nav {
+  display: flex;
+}
   </style>
 </head>
 
