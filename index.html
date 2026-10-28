@@ -2063,7 +2063,35 @@ header .menu-container {
     padding: 30px 18px 50px;
   }
 }
+/* COMPETITIONS PAGE LAYOUT FIX */
+#page-competition {
+  margin: 0;
+  padding: 0;
+}
 
+#page-competition > .board.little-bg {
+  margin: 0;
+  padding: 24px 16px;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: transparent;
+}
+
+#page-competition > .board.little-bg::before {
+  background-size: cover;
+  background-position: center;
+}
+
+#page-competition > .board.little-bg::after {
+  background: rgba(8, 24, 45, 0.68);
+}
+
+#page-competition > .board.little-bg > h3 {
+  color: #fff;
+  margin-top: 0;
+}
   </style>
 </head>
 
