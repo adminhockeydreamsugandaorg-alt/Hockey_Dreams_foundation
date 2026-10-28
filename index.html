@@ -2081,6 +2081,175 @@ function showPage(n){
   document.getElementById('page-'+n).classList.add('active');
   document.getElementById('nav-'+n).classList.add('active');
 }
+  
+/* HDF PROGRAM DETAILS */
+
+const hdfProgramDetails = {
+  school: {
+    title: "School Hockey Development",
+    intro: "Bringing field hockey to schools and opening new opportunities for young people.",
+    sections: [
+      {
+        heading: "What the program offers",
+        text: "Students are introduced to field hockey through demonstrations, structured training and practical coaching sessions designed to help them learn the game."
+      },
+      {
+        heading: "What young people gain",
+        text: "Participants can develop hockey skills, teamwork, discipline, communication and confidence while enjoying an active sporting environment."
+      },
+      {
+        heading: "Working with schools",
+        text: "HDF Uganda works with schools to explore opportunities for hockey activities and continued participation."
+      }
+    ]
+  },
+
+  tournaments: {
+    title: "Tournaments & Competitions",
+    intro: "Giving young hockey players opportunities to compete, learn and grow.",
+    sections: [
+      {
+        heading: "A chance to compete",
+        text: "Tournaments give players the opportunity to apply what they learn in training, challenge themselves and experience organized competition."
+      },
+      {
+        heading: "More than winning",
+        text: "Players can practise teamwork, respect, fair play, resilience and sportsmanship while learning from teammates and opponents."
+      },
+      {
+        heading: "Schools and communities",
+        text: "HDF Uganda uses hockey events to encourage participation and help create connections among young players, schools and communities."
+      }
+    ]
+  },
+
+  camps: {
+    title: "Holiday Training Camps",
+    intro: "Making school holidays an opportunity for activity, learning and friendship.",
+    sections: [
+      {
+        heading: "Active holidays",
+        text: "Holiday camps provide opportunities for children to participate in hockey activities and continue developing their sporting abilities outside the school term."
+      },
+      {
+        heading: "Learning together",
+        text: "Through group activities and coaching, participants can build friendships, confidence, teamwork and a positive attitude towards sport."
+      },
+      {
+        heading: "A welcoming environment",
+        text: "HDF aims to make its activities enjoyable and supportive so that young people can learn while taking part."
+      }
+    ]
+  },
+
+  girls: {
+    title: "Girls in Sport & Inclusion",
+    intro: "Encouraging more young people to experience the opportunities sport can create.",
+    sections: [
+      {
+        heading: "Opportunities for girls",
+        text: "HDF seeks to encourage girls to participate in hockey, develop their abilities and feel confident taking part in sport."
+      },
+      {
+        heading: "Sport for everyone",
+        text: "Welcoming activities can help children from different backgrounds participate, build friendships and feel part of a team."
+      },
+      {
+        heading: "Confidence and leadership",
+        text: "Sport can provide opportunities to practise communication, responsibility, teamwork and leadership."
+      }
+    ]
+  },
+
+  lifeskills: {
+    title: "Life Skills Through Hockey",
+    intro: "Using sport as a practical way to support personal and social development.",
+    sections: [
+      {
+        heading: "Skills beyond the pitch",
+        text: "Hockey activities can help young people practise communication, cooperation, respect, responsibility and problem-solving."
+      },
+      {
+        heading: "Building resilience",
+        text: "Training and competition provide opportunities to learn from mistakes, respond to challenges and keep working towards goals."
+      },
+      {
+        heading: "Growing together",
+        text: "Through shared experiences, young people can learn to support teammates, respect others and contribute positively to their communities."
+      }
+    ]
+  },
+
+  coaches: {
+    title: "Youth & Coach Development",
+    intro: "Supporting the people who help young hockey players learn and progress.",
+    sections: [
+      {
+        heading: "Developing young players",
+        text: "Young players are encouraged to improve their hockey abilities, understand the game and continue progressing through practice and participation."
+      },
+      {
+        heading: "Supporting coaches",
+        text: "Coach development focuses on strengthening coaching knowledge, practical teaching skills and the ability to support young people."
+      },
+      {
+        heading: "A stronger hockey community",
+        text: "Supporting players and coaches helps build a positive environment for hockey development and wider participation."
+      }
+    ]
+  }
+};
+
+function openProgram(programKey) {
+  const program = hdfProgramDetails[programKey];
+
+  if (!program) return;
+
+  const grid = document.querySelector(
+    '#page-programs .programs-grid'
+  );
+  const intro = document.querySelector(
+    '#page-programs .programs-intro'
+  );
+  const partner = document.querySelector(
+    '#page-programs .programs-partner'
+  );
+  const details = document.getElementById('program-details');
+  const content = document.getElementById('program-detail-content');
+
+  content.innerHTML = `
+    <div class="program-detail-inner">
+      <span class="programs-label">OUR PROGRAMS</span>
+      <h2>${program.title}</h2>
+      <p class="program-detail-intro">${program.intro}</p>
+
+      ${program.sections.map(section => `
+        <article class="program-detail-section">
+          <h3>${section.heading}</h3>
+          <p>${section.text}</p>
+        </article>
+      `).join('')}
+    </div>
+  `;
+
+  grid.style.display = 'none';
+  intro.style.display = 'none';
+  partner.style.display = 'none';
+  details.style.display = 'block';
+
+  details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function closeProgramDetails() {
+  document.getElementById('program-details').style.display = 'none';
+  document.querySelector('#page-programs .programs-grid').style.display = '';
+  document.querySelector('#page-programs .programs-intro').style.display = '';
+  document.querySelector('#page-programs .programs-partner').style.display = '';
+
+  document.querySelector('#page-programs .programs-intro')
+    .scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 
 function showComp(c){
   document.getElementById('comp-little').style.display=
