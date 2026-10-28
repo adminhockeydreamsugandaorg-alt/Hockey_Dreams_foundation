@@ -1159,15 +1159,6 @@ body:has(#page-home.active) header .menu-toggle {
   position: relative;
   z-index: 101;
 }
-/* POSITION MENU AT THE TOP-RIGHT */
-body:has(#page-home.active) header .menu-container {
-  position: absolute;
-  top: 20px;
-  right: clamp(16px, 5vw, 72px);
-  margin-left: 0;
-  order: initial;
-  z-index: 110;
-}
  /* DOUBLE THE LOGO SIZE ON THE HOME PAGE */
 body:has(#page-home.active) header .hdf-logo {
   width: 116px !important;
@@ -1176,45 +1167,8 @@ body:has(#page-home.active) header .hdf-logo {
   max-height: 116px !important;
   object-fit: contain;
 } 
-}
-/* POSITION MENU AT THE TOP-RIGHT */
-body:has(#page-competitions.active) header .menu-container {
-  position: absolute;
-  top: 20px;
-  right: clamp(16px, 5vw, 72px);
-  margin-left: 0;
-  order: initial;
-  z-index: 110;
-} 
- /* POSITION MENU AT THE TOP-RIGHT */
-body:has(#page-about.active) header .menu-container {
-  position: absolute;
-  top: 20px;
-  right: clamp(16px, 5vw, 72px);
-  margin-left: 0;
-  order: initial;
-  z-index: 110;
-} 
-/* POSITION MENU AT THE TOP-RIGHT */
-body:has(#page-programs.active) header .menu-container {
-  position: absolute;
-  top: 20px;
-  right: clamp(16px, 5vw, 72px);
-  margin-left: 0;
-  order: initial;
-  z-index: 110;
-}  
-/* COMPETITIONS PAGE: MENU AT TOP-RIGHT */
-body:has(#page-get involved.active) header .menu-container {
-  position: absolute;
-  top: 20px;
-  right: clamp(16px, 5vw, 72px);
-  margin-left: 0;
-  order: initial;
-  z-index: 110;
-} 
- /* COMPETITIONS PAGE: MENU AT TOP-RIGHT */
-body:has(#page-news.active) header .menu-container {
+/* KEEP MENU AT THE TOP-RIGHT ON ALL TABS */
+header .menu-container {
   position: absolute;
   top: 20px;
   right: clamp(16px, 5vw, 72px);
