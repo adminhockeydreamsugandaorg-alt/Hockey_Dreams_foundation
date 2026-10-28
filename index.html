@@ -3073,6 +3073,23 @@ function showPage(n){
   document.getElementById('page-'+n).classList.add('active');
   document.getElementById('nav-'+n).classList.add('active');
 }
+
+/* OPEN HDF NEWS ARTICLE */
+function openNewsArticle() {
+  document.querySelectorAll('.page').forEach(p =>
+    p.classList.remove('active')
+  );
+
+  document.querySelectorAll('header nav button').forEach(b =>
+    b.classList.remove('active')
+  );
+
+  document.getElementById('page-news-article').classList.add('active');
+
+  const newsNav = document.getElementById('nav-news');
+  if (newsNav) newsNav.classList.add('active');
+}
+
   
 /* HDF PROGRAM DETAILS */
 
