@@ -16,19 +16,25 @@
   --hdf-ink:#08254c;
 }
 
-body{font-family:Arial,sans-serif;background:#f4f7fb;color:#14233b}
+body{font-family:Arial,sans-serif;background:#f4f7fb;color:#14233b
+
 
 header {
-  background: var(--hdf-navy);
+  background: transparent !important;
   padding: 12px clamp(16px, 5vw, 72px);
-  position: sticky;
+  position: absolute;
   top: 0;
-  z-index: 20;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 22px;
   box-sizing: border-box;
+}
+     
 }
 header .hdf-logo {
   width: 58px !important;
