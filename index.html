@@ -3361,26 +3361,32 @@ function showComp(c){
   );
 }
 
-
 function showLittle(t){
   ['teams','fixtures','results','table','gallery'].forEach(x=>{
     const section = document.getElementById('little-'+x);
     const button = document.getElementById('btn-l-'+x);
 
     if(section){
-      section.style.display = x===t?'block':'none';
+      section.style.display = x===t ? 'block' : 'none';
     }
 
     if(button){
-      button.classList.toggle('active',x===t);
+      button.classList.toggle('active', x===t);
     }
   });
-  if(t==='gallery'){
-  loadGallery();
-}
-}
 
+  const dropdown = document.querySelector(
+    '#page-competition #comp-little > .little-dropdown'
+  );
 
+  if(dropdown){
+    dropdown.open = false;
+  }
+
+  if(t === 'gallery'){
+    loadGallery();
+  }
+}
 async function loadGallery(category='All'){
   const list=document.getElementById('gallery-list');
   const filters=document.getElementById('gallery-filters');
