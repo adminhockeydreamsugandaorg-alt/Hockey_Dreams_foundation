@@ -3367,7 +3367,11 @@ function showLittle(t){
     const button = document.getElementById('btn-l-'+x);
 
     if(section){
-      section.style.display = x===t ? 'block' : 'none';
+      section.style.setProperty(
+  'display',
+  x === t ? 'block' : 'none',
+  'important'
+);
     }
 
     if(button){
