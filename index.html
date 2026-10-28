@@ -1176,6 +1176,236 @@ header .menu-container {
   order: initial;
   z-index: 110;
 }
+ 
+/* ================================
+   HDF PROGRAMS PAGE
+================================ */
+
+#page-programs {
+  padding: 0;
+  color: #17324d;
+  background: #f5f8fb;
+}
+
+#page-programs .programs-hero {
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  box-sizing: border-box;
+  background:
+    linear-gradient(135deg, rgba(10, 35, 60, 0.96),
+    rgba(20, 75, 112, 0.88));
+  color: #ffffff;
+}
+
+#page-programs .programs-hero-content {
+  max-width: 760px;
+}
+
+#page-programs .programs-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #b9dcf4;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+#page-programs .programs-hero h1 {
+  margin: 0 0 16px;
+  color: #ffffff;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.1;
+}
+
+#page-programs .programs-hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #e7f0f7;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.7;
+}
+
+#page-programs .programs-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px 72px;
+  box-sizing: border-box;
+}
+
+#page-programs .programs-intro {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+#page-programs .programs-label {
+  color: #2876a8;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+#page-programs .programs-intro h2,
+#page-programs .programs-partner h2 {
+  margin: 12px 0;
+  color: #123451;
+  font-size: clamp(27px, 4vw, 40px);
+  line-height: 1.2;
+}
+
+#page-programs .programs-intro p,
+#page-programs .programs-partner p {
+  color: #536779;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+#page-programs .programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+#page-programs .program-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 5px 22px rgba(15, 43, 66, 0.09);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#page-programs .program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(15, 43, 66, 0.15);
+}
+
+#page-programs .program-card > img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  background: #dce7ef;
+}
+
+#page-programs .program-card-content {
+  padding: 24px;
+}
+
+#page-programs .program-number {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #2876a8;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+#page-programs .program-card h3 {
+  margin: 0 0 12px;
+  color: #123451;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+#page-programs .program-card p {
+  margin: 0;
+  color: #536779;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+#page-programs .programs-partner {
+  padding: 64px 24px;
+  text-align: center;
+  background: #e8f1f7;
+}
+
+#page-programs .programs-partner h2 {
+  max-width: 700px;
+  margin: 12px auto;
+}
+
+#page-programs .programs-partner p {
+  max-width: 650px;
+  margin: 0 auto 24px;
+}
+
+#page-programs .programs-partner button {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 7px;
+  background: #123451;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#page-programs .programs-partner button:hover {
+  background: #2876a8;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+  #page-programs .programs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  #page-programs .program-card > img {
+    height: 190px;
+  }
+
+  #page-programs .program-card-content {
+    padding: 20px;
+  }
+}
+
+/* PHONES */
+@media (max-width: 560px) {
+  #page-programs .programs-hero {
+    min-height: 300px;
+    padding: 72px 20px 48px;
+  }
+
+  #page-programs .programs-eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  #page-programs .programs-section {
+    padding: 44px 16px 50px;
+  }
+
+  #page-programs .programs-intro {
+    margin-bottom: 28px;
+  }
+
+  #page-programs .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  #page-programs .program-card > img {
+    height: 230px;
+  }
+
+  #page-programs .program-card-content {
+    padding: 22px;
+  }
+
+  #page-programs .programs-partner {
+    padding: 48px 20px;
+  }
+}
+
   </style>
 </head>
 
