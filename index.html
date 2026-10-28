@@ -1406,6 +1406,166 @@ header .menu-container {
   }
 }
 
+/* ===== HDF GET INVOLVED PAGE ===== */
+
+#page-involved {
+  background: #f4f7fa;
+  color: #17334d;
+  padding-bottom: 40px;
+}
+
+#page-involved .involved-hero {
+  background: #102e49;
+  color: #ffffff;
+  padding: 55px 7%;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  min-height: 300px;
+}
+
+#page-involved .involved-hero-content {
+  flex: 1;
+  max-width: 620px;
+}
+
+#page-involved .involved-eyebrow,
+#page-involved .involved-label {
+  display: inline-block;
+  color: #d8a944;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+#page-involved .involved-hero h1 {
+  color: #ffffff;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+#page-involved .involved-hero p {
+  color: #e1eaf1;
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+#page-involved .involved-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 55px 25px;
+}
+
+#page-involved .involved-intro {
+  max-width: 700px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+#page-involved .involved-intro h2,
+#page-involved .involved-cta h2 {
+  color: #102e49;
+  font-size: clamp(27px, 4vw, 36px);
+  margin: 0 0 15px;
+}
+
+#page-involved .involved-intro p,
+#page-involved .involved-cta p {
+  color: #586574;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+#page-involved .involved-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+#page-involved .involved-card {
+  background: #ffffff;
+  border: 1px solid #e0e7ed;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 5px 18px rgba(16, 46, 73, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#page-involved .involved-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(16, 46, 73, 0.12);
+}
+
+#page-involved .involved-icon {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+#page-involved .involved-card h3 {
+  color: #173f5f;
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+
+#page-involved .involved-card p {
+  color: #586574;
+  line-height: 1.8;
+  margin: 0 0 22px;
+}
+
+#page-involved .involved-card button,
+#page-involved .involved-cta button {
+  background: #102e49;
+  color: #ffffff;
+  border: 0;
+  border-radius: 7px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#page-involved .involved-card button:hover,
+#page-involved .involved-cta button:hover {
+  background: #245779;
+}
+
+#page-involved .involved-cta {
+  background: #eaf0f4;
+  text-align: center;
+  padding: 45px 25px;
+  margin-top: 10px;
+}
+
+#page-involved .involved-cta p {
+  max-width: 650px;
+  margin: 0 auto 22px;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  #page-involved .involved-hero {
+    padding: 40px 24px;
+    min-height: auto;
+  }
+
+  #page-involved .involved-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #page-involved .involved-section {
+    padding: 40px 18px;
+  }
+
+  #page-involved .involved-card {
+    padding: 24px;
+  }
+}
+
   </style>
 </head>
 
@@ -2059,9 +2219,94 @@ header .menu-container {
 </div>
 <!-- END PROGRAMS PAGE -->
 
+
 <div id="page-involved" class="page">
-  <div class="board white"><h3>Get Involved</h3></div>
+
+  <section class="involved-hero">
+    <div class="involved-hero-content">
+      <span class="involved-eyebrow">BE PART OF THE JOURNEY</span>
+      <h1>Get Involved</h1>
+      <p>Together, we can create more opportunities for young people through hockey and sport.</p>
+    </div>
+  </section>
+
+  <section class="involved-section">
+
+    <div class="involved-intro">
+      <span class="involved-label">MAKE A DIFFERENCE</span>
+      <h2>Be Part of Our Mission</h2>
+      <p>
+        Every contribution, partnership and helping hand can
+        support young people as they learn, play and grow through sport.
+      </p>
+    </div>
+
+    <div class="involved-grid">
+
+      <article class="involved-card">
+        <div class="involved-icon">🏫</div>
+        <h3>Partner as a School</h3>
+        <p>
+          Introduce your students to field hockey and explore
+          opportunities for training, demonstrations and school activities.
+        </p>
+        <button type="button" onclick="contactHDF('school')">
+          Find Out More →
+        </button>
+      </article>
+
+      <article class="involved-card">
+        <div class="involved-icon">🤝</div>
+        <h3>Volunteer With Us</h3>
+        <p>
+          Contribute your time, skills and enthusiasm to help
+          support young people and HDF activities.
+        </p>
+        <button type="button" onclick="contactHDF('volunteer')">
+          Find Out More →
+        </button>
+      </article>
+
+      <article class="involved-card">
+        <div class="involved-icon">💙</div>
+        <h3>Become a Sponsor</h3>
+        <p>
+          Help support hockey activities, equipment, events and
+          opportunities for children and young people.
+        </p>
+        <button type="button" onclick="contactHDF('sponsor')">
+          Find Out More →
+        </button>
+      </article>
+
+      <article class="involved-card">
+        <div class="involved-icon">🌍</div>
+        <h3>Partner With HDF</h3>
+        <p>
+          Explore collaboration with HDF Uganda to expand access
+          to sport and support youth development in our communities.
+        </p>
+        <button type="button" onclick="contactHDF('partner')">
+          Find Out More →
+        </button>
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="involved-cta">
+    <h2>Let's Create Opportunities Together</h2>
+    <p>
+      Be part of a team working to help young people grow through sport.
+    </p>
+    <button type="button" onclick="contactHDF('general')">
+      Get in Touch
+    </button>
+  </section>
+
 </div>
+
 
 <div id="page-news" class="page">
   <div class="board white"><h3>News</h3></div>
