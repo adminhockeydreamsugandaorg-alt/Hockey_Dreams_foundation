@@ -2097,6 +2097,58 @@ header .menu-container {
   color: #fff;
   margin-top: 0;
 }
+ /* PROFESSIONAL LITTLE STICKS DROPDOWN */
+#page-competition #comp-little > .sub-nav {
+  display: none;
+}
+
+#page-competition .little-dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 12px 0;
+}
+
+#page-competition .little-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: rgba(15, 48, 72, 0.92);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.45);
+  font-weight: 600;
+}
+
+#page-competition .little-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+#page-competition .little-dropdown summary::after {
+  content: " ▾";
+}
+
+#page-competition .little-dropdown[open] summary::after {
+  content: " ▴";
+}
+
+#page-competition .little-dropdown .sub-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 190px;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(10, 25, 40, 0.96);
+  border: 1px solid rgba(255,255,255,.25);
+}
+
+#page-competition .little-dropdown .sub-nav button {
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  padding: 10px 12px;
+}
   </style>
 </head>
 
@@ -2508,24 +2560,26 @@ header .menu-container {
 
     <div id="comp-little">
 
-      <div class="sub-nav">
-        <button id="btn-l-teams" class="active"
-                onclick="showLittle('teams')">Teams</button>
+     <details class="little-dropdown">
+  <summary>Championship Menu</summary>
 
-        <button id="btn-l-fixtures"
-                onclick="showLittle('fixtures')">Fixtures</button>
+  <div class="sub-nav">
+    <button id="btn-l-teams" class="active"
+            onclick="showLittle('teams')">Teams</button>
 
-        <button id="btn-l-results"
-                onclick="showLittle('results')">Results</button>
+    <button id="btn-l-fixtures"
+            onclick="showLittle('fixtures')">Fixtures</button>
 
-        <button id="btn-l-table"
-                onclick="showLittle('table')">Table</button>
-        
-        <button id="btn-l-gallery"
-                onclick="showLittle('gallery')">Gallery</button>
+    <button id="btn-l-results"
+            onclick="showLittle('results')">Results</button>
 
-      </div>
+    <button id="btn-l-table"
+            onclick="showLittle('table')">Table</button>
 
+    <button id="btn-l-gallery"
+            onclick="showLittle('gallery')">Gallery</button>
+  </div>
+</details>
       <div id="little-teams">
         <div class="board black">
           <div id="teams-list"></div>
