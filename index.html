@@ -1042,6 +1042,67 @@ body:has(#page-about.active) header nav button.active {
   color: #ffffff;
 }
 
+ 
+/* TOP-RIGHT NAVIGATION MENU */
+.menu-container {
+  position: relative;
+  margin-left: auto;
+}
+
+.menu-toggle {
+  background: rgba(7, 35, 65, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#main-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 210px;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  gap: 4px;
+  z-index: 200;
+}
+
+#main-menu.open {
+  display: flex;
+}
+
+#main-menu button {
+  width: 100%;
+  text-align: left;
+  color: #14233b;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#main-menu button:hover,
+#main-menu button.active {
+  background: #eaf1f8;
+  color: #14233b;
+}
+
+#main-menu button#nav-donate {
+  background: var(--hdf-red);
+  color: #ffffff;
+  border-radius: 6px;
+}
+
   </style>
 </head>
 
@@ -1055,15 +1116,23 @@ body:has(#page-about.active) header nav button.active {
   </div>
 </div>
 
-  <nav>
-    <button id="nav-home" class="active" onclick="showPage('home')">Home</button>
-    <button id="nav-competition" onclick="showPage('competition')">Competitions</button>
-    <button id="nav-about" onclick="showPage('about')">About</button>
-    <button id="nav-programs" onclick="showPage('programs')">Programs</button>
-    <button id="nav-involved" onclick="showPage('involved')">Get Involved</button>
-    <button id="nav-news" onclick="showPage('news')">News</button>
-    <button id="nav-donate" onclick="showPage('donate')">Donate</button>
+ 
+<div class="menu-container">
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation menu" aria-expanded="false">
+    ☰ Menu
+  </button>
+
+  <nav id="main-menu">
+    <button id="nav-home" class="active" onclick="showPage('home'); toggleMenu(true)">Home</button>
+    <button id="nav-competition" onclick="showPage('competition'); toggleMenu(true)">Competitions</button>
+    <button id="nav-about" onclick="showPage('about'); toggleMenu(true)">About</button>
+    <button id="nav-programs" onclick="showPage('programs'); toggleMenu(true)">Programs</button>
+    <button id="nav-involved" onclick="showPage('involved'); toggleMenu(true)">Get Involved</button>
+    <button id="nav-news" onclick="showPage('news'); toggleMenu(true)">News</button>
+    <button id="nav-donate" onclick="showPage('donate'); toggleMenu(true)">Donate</button>
   </nav>
+</div>
+
 </header>
 
 <!-- HOMEPAGE -->
@@ -1977,6 +2046,22 @@ function getH2H(a,b){
 }
 
 loadAll();
+
+function toggleMenu(closeOnly = false) {
+  const menu = document.getElementById('main-menu');
+  const toggle = document.querySelector('.menu-toggle');
+
+  if (!menu || !toggle) return;
+
+  if (closeOnly || menu.classList.contains('open')) {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  } else {
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+}
+
 </script>
 
 </body>
