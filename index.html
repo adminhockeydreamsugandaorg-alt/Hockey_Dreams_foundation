@@ -2308,8 +2308,106 @@ header .menu-container {
 </div>
 
 
+
 <div id="page-news" class="page">
-  <div class="board white"><h3>News</h3></div>
+
+  <!-- NEWS HERO -->
+  <section class="news-hero">
+    <div class="news-hero-content">
+      <span class="news-eyebrow">HOCKEY DREAMS FOUNDATION UGANDA</span>
+      <h1>Stories From the Field.</h1>
+      <p>
+        Discover our activities, achievements and the people
+        making a difference through hockey.
+      </p>
+    </div>
+  </section>
+
+  <!-- NEWS CONTENT -->
+  <section class="news-section">
+
+    <div class="news-heading">
+      <span class="news-label">OUR JOURNEY</span>
+      <h2>Latest News & Stories</h2>
+      <p>Celebrating the moments, milestones and people behind HDF Uganda.</p>
+    </div>
+
+    <!-- FEATURED STORY -->
+    <article class="news-featured">
+
+      <div class="news-featured-image">
+        <img
+          src="images/hands-for-hope-camp.jpg"
+          alt="Children participating in the HDF Uganda hockey camp at Uganda Hands for Hope Primary School"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="news-featured-content">
+        <span class="news-category">HDF ACTIVITIES</span>
+        <h3>HDF Uganda Brings Hockey to Uganda Hands for Hope Primary School</h3>
+        <p>
+          A look back at an HDF Uganda camp bringing young people
+          together through field hockey, teamwork and sport.
+        </p>
+        <button type="button" onclick="openNewsStory('hands-for-hope')">
+          Read Full Story →
+        </button>
+      </div>
+
+    </article>
+
+    <!-- OTHER NEWS STORIES -->
+    <div class="news-heading news-more-heading">
+      <h2>More From HDF Uganda</h2>
+      <p>More stories from our programs, competitions and community activities.</p>
+    </div>
+
+    <div class="news-grid">
+
+      <article class="news-card">
+        <div class="news-card-placeholder">🏑</div>
+        <div class="news-card-content">
+          <span class="news-category">COMPETITIONS</span>
+          <h3>Hockey Competitions & Tournaments</h3>
+          <p>Updates and highlights from HDF Uganda's hockey competitions.</p>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-card-placeholder">🌱</div>
+        <div class="news-card-content">
+          <span class="news-category">YOUTH DEVELOPMENT</span>
+          <h3>Growing Through Hockey</h3>
+          <p>Stories about learning, teamwork and opportunities for young people.</p>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-card-placeholder">🤝</div>
+        <div class="news-card-content">
+          <span class="news-category">COMMUNITY</span>
+          <h3>Working Together for Young People</h3>
+          <p>Celebrating the schools, volunteers and partners supporting our mission.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- FULL STORY PANEL -->
+    <div id="news-story-details" style="display:none;">
+      <button
+        type="button"
+        class="news-back-button"
+        onclick="closeNewsStory()">
+        ← Back to News
+      </button>
+
+      <div id="news-story-content"></div>
+    </div>
+
+  </section>
+
 </div>
 
 <div id="page-donate" class="page">
