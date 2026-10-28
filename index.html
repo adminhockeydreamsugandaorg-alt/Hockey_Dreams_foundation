@@ -1084,7 +1084,7 @@ body:has(#page-about.active) header nav button.active {
 
 #main-menu button {
   width: 100%;
-  text-align: right;
+  text-align: left;
   color: #14233b;
   background: transparent;
   border: 0;
@@ -1158,6 +1158,15 @@ body:has(#page-home.active) header .hdf-brand-text strong {
 body:has(#page-home.active) header .menu-toggle {
   position: relative;
   z-index: 101;
+}
+/* POSITION MENU AT THE TOP-RIGHT */
+body:has(#page-home.active) header .menu-container {
+  position: absolute;
+  top: 20px;
+  right: clamp(16px, 5vw, 72px);
+  margin-left: 0;
+  order: initial;
+  z-index: 110;
 }
   </style>
 </head>
