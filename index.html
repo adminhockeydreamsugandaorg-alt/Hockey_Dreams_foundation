@@ -2019,24 +2019,26 @@ header .menu-container {
           <button class="program-more-button" onclick="openProgram('coaches')">
   Find Out More →
 </button>
+
         </div>
       </article>
 
-   
-<!-- PROGRAM DETAILS -->
+    </div> <!-- closes programs-grid -->
 
+    <!-- PROGRAM DETAILS -->
+    <div id="program-details" style="display:none;">
 
-<div id="program-details" style="display:none;">
+      <button
+        type="button"
+        class="program-more-button"
+        onclick="closeProgramDetails()"
+        style="display:inline-block !important; visibility:visible !important; margin:20px 0; padding:12px 20px; background:#123451; color:#ffffff; border:0; border-radius:7px; cursor:pointer; position:relative; z-index:10;">
+        ← Back to Programs
+      </button>
 
-  <button
-    type="button"
-    class="program-more-button"
-    onclick="closeProgramDetails()"
-    style="display:inline-block !important; visibility:visible !important; margin:20px 0; padding:12px 20px; background:#123451; color:#ffffff; border:0; border-radius:7px; cursor:pointer; position:relative; z-index:10;">
-    ← Back to Programs
-  </button>
+      <div id="program-detail-content"></div>
 
-  <div id="program-detail-content"></div>
+    </div> <!-- closes program-details -->
 
 </div>
 
