@@ -985,11 +985,16 @@ td.team-name{
   }
 }
 
-
 /* TRANSPARENT HEADER ON ALL TABS */
 header {
   background: transparent !important;
-  box-shadow: none;
+  box-shadow: none !important;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 /* KEEP LOGO AND BRAND VISIBLE */
