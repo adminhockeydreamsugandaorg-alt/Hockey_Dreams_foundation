@@ -2303,6 +2303,25 @@ header .menu-container {
   cursor: pointer;
 }
  
+/* BACK TO COMPETITIONS BUTTON */
+#page-tournaments .back-to-competitions {
+  display: inline-block;
+  margin: 10px 0 24px;
+  padding: 10px 18px;
+  background: transparent;
+  color: #102338;
+  border: 1px solid #102338;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#page-tournaments .back-to-competitions:hover {
+  background: #102338;
+  color: #ffffff;
+}
+
   </style>
 </head>
 
@@ -2717,6 +2736,12 @@ header .menu-container {
 
 <!-- TOURNAMENTS PAGE -->
 <div id="page-tournaments" class="page">
+  
+<button type="button" class="back-to-competitions"
+        onclick="showPage('competition')">
+  ← Back to Competitions
+</button>
+
   <section class="tournaments-heading">
     <p>HDF UGANDA</p>
     <h1>Our Tournaments</h1>
