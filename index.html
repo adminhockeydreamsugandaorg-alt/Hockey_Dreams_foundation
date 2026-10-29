@@ -2335,6 +2335,128 @@ header .menu-container {
   color: #ffffff;
 }
 
+/* UPCOMING EVENTS PAGE */
+#page-upcoming .back-to-competitions {
+  display: block;
+  position: relative;
+  z-index: 1001;
+  margin: 130px 0 28px;
+  padding: 10px 18px;
+  background: #102338;
+  color: #ffffff;
+  border: 1px solid #f5bf42;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#page-upcoming .back-to-competitions:hover {
+  background: #f5bf42;
+  color: #102338;
+}
+
+#page-upcoming .upcoming-hero {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 42px;
+  padding: 20px;
+}
+
+#page-upcoming .upcoming-eyebrow {
+  color: #c28d12;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#page-upcoming .upcoming-hero h1 {
+  color: #102338;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  margin: 12px 0 16px;
+}
+
+#page-upcoming .upcoming-hero > p:last-child {
+  color: #5c6672;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+#page-upcoming .upcoming-events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+}
+
+#page-upcoming .upcoming-event-card {
+  background: #ffffff;
+  border: 1px solid #e5e8ec;
+  border-top: 4px solid #f5bf42;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(16, 35, 56, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#page-upcoming .upcoming-event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(16, 35, 56, 0.14);
+}
+
+#page-upcoming .upcoming-event-icon {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+#page-upcoming .upcoming-event-card h2 {
+  color: #102338;
+  font-size: 23px;
+  margin: 0 0 12px;
+}
+
+#page-upcoming .upcoming-event-card p {
+  color: #5c6672;
+  line-height: 1.7;
+  min-height: 55px;
+}
+
+#page-upcoming .upcoming-event-card button {
+  margin-top: 12px;
+  padding: 12px 18px;
+  background: #f5bf42;
+  color: #102338;
+  border: none;
+  border-radius: 7px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#page-upcoming .upcoming-event-card button:hover {
+  background: #102338;
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  #page-upcoming .upcoming-events-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+    gap: 18px;
+  }
+
+  #page-upcoming .upcoming-event-card {
+    padding: 24px;
+  }
+
+  #page-upcoming .upcoming-hero {
+    padding: 12px;
+  }
+}
+
   </style>
 </head>
 
@@ -2736,7 +2858,7 @@ header .menu-container {
         build skills, and create opportunities for growth through hockey.
       </p>
       <div class="competition-hero-buttons">
-        <button type="button" onclick="goToUpcomingEvents()">
+        <button type="button" onclick="showPage('upcoming')">
           Upcoming Events →
         </button>
         <button type="button" onclick="showPage('tournaments')">
@@ -2835,6 +2957,54 @@ header .menu-container {
 
 <!-- OTHER PAGES -->
 
+
+<!-- UPCOMING EVENTS PAGE -->
+<div id="page-upcoming" class="page">
+
+  <button type="button" class="back-to-competitions"
+          onclick="showPage('competition')">
+    ← Back to Competitions
+  </button>
+
+  <section class="upcoming-hero">
+    <p class="upcoming-eyebrow">HOCKEY DREAMS FOUNDATION UGANDA</p>
+    <h1>Upcoming Events</h1>
+    <p>Discover the camps, school projects and team activities bringing our hockey community together.</p>
+  </section>
+
+  <section class="upcoming-events-grid">
+
+    <article class="upcoming-event-card">
+      <div class="upcoming-event-icon">🏑</div>
+      <h2>Upcoming Camps</h2>
+      <p>Hockey camps filled with skills development, teamwork, learning and fun.</p>
+      <button type="button" onclick="showPage('programs')">Explore Programs</button>
+    </article>
+
+    <article class="upcoming-event-card">
+      <div class="upcoming-event-icon">🏫</div>
+      <h2>School Projects</h2>
+      <p>Discover our school hockey sessions, partnerships and opportunities for young players.</p>
+      <button type="button" onclick="showPage('programs')">Explore Projects</button>
+    </article>
+
+    <article class="upcoming-event-card">
+      <div class="upcoming-event-icon">🤝</div>
+      <h2>Coaches Team Bonding</h2>
+      <p>Activities that strengthen relationships, communication and teamwork among HDF coaches.</p>
+      <button type="button" onclick="showPage('about')">Meet Our Team</button>
+    </article>
+
+    <article class="upcoming-event-card">
+      <div class="upcoming-event-icon">⭐</div>
+      <h2>And More</h2>
+      <p>More hockey events and community activities will be announced here.</p>
+      <button type="button" onclick="showPage('news')">Explore News</button>
+    </article>
+
+  </section>
+</div>
+<!-- END UPCOMING EVENTS PAGE -->
 
 <div id="page-programs" class="page">
 
