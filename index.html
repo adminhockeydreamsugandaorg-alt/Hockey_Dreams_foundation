@@ -2157,6 +2157,153 @@ header .menu-container {
 #page-competition #comp-little > .little-dropdown[open] .sub-nav {
   display: flex;
 }
+ 
+/* COMPETITIONS HERO */
+#page-competition {
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 100px clamp(20px, 7vw, 100px) 50px;
+  background:
+    linear-gradient(90deg, rgba(5, 18, 20, 0.88), rgba(5, 18, 20, 0.22)),
+    url('little_sticks_bg.jpg') center / cover no-repeat;
+}
+
+#page-competition .competition-hero {
+  width: 100%;
+  max-width: 650px;
+  margin: 0;
+  background: transparent;
+}
+
+#page-competition .competition-hero-content {
+  color: #fff;
+}
+
+#page-competition .competition-eyebrow {
+  color: #f5bf42;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+#page-competition .competition-hero h1 {
+  color: #fff;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.05;
+  margin: 0 0 20px;
+}
+
+#page-competition .competition-hero p {
+  max-width: 560px;
+  color: #e5eaf0;
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.55;
+  margin: 0 0 28px;
+}
+
+#page-competition .competition-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+#page-competition .competition-hero-buttons button {
+  padding: 15px 24px;
+  min-width: 220px;
+  border: 2px solid #f5bf42;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#page-competition .competition-hero-buttons button:first-child {
+  background: #f5bf42;
+  color: #102338;
+}
+
+#page-competition .competition-hero-buttons button:last-child {
+  background: rgba(10, 25, 40, 0.35);
+  color: #f5bf42;
+}
+
+@media (max-width: 600px) {
+  #page-competition {
+    padding: 100px 22px 40px;
+  }
+
+  #page-competition .competition-hero-buttons {
+    flex-direction: column;
+  }
+
+  #page-competition .competition-hero-buttons button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* LITTLE STICKS CHAMPIONSHIP NAVIGATION */
+#page-tournaments .little-championship-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+#page-tournaments .little-championship-navigation button {
+  background: #102338;
+  color: #ffffff;
+  border: 1px solid #f5bf42;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#page-tournaments .little-championship-navigation button:hover,
+#page-tournaments .little-championship-navigation button.active {
+  background: #f5bf42;
+  color: #102338;
+}
+
+#page-tournaments .tournaments-heading {
+  margin-bottom: 28px;
+}
+
+#page-tournaments .tournaments-heading > p:first-child {
+  color: #c28d12;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+#page-tournaments .tournaments-heading h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  margin: 8px 0 12px;
+}
+
+#page-tournaments .tournament-card {
+  padding: 22px;
+  margin: 20px 0;
+  border-radius: 12px;
+  background: rgba(16, 35, 56, 0.08);
+  border: 1px solid rgba(16, 35, 56, 0.2);
+}
+
+#page-tournaments .tournament-card button {
+  background: #f5bf42;
+  color: #102338;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+ 
   </style>
 </head>
 
@@ -2546,37 +2693,54 @@ header .menu-container {
   </div>
 
 </div>
+
 <!-- COMPETITIONS PAGE -->
-
 <div id="page-competition" class="page">
+  <section class="competition-hero">
+    <div class="competition-hero-content">
+      <div class="competition-eyebrow">HDF UGANDA</div>
+      <h1>Competitions</h1>
+      <p>
+        Tournaments and events that bring our players together,
+        build skills, and create opportunities for growth through hockey.
+      </p>
+      <div class="competition-hero-buttons">
+        <button type="button" onclick="goToUpcomingEvents()">
+          Upcoming Events →
+        </button>
+        <button type="button" onclick="showPage('tournaments')">
+          Our Tournaments
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
 
-  <div class="board white little-bg">
+<!-- TOURNAMENTS PAGE -->
+<div id="page-tournaments" class="page">
+  <section class="tournaments-heading">
+    <p>HDF UGANDA</p>
+    <h1>Our Tournaments</h1>
+    <p>Explore our hockey championships and tournament activities.</p>
+  </section>
 
-    <h3>Little Sticks Championship 2026</h3>
+  <section class="tournament-card">
+    <h2>Little Sticks Championship 2026</h2>
+    <p>Teams, fixtures, results, standings and gallery.</p>
+    <button type="button" onclick="showLittle('teams')">
+      Open Championship
+    </button>
+    
+<div class="little-championship-navigation">
+  <button type="button" onclick="showLittle('teams')">Teams</button>
+  <button type="button" onclick="showLittle('fixtures')">Fixtures</button>
+  <button type="button" onclick="showLittle('results')">Results</button>
+  <button type="button" onclick="showLittle('table')">Table</button>
+  <button type="button" onclick="showLittle('gallery')">Gallery</button>
+</div>
 
-    <div id="comp-little">
-
-     <details class="little-dropdown">
-  <summary>Championship Menu</summary>
-
-  <div class="sub-nav">
-    <button id="btn-l-teams" class="active"
-            onclick="showLittle('teams')">Teams</button>
-
-    <button id="btn-l-fixtures"
-            onclick="showLittle('fixtures')">Fixtures</button>
-
-    <button id="btn-l-results"
-            onclick="showLittle('results')">Results</button>
-
-    <button id="btn-l-table"
-            onclick="showLittle('table')">Table</button>
-
-    <button id="btn-l-gallery"
-            onclick="showLittle('gallery')">Gallery</button>
-  </div>
-</details>
-      <div id="little-teams">
+  </section>
+    <div id="little-teams">
         <div class="board black">
           <div id="teams-list"></div>
         </div>
@@ -2618,6 +2782,10 @@ header .menu-container {
       </div>
 
 
+</div>
+<!-- END TOURNAMENTS PAGE -->
+
+    
     </div>
 
     <div id="comp-weekend" style="display:none">
@@ -3146,6 +3314,7 @@ header .menu-container {
 
 
 <script>
+
 function showPage(n){
   document.querySelectorAll('.page').forEach(p=>
     p.classList.remove('active')
@@ -3155,9 +3324,17 @@ function showPage(n){
     b.classList.remove('active')
   );
 
-  document.getElementById('page-'+n).classList.add('active');
-  document.getElementById('nav-'+n).classList.add('active');
+  const page = document.getElementById('page-' + n);
+  if(page){
+    page.classList.add('active');
+  }
+
+  const navButton = document.getElementById('nav-' + n);
+  if(navButton){
+    navButton.classList.add('active');
+  }
 }
+
 
 /* OPEN HDF NEWS ARTICLE */
 function openNewsArticle() {
