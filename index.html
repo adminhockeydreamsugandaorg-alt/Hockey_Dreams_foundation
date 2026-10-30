@@ -2649,6 +2649,127 @@ header .menu-container {
   font-size: 29px;
   margin-bottom: 18px;
 }
+ /* SCHOOL PARTNERSHIP SECTION */
+
+.program-school-partnership {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  background: #f1f5f8;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 28px rgba(16, 43, 80, 0.08);
+}
+
+.program-partnership-image {
+  min-height: 340px;
+}
+
+.program-partnership-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.program-partnership-content {
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.program-partnership-content h3 {
+  color: #102b50;
+  font-size: 27px;
+  margin: 12px 0 18px;
+}
+
+.program-partnership-content p {
+  color: #586779;
+  font-size: 16px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* GETTING STARTED PANEL */
+
+.program-detail-highlight.highlight-2 {
+  background: #102b50;
+  border-radius: 20px;
+  padding: 38px;
+  margin-bottom: 25px;
+}
+
+/* CONTACT BANNER */
+
+.program-school-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  background: #168b55;
+  color: #ffffff;
+  padding: 42px;
+  border-radius: 20px;
+}
+
+.program-school-cta span {
+  color: #f5d56b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.program-school-cta h3 {
+  color: #ffffff;
+  font-size: 28px;
+  margin: 12px 0;
+}
+
+.program-school-cta p {
+  color: #ffffff;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.program-school-cta-icon {
+  font-size: 65px;
+  flex-shrink: 0;
+}
+
+/* MOBILE LAYOUT */
+
+@media (max-width: 700px) {
+  .program-school-partnership {
+    grid-template-columns: 1fr;
+  }
+
+  .program-partnership-image,
+  .program-partnership-image img {
+    min-height: 240px;
+    height: 240px;
+  }
+
+  .program-partnership-content {
+    padding: 28px;
+  }
+
+  .program-school-cta {
+    padding: 28px;
+    align-items: flex-start;
+  }
+
+  .program-school-cta h3 {
+    font-size: 23px;
+  }
+
+  .program-school-cta-icon {
+    font-size: 42px;
+  }
+}
   </style>
 </head>
 
@@ -3922,17 +4043,46 @@ function openProgram(programKey) {
       `).join('')}
     </div>
 
-    <div class="program-detail-featured">
-      ${program.sections.slice(4).map((section, index) => `
-        <article class="program-detail-highlight highlight-${index + 1}">
-  ${index === 0 ? '<div class="program-highlight-icon">🤝</div>' : ''}
-          <h3>${section.heading}</h3>
-          <p>${section.text}</p>
-        </article>
-      `).join('')}
-    </div>
-  </div>
-`;
+  <div class="program-detail-featured">
+
+  ${programKey === 'school' ? `
+
+    <section class="program-school-partnership">
+      <div class="program-partnership-image">
+        <img src="images/school-hockey.jpg"
+             alt="Students participating in school hockey">
+      </div>
+
+      <div class="program-partnership-content">
+        <span class="programs-label">WORKING TOGETHER</span>
+        <h3>${program.sections[4].heading}</h3>
+        <p>${program.sections[4].text}</p>
+      </div>
+    </section>
+
+    <article class="program-detail-highlight highlight-2">
+      <div class="program-highlight-icon">🏑</div>
+      <h3>${program.sections[5].heading}</h3>
+      <p>${program.sections[5].text}</p>
+    </article>
+
+    <section class="program-school-cta">
+      <div>
+        <span>LET'S GROW THE GAME</span>
+        <h3>${program.sections[6].heading}</h3>
+        <p>${program.sections[6].text}</p>
+      </div>
+      <div class="program-school-cta-icon">🏑</div>
+    </section>
+
+  ` : program.sections.slice(4).map((section, index) => `
+    <article class="program-detail-highlight highlight-${index + 1}">
+      <h3>${section.heading}</h3>
+      <p>${section.text}</p>
+    </article>
+  `).join('')}
+
+</div>
 
   grid.style.display = 'none';
   intro.style.display = 'none';
