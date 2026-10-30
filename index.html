@@ -3813,17 +3813,6 @@ function openProgram(programKey) {
   </div>
 `;
 
-    <div class="program-detail-featured">
-      ${program.sections.slice(4).map((section, index) => `
-        <article class="program-detail-highlight highlight-${index + 1}">
-          <h3>${section.heading}</h3>
-          <p>${section.text}</p>
-        </article>
-      `).join('')}
-    </div>
-  </div>
-`;
-
   grid.style.display = 'none';
   intro.style.display = 'none';
   partner.style.display = 'none';
