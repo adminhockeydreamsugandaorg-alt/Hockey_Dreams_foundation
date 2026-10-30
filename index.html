@@ -2637,6 +2637,18 @@ header .menu-container {
   background: #168b55;
   color: #ffffff;
 } 
+ .program-highlight-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  font-size: 29px;
+  margin-bottom: 18px;
+}
   </style>
 </head>
 
@@ -3913,6 +3925,7 @@ function openProgram(programKey) {
     <div class="program-detail-featured">
       ${program.sections.slice(4).map((section, index) => `
         <article class="program-detail-highlight highlight-${index + 1}">
+  ${index === 0 ? '<div class="program-highlight-icon">🤝</div>' : ''}
           <h3>${section.heading}</h3>
           <p>${section.text}</p>
         </article>
