@@ -2664,9 +2664,16 @@ header .menu-container {
 
 .program-partnership-image {
   min-height: 260px;
-  background: #e3eaf0;
+  overflow: hidden;
 }
 
+.program-partnership-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: contain;
+  display: block;
+}
 .program-partnership-content {
   padding: 42px;
   display: flex;
@@ -4044,6 +4051,10 @@ function openProgram(programKey) {
         ${programKey === 'school' ? `
 
           <section class="program-school-partnership">
+          <div class="program-partnership-image">
+  <img src="images/school-hockey-partnership.jpg"
+       alt="Hockey activities in schools">
+</div>
 
             <div class="program-partnership-content">
               <span class="programs-label">WORKING TOGETHER</span>
