@@ -2457,7 +2457,81 @@ header .menu-container {
     padding: 12px;
   }
 }
+/* =================================
+   HDF PROGRAM DETAILS DESIGN
+================================= */
 
+.program-detail-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 55px 25px 75px;
+}
+
+.program-detail-inner > .programs-label {
+  display: inline-block;
+  color: #168b55;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.program-detail-inner > h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  color: #102b50;
+  margin: 0 0 18px;
+  font-weight: 800;
+}
+
+.program-detail-intro {
+  max-width: 800px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #586779;
+  margin-bottom: 40px;
+}
+
+.program-detail-section {
+  background: #ffffff;
+  border: 1px solid #e5ebf0;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 25px rgba(16, 43, 80, 0.06);
+}
+
+.program-detail-section h3 {
+  color: #102b50;
+  font-size: 21px;
+  font-weight: 800;
+  margin: 0 0 13px;
+}
+
+.program-detail-section p {
+  color: #586779;
+  font-size: 16px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .program-detail-inner {
+    padding: 35px 16px 50px;
+  }
+
+  .program-detail-section {
+    padding: 22px;
+  }
+
+  .program-detail-intro {
+    font-size: 16px;
+  }
+
+  .program-detail-section h3 {
+    font-size: 19px;
+  }
+}
   </style>
 </head>
 
