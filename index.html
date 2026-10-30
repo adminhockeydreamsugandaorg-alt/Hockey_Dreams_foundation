@@ -3831,8 +3831,7 @@ filters.querySelectorAll('button[data-gallery-category]').forEach(button => {
   }
 }
 
-showPage('home');
-showLittle('teams');
+
 
 /* EXISTING GOOGLE SHEETS CONNECTIONS */
 
@@ -3869,7 +3868,9 @@ function splitCSVLine(line){
   result.push(cur.trim());
   return result;
 }
-
+showPage('home');
+showLittle('teams');
+  
 async function loadAll(){
 
   /* LOAD TEAMS */
