@@ -2620,6 +2620,23 @@ header .menu-container {
     padding: 24px;
   }
 }
+ .program-card-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8f5ee;
+  color: #168b55;
+  border-radius: 14px;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.program-detail-section:hover .program-card-icon {
+  background: #168b55;
+  color: #ffffff;
+} 
   </style>
 </head>
 
@@ -3882,9 +3899,12 @@ function openProgram(programKey) {
     <p class="program-detail-intro">${program.intro}</p>
 
     <div class="program-detail-grid">
-      ${program.sections.slice(0, 4).map(section => `
+      ${program.sections.slice(0, 4).map((section, index) => `
         <article class="program-detail-section">
-          <h3>${section.heading}</h3>
+  <div class="program-card-icon">
+    ${["🏑", "🎯", "🌟", "🏃"][index]}
+  </div>
+  <h3>${section.heading}</h3>
           <p>${section.text}</p>
         </article>
       `).join('')}
