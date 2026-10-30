@@ -2670,47 +2670,67 @@ header .menu-container {
 
 .program-school-partnership {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  align-items: stretch;
-  background: #f1f5f8;
-  border-radius: 20px;
-  overflow: hidden;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 34px;
+  background: #eaf5fc;
+  border-radius: 18px;
+  padding: 17px;
   margin-bottom: 25px;
-  box-shadow: 0 10px 28px rgba(16, 43, 80, 0.08);
+  overflow: hidden;
 }
 
 .program-partnership-image {
-  min-height: 260px;
+  min-height: 185px;
+  height: 185px;
+  border-radius: 9px;
   overflow: hidden;
 }
 
 .program-partnership-image img {
   width: 100%;
   height: 100%;
-  min-height: 260px;
-  object-fit: contain;
+  min-height: 185px;
+  object-fit: cover;
   display: block;
 }
+
 .program-partnership-content {
-  padding: 42px;
+  padding: 8px 12px 8px 0;
+}
+
+.program-partnership-heading {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.program-partnership-icon {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 50%;
+  background: #0875b9;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  font-size: 29px;
 }
 
 .program-partnership-content h3 {
-  color: #102b50;
-  font-size: 27px;
-  margin: 12px 0 18px;
-}
-
-.program-partnership-content p {
-  color: #586779;
-  font-size: 16px;
-  line-height: 1.85;
+  color: #123c5b;
+  font-size: 23px;
   margin: 0;
 }
 
+.program-partnership-content p {
+  color: #234b68;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
 /* GETTING STARTED PANEL */
 
 .program-detail-highlight.highlight-2 {
@@ -4164,10 +4184,15 @@ function openProgram(programKey) {
 </div>
 
             <div class="program-partnership-content">
-              <span class="programs-label">WORKING TOGETHER</span>
-              <h3>${program.sections[4].heading}</h3>
-              <p>${program.sections[4].text}</p>
-            </div>
+
+  <div class="program-partnership-heading">
+    <div class="program-partnership-icon">🤝</div>
+    <h3>${program.sections[4].heading}</h3>
+  </div>
+
+  <p>${program.sections[4].text}</p>
+
+</div>
           </section>
 
           <section class="school-get-started">
