@@ -2653,7 +2653,11 @@ header .menu-container {
 
 .program-school-partnership {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  .program-partnership-image,
+.program-partnership-image img {
+  min-height: 240px;
+  height: 240px;
+}
   align-items: stretch;
   background: #f1f5f8;
   border-radius: 20px;
