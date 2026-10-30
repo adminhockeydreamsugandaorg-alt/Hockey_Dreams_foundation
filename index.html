@@ -3728,22 +3728,6 @@ function closeProgramDetails() {
 }
 
 
-function showComp(c){
-  document.getElementById('comp-little').style.display=
-    c==='little'?'block':'none';
-
-  document.getElementById('comp-weekend').style.display=
-    c==='weekend'?'block':'none';
-
-  document.getElementById('btn-little').classList.toggle(
-    'active',c==='little'
-  );
-
-  document.getElementById('btn-weekend').classList.toggle(
-    'active',c==='weekend'
-  );
-}
-
 function showLittle(t){
   ['teams','fixtures','results','table','gallery'].forEach(x=>{
     const section = document.getElementById('little-'+x);
