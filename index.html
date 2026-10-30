@@ -2925,10 +2925,13 @@ background: #eaf5fc;
 }
   /* SCHOOL HOCKEY DEVELOPMENT HERO IMAGE */
 
+/* SCHOOL PROGRAM HERO */
+
 .program-detail-hero {
+  position: relative;
   width: 100%;
-  height: 360px;
-  margin: 25px 0 35px;
+  height: 480px;
+  margin: 0 0 35px;
   border-radius: 18px;
   overflow: hidden;
 }
@@ -2938,6 +2941,47 @@ background: #eaf5fc;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.program-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 55px;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 35, 29, 0.88) 0%,
+    rgba(5, 35, 29, 0.58) 45%,
+    rgba(5, 35, 29, 0.05) 100%
+  );
+}
+
+.program-hero-overlay .programs-label {
+  color: #8ee84a;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.program-hero-overlay h2 {
+  color: #ffffff;
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1.08;
+  max-width: 600px;
+  margin: 0 0 18px;
+}
+
+.program-hero-overlay .program-detail-intro {
+  color: #ffffff;
+  font-size: 19px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0;
 }
   </style>
 </head>
@@ -4197,13 +4241,15 @@ function openProgram(programKey) {
 
   content.innerHTML = `
     <div class="program-detail-inner">
-      <span class="programs-label">OUR PROGRAMS</span>
-      <h2>${program.title}</h2>
-      <p class="program-detail-intro">${program.intro}</p>
-
-     <div class="program-detail-hero">
+     <section class="program-detail-hero">
   <img src="images/school-hockey.jpg" alt="Students participating in school hockey">
-</div>
+
+  <div class="program-hero-overlay">
+    <span class="programs-label">OUR PROGRAMS</span>
+    <h2>${program.title}</h2>
+    <p class="program-detail-intro">${program.intro}</p>
+  </div>
+</section>
       <div class="program-detail-grid">
         ${program.sections.slice(0, 4).map((section, index) => `
           <article class="program-detail-section">
