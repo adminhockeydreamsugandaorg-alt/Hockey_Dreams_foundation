@@ -2551,14 +2551,14 @@ header .menu-container {
           </ul>
 
           <a class="home-cta" href="#register"
-             onclick="showPage('competition');showComp('little')">
+             onclick="showPage('tournaments');showLittle('teams')"
             REGISTRATION OPEN NOW
           </a>
 
           <br>
 
           <a class="home-cta outline" href="#details"
-             onclick="showPage('competition');showComp('little')">
+             onclick="showPage('tournaments');showLittle('teams')"
             View Tournament Details →
           </a>
 
@@ -2585,7 +2585,7 @@ header .menu-container {
         </p>
 
         <a class="home-cta" href="#notify"
-           onclick="showPage('competition');showComp('weekend')">
+           onclick="showPage('upcoming')"
           Notify Me →
         </a>
 
@@ -3848,7 +3848,6 @@ filters.querySelectorAll('button[data-gallery-category]').forEach(button => {
 }
 
 showPage('home');
-showComp('little');
 showLittle('teams');
 
 /* EXISTING GOOGLE SHEETS CONNECTIONS */
