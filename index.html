@@ -2276,7 +2276,53 @@ header .menu-container {
   margin-top: 0;
   margin-bottom: 28px;
 }
+/* TOURNAMENTS HERO DESIGN */
+#page-tournaments .tournaments-heading {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  padding: 55px clamp(20px, 6vw, 70px);
+  margin-bottom: 35px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 18, 20, 0.92),
+      rgba(5, 18, 20, 0.45)
+    ),
+    url('little_sticks_bg.jpg') center / cover no-repeat;
+}
 
+#page-tournaments .tournaments-hero-content {
+  max-width: 720px;
+}
+
+#page-tournaments .tournaments-heading .tournaments-eyebrow {
+  color: #f5bf42;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+#page-tournaments .tournaments-heading h1 {
+  color: #ffffff;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+
+#page-tournaments .tournaments-heading .tournaments-intro {
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0;
+}
 #page-tournaments .back-to-competitions {
   margin-top: 100px;
 }
@@ -3403,10 +3449,18 @@ background: #eaf5fc;
 </button>
 
   <section class="tournaments-heading">
-    <p>HDF UGANDA</p>
+  <div class="tournaments-hero-content">
+    <p class="tournaments-eyebrow">HOCKEY DREAMS FOUNDATION UGANDA</p>
+
     <h1>Our Tournaments</h1>
-    <p>Explore our hockey championships and tournament activities.</p>
-  </section>
+
+    <p class="tournaments-intro">
+      Celebrating talent, teamwork and the spirit of hockey.
+      Discover our championships, follow the action and relive
+      unforgettable tournament moments.
+    </p>
+  </div>
+</section>
   
   <section class="tournament-card">
     <h2>Little Sticks Championship 2026</h2>
