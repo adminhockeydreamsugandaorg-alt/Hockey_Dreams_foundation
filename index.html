@@ -2249,28 +2249,33 @@ header .menu-container {
 #page-tournaments .little-championship-navigation {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 24px 0;
+  gap: 12px;
+  margin: 28px 0;
+  padding: 14px;
+  background: #e9edf2;
+  border-radius: 12px;
 }
 
 #page-tournaments .little-championship-navigation button {
   background: #102338;
   color: #ffffff;
-  border: 1px solid #f5bf42;
+  border: 1px solid #102338;
   border-radius: 8px;
-  padding: 11px 20px;
+  padding: 13px 22px;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 #page-tournaments .little-championship-navigation button:hover,
 #page-tournaments .little-championship-navigation button.active {
   background: #f5bf42;
   color: #102338;
+  border-color: #f5bf42;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
 
 #page-tournaments .tournaments-heading {
   margin-top: 0;
