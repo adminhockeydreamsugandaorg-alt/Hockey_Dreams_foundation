@@ -2284,49 +2284,69 @@ header .menu-container {
 /* TOURNAMENTS HERO DESIGN */
 #page-tournaments .tournaments-heading {
   position: relative;
-  min-height: 380px;
+  min-height: 440px;
   display: flex;
   align-items: center;
-  padding: 55px clamp(20px, 6vw, 70px);
+  padding: 65px clamp(25px, 8vw, 110px);
   margin-bottom: 35px;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 0;
   overflow: hidden;
   background:
     linear-gradient(
       90deg,
-      rgba(5, 18, 20, 0.92),
-      rgba(5, 18, 20, 0.45)
+      rgba(5, 18, 20, 0.88),
+      rgba(5, 18, 20, 0.25)
     ),
     url('little_sticks_bg.jpg') center / cover no-repeat;
 }
 
 #page-tournaments .tournaments-hero-content {
-  max-width: 720px;
+  max-width: 760px;
 }
 
-#page-tournaments .tournaments-heading .tournaments-eyebrow {
-  color: #f5bf42;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 4px;
-  margin-bottom: 16px;
+#page-tournaments .tournaments-eyebrow {
+  color: #ef3038;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
 }
 
 #page-tournaments .tournaments-heading h1 {
   color: #ffffff;
-  font-size: clamp(38px, 6vw, 64px);
+  font-size: clamp(38px, 6vw, 68px);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.12;
   margin: 0 0 20px;
 }
 
-#page-tournaments .tournaments-heading .tournaments-intro {
+#page-tournaments .tournaments-heading h1 span {
+  display: block;
+  color: #f5bf42;
+}
+
+#page-tournaments .tournaments-intro {
   color: #ffffff;
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 600px;
-  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0 0 25px;
+}
+
+#page-tournaments .tournaments-join-button {
+  background: #ed3038;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#page-tournaments .tournaments-join-button:hover {
+  background: #c91f28;
 }
 #page-tournaments .back-to-competitions {
   margin-top: 100px;
@@ -3470,20 +3490,30 @@ background: #eaf5fc;
   ← Back to Competitions
 </button>
 
-  <section class="tournaments-heading">
+ <section class="tournaments-heading">
   <div class="tournaments-hero-content">
-    <p class="tournaments-eyebrow">HOCKEY DREAMS FOUNDATION UGANDA</p>
 
-    <h1>Our Tournaments</h1>
+    <p class="tournaments-eyebrow">
+      TOURNAMENTS &amp; COMPETITIONS
+    </p>
+
+    <h1>
+      HDF TOURNAMENTS
+      <span>&amp; CHAMPIONSHIPS</span>
+    </h1>
 
     <p class="tournaments-intro">
-      Celebrating talent, teamwork and the spirit of hockey.
-      Discover our championships, follow the action and relive
-      unforgettable tournament moments.
+      Building talent. Creating opportunities. Celebrating hockey.
     </p>
+
+    <button type="button"
+      class="tournaments-join-button"
+      onclick="document.querySelector('#page-tournaments .tournament-card').scrollIntoView({behavior:'smooth'});">
+      Join Our Tournaments →
+    </button>
+
   </div>
 </section>
-  
   <section class="tournament-card">
     <h2>Little Sticks Championship 2026</h2>
     <p>Teams, fixtures, results, standings and gallery.</p>
