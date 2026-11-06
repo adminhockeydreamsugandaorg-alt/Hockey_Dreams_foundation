@@ -2426,6 +2426,126 @@ header .menu-container {
     border-bottom: none;
   }
 }
+    /* THREE-COLUMN TOURNAMENT LAYOUT */
+#page-tournaments .tournament-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+  gap: 22px;
+  align-items: stretch;
+  margin: 30px 0;
+}
+
+/* FEATURED CHAMPIONSHIP */
+#page-tournaments .tournament-card {
+  margin: 0;
+  min-width: 0;
+}
+
+#page-tournaments .tournament-feature-label {
+  color: #ef3038;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+/* TOURNAMENT DETAILS */
+#page-tournaments .tournament-details-card {
+  background: #ffffff;
+  border: 1px solid #e2e5e9;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+#page-tournaments .tournament-details-card h3,
+#page-tournaments .tournament-quick-links h3 {
+  color: #102338;
+  font-size: 21px;
+  font-weight: 900;
+  margin: 0 0 22px;
+}
+
+#page-tournaments .tournament-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#page-tournaments .tournament-detail-item:last-child {
+  border-bottom: none;
+}
+
+#page-tournaments .tournament-detail-item span {
+  color: #ef3038;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+#page-tournaments .tournament-detail-item strong {
+  color: #102338;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* QUICK LINKS */
+#page-tournaments .tournament-quick-links {
+  background: #f1f3f6;
+  border-radius: 12px;
+  padding: 25px 18px;
+}
+
+#page-tournaments .tournament-quick-links .little-championship-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+#page-tournaments .tournament-quick-links .little-championship-navigation button {
+  width: 100%;
+  text-align: left;
+  background: #ffffff;
+  color: #102338;
+  border: 1px solid #dce1e7;
+  border-radius: 6px;
+  padding: 13px 14px;
+  transform: none;
+  box-shadow: none;
+}
+
+#page-tournaments .tournament-quick-links .little-championship-navigation button:hover,
+#page-tournaments .tournament-quick-links .little-championship-navigation button.active {
+  background: #ef3038;
+  color: #ffffff;
+  border-color: #ef3038;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 900px) {
+  #page-tournaments .tournament-content-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #page-tournaments .tournament-quick-links {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  #page-tournaments .tournament-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #page-tournaments .tournament-quick-links {
+    grid-column: auto;
+  }
+}
 #page-tournaments .tournament-card {
   position: relative;
   padding: 32px;
@@ -3600,22 +3720,64 @@ background: #eaf5fc;
   </div>
 
 </section>
-  <section class="tournament-card">
-    <h2>Little Sticks Championship 2026</h2>
-    <p>Teams, fixtures, results, standings and gallery.</p>
-    <button type="button" onclick="showLittle('teams')">
-      Open Championship
-    </button>
-    
-<div class="little-championship-navigation">
-  <button type="button" onclick="showLittle('teams')">Teams</button>
-  <button type="button" onclick="showLittle('fixtures')">Fixtures</button>
-  <button type="button" onclick="showLittle('results')">Results</button>
-  <button type="button" onclick="showLittle('table')">Table</button>
-  <button type="button" onclick="showLittle('gallery')">Gallery</button>
-</div>
+ <!-- THREE-COLUMN TOURNAMENT LAYOUT -->
+<div class="tournament-content-grid">
 
+  <!-- LEFT: CHAMPIONSHIP FEATURE -->
+  <section class="tournament-card">
+    <div class="tournament-feature-label">FEATURED CHAMPIONSHIP</div>
+
+    <h2>Little Sticks Championship 2026</h2>
+
+    <p>
+      Bringing together young hockey talents from primary schools
+      to celebrate teamwork, sportsmanship and the love of hockey.
+    </p>
+
+    <button type="button" onclick="showLittle('teams')">
+      Explore Championship →
+    </button>
   </section>
+
+  <!-- MIDDLE: TOURNAMENT DETAILS -->
+  <section class="tournament-details-card">
+    <h3>Tournament Details</h3>
+
+    <div class="tournament-detail-item">
+      <span>DATE</span>
+      <strong>23 October 2026</strong>
+    </div>
+
+    <div class="tournament-detail-item">
+      <span>VENUE</span>
+      <strong>East Kololo Primary School Grounds</strong>
+    </div>
+
+    <div class="tournament-detail-item">
+      <span>CATEGORY</span>
+      <strong>Primary Schools</strong>
+    </div>
+
+    <div class="tournament-detail-item">
+      <span>PARTICIPATION</span>
+      <strong>8 Schools</strong>
+    </div>
+  </section>
+
+  <!-- RIGHT: QUICK LINKS -->
+  <aside class="tournament-quick-links">
+    <h3>Quick Links</h3>
+
+    <div class="little-championship-navigation">
+      <button type="button" onclick="showLittle('teams')">Teams →</button>
+      <button type="button" onclick="showLittle('fixtures')">Fixtures →</button>
+      <button type="button" onclick="showLittle('results')">Results →</button>
+      <button type="button" onclick="showLittle('table')">Points Table →</button>
+      <button type="button" onclick="showLittle('gallery')">Gallery →</button>
+    </div>
+  </aside>
+
+</div>
     <div id="little-teams">
         <div class="board black">
           <div id="teams-list"></div>
