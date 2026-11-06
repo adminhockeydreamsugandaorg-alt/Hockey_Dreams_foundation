@@ -2363,7 +2363,69 @@ header .menu-container {
   font-size: clamp(32px, 5vw, 52px);
   margin: 8px 0 12px;
 }
+/* TOURNAMENT INFORMATION STRIP */
+#page-tournaments .tournament-info-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #102338;
+  border-radius: 8px;
+  margin: 25px 0 35px;
+  padding: 24px 15px;
+  gap: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
 
+#page-tournaments .tournament-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 5px 15px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#page-tournaments .tournament-info-item:last-child {
+  border-right: none;
+}
+
+#page-tournaments .tournament-info-item span {
+  color: #ef3038;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+#page-tournaments .tournament-info-item strong {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 700px) {
+  #page-tournaments .tournament-info-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #page-tournaments .tournament-info-item:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 420px) {
+  #page-tournaments .tournament-info-strip {
+    grid-template-columns: 1fr;
+  }
+
+  #page-tournaments .tournament-info-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+  }
+
+  #page-tournaments .tournament-info-item:last-child {
+    border-bottom: none;
+  }
+}
 #page-tournaments .tournament-card {
   position: relative;
   padding: 32px;
@@ -3513,6 +3575,30 @@ background: #eaf5fc;
     </button>
 
   </div>
+</section>
+  <!-- TOURNAMENT INFORMATION STRIP -->
+<section class="tournament-info-strip">
+
+  <div class="tournament-info-item">
+    <span>CHAMPIONSHIP</span>
+    <strong>Little Sticks Championship 2026</strong>
+  </div>
+
+  <div class="tournament-info-item">
+    <span>DATE</span>
+    <strong>23 October 2026</strong>
+  </div>
+
+  <div class="tournament-info-item">
+    <span>PARTICIPATING SCHOOLS</span>
+    <strong>8 Schools</strong>
+  </div>
+
+  <div class="tournament-info-item">
+    <span>OUR MOTTO</span>
+    <strong>WE ARE THE GAME CHANGERS</strong>
+  </div>
+
 </section>
   <section class="tournament-card">
     <h2>Little Sticks Championship 2026</h2>
