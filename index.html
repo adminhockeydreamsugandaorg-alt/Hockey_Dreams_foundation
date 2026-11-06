@@ -2566,26 +2566,34 @@ header .menu-container {
 
 #page-tournaments .tournament-card h2 {
   color: #ffffff;
-  font-size: clamp(23px, 3vw, 32px);
+  font-size: clamp(25px, 3vw, 34px);
   font-weight: 900;
-  margin: 0 0 12px;
+  line-height: 1.2;
+  margin: 0 0 16px;
 }
 
 #page-tournaments .tournament-card p {
   color: #e2e8f0;
   font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 22px;
+  line-height: 1.8;
+  margin-bottom: 26px;
+  max-width: 520px;
+}
+#page-tournaments .tournament-card button {
+  background: #ef3038;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 22px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-#page-tournaments .tournament-card button {
-  background: #f5bf42;
-  color: #102338;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 18px;
-  font-weight: 700;
-  cursor: pointer;
+#page-tournaments .tournament-card button:hover {
+  background: #c91f28;
+  transform: translateY(-2px);
 }
  
 /* BACK TO COMPETITIONS BUTTON */
@@ -3259,6 +3267,12 @@ background: #eaf5fc;
   line-height: 1.6;
   max-width: 520px;
   margin: 0;
+}
+    /* ALIGN TOURNAMENT COLUMNS */
+#page-tournaments .tournament-content-grid > .tournament-card {
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
 }
   </style>
 </head>
