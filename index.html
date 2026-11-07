@@ -3487,6 +3487,42 @@ background: #eaf5fc;
   font-size: 15px;
   font-weight: 900;
 }
+    /* HDF CHAMPIONSHIP GALLERY */
+#page-tournaments #gallery-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+#page-tournaments #gallery-list figure {
+  width: 100% !important;
+  margin: 0 !important;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.09);
+}
+
+#page-tournaments #gallery-list img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0 !important;
+  transition: transform 0.3s ease;
+}
+
+#page-tournaments #gallery-list figure:hover img {
+  transform: scale(1.04);
+}
+
+#page-tournaments #gallery-list figcaption {
+  color: #102338 !important;
+  padding: 13px !important;
+  font-size: 14px;
+  font-weight: 700;
+}
   </style>
 </head>
 
