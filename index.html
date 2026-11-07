@@ -3322,6 +3322,25 @@ background: #eaf5fc;
     padding: 13px 18px;
   }
 }  
+    /* MOBILE TOURNAMENT COLUMNS */
+@media (max-width: 600px) {
+  #page-tournaments .tournament-content-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 25px 15px 40px;
+  }
+
+  #page-tournaments .tournament-card,
+  #page-tournaments .tournament-details-card,
+  #page-tournaments .tournament-quick-links {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #page-tournaments .tournament-feature-image {
+    height: 190px;
+  }
+}
   </style>
 </head>
 
