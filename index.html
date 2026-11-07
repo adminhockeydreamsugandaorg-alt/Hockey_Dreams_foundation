@@ -3523,6 +3523,45 @@ background: #eaf5fc;
   font-size: 14px;
   font-weight: 700;
 }
+    /* RESPONSIVE HDF GALLERY */
+@media (max-width: 900px) {
+  #page-tournaments #gallery-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  #page-tournaments #gallery-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  #page-tournaments #gallery-list img {
+    height: 220px;
+  }
+}
+    /* HDF GALLERY CATEGORY FILTERS */
+#page-tournaments #gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#page-tournaments #gallery-filters button {
+  background: #102338 !important;
+  color: #ffffff !important;
+  border: 1px solid #102338 !important;
+  border-radius: 6px !important;
+  padding: 10px 18px !important;
+  font-weight: 800;
+  transition: background 0.2s ease;
+}
+
+#page-tournaments #gallery-filters button:hover {
+  background: #ef3038 !important;
+  border-color: #ef3038 !important;
+}
   </style>
 </head>
 
