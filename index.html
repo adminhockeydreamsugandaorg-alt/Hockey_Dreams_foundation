@@ -3402,6 +3402,47 @@ background: #eaf5fc;
   font-weight: 900;
   margin-bottom: 22px;
 }
+    /* TOURNAMENT SECTION HEADINGS */
+#page-tournaments .board.black h3,
+#page-tournaments .board.black h4 {
+  color: #102338 !important;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #ef3038;
+}
+    /* HDF FIXTURES AND RESULTS TABLES */
+#page-tournaments .board.black table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #ffffff;
+  color: #102338;
+}
+
+#page-tournaments .board.black table th {
+  background: #102338;
+  color: #ffffff;
+  padding: 15px 12px;
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+#page-tournaments .board.black table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #102338;
+}
+
+#page-tournaments .board.black table tr:nth-child(even) {
+  background: #f5f6f8;
+}
+
+#page-tournaments .board.black table tr:hover {
+  background: #fff0f0;
+}
   </style>
 </head>
 
@@ -5034,21 +5075,28 @@ async function loadAll(){
       .filter(l=>l.trim()!=='')
       .slice(1);
 
-    let h='<div style="display:flex;flex-wrap:wrap;gap:6px">';
+   let h='<div style="display:flex;flex-wrap:wrap;gap:12px">';
 
-    rows.forEach(l=>{
-      let cols=splitCSVLine(l);
-      let n=cols[0];
+rows.forEach(l=>{
+  let cols=splitCSVLine(l);
+  let n=cols[0];
 
-      if(n&&!n.toLowerCase().includes('team')&&n.length>1){
-        h+=`<div style="background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.7);color:#fff;padding:6px 10px;border-radius:14px;font-size:11px">🏑 ${n}</div>`;
-      }
-    });
+  if(n&&!n.toLowerCase().includes('team')&&n.length>1){
+    h+=`<div style="
+      background:#f1f3f6;
+      border:1px solid #dce1e7;
+      color:#102338;
+      padding:12px 18px;
+      border-radius:8px;
+      font-size:14px;
+      font-weight:800;
+    ">🏑 ${n}</div>`;
+  }
+});
 
-    h+='</div>';
+h+='</div>';
 
-    document.getElementById('teams-list').innerHTML=h;
-
+document.getElementById('teams-list').innerHTML=h;
   }catch(e){
     console.error('Teams could not be loaded:',e);
   }
