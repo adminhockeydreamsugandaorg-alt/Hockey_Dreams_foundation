@@ -2620,7 +2620,35 @@ header .menu-container {
   background: #102338;
   color: #ffffff;
 }
+/* CONTENT INSIDE QUICK LINKS PANEL */
+#page-tournaments .tournament-quick-links .board.black {
+  padding: 12px;
+  margin: 12px 0;
+  overflow-x: auto;
+}
 
+#page-tournaments .tournament-quick-links table {
+  min-width: 450px;
+}
+
+#page-tournaments .tournament-quick-links #gallery-list {
+  grid-template-columns: 1fr;
+}
+
+#page-tournaments .tournament-quick-links #gallery-list figure {
+  width: 100%;
+}
+
+#page-tournaments #tournament-panel-back {
+  background: #102338;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-weight: 700;
+}
 /* UPCOMING EVENTS PAGE */
 #page-upcoming .back-to-competitions {
   display: block;
@@ -4048,9 +4076,7 @@ background: #eaf5fc;
       to celebrate teamwork, sportsmanship and the love of hockey.
     </p>
 
-    <button type="button" onclick="showLittle('teams')">
-      Explore Championship →
-    </button>
+    <button type="button" onclick="showTournamentPanel('teams')">Explore Championship →</button>
   </section>
 
   <!-- MIDDLE: TOURNAMENT DETAILS -->
@@ -4080,50 +4106,91 @@ background: #eaf5fc;
 
   <!-- RIGHT: QUICK LINKS -->
   <aside class="tournament-quick-links">
+
+  <!-- QUICK LINKS MENU -->
+  <div id="tournament-quick-menu">
+
     <h3>Quick Links</h3>
 
     <div class="little-championship-navigation">
-      <button type="button" onclick="showLittle('teams')">Teams →</button>
-      <button type="button" onclick="showLittle('fixtures')">Fixtures →</button>
-      <button type="button" onclick="showLittle('results')">Results →</button>
-      <button type="button" onclick="showLittle('table')">Points Table →</button>
-      <button type="button" onclick="showLittle('gallery')">Gallery →</button>
+      <button type="button" onclick="showTournamentPanel('teams')">
+        Teams →
+      </button>
+
+      <button type="button" onclick="showTournamentPanel('fixtures')">
+        Fixtures →
+      </button>
+
+      <button type="button" onclick="showTournamentPanel('results')">
+        Results →
+      </button>
+
+      <button type="button" onclick="showTournamentPanel('table')">
+        Points Table →
+      </button>
+
+      <button type="button" onclick="showTournamentPanel('gallery')">
+        Gallery →
+      </button>
     </div>
-  </aside>
+
+  </div>
+
+  <!-- BACK BUTTON -->
+  <button
+    type="button"
+    id="tournament-panel-back"
+    onclick="closeTournamentPanel()"
+    style="display:none">
+    ← Back to Quick Links
+  </button>
+
+  <!-- TEAMS -->
+  <div id="little-teams" style="display:none">
+    <div class="board black">
+      <div id="teams-list"></div>
+    </div>
+  </div>
+
+  <!-- FIXTURES -->
+  <div id="little-fixtures" style="display:none">
+    <div class="board black">
+      <div id="fixtures-list"></div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="little-results" style="display:none">
+    <div class="board black">
+      <div id="results-list"></div>
+    </div>
+  </div>
+
+  <!-- POINTS TABLE -->
+  <div id="little-table" style="display:none">
+    <div class="board black">
+      <h4>Points Table - W3 D1 | GD&gt;H2H&gt;GF&gt;GA</h4>
+      <div id="table-list"></div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div id="little-gallery" style="display:none">
+    <div class="board black">
+      <h4>HDF Little Sticks Championship 2026 — Gallery</h4>
+
+      <div id="gallery-filters"></div>
+      <div id="gallery-list"></div>
+
+      <p id="gallery-status">
+        Loading gallery photos...
+      </p>
+    </div>
+  </div>
+
+</aside>
 
 </div>
-    <div id="little-teams">
-        <div class="board black">
-          <div id="teams-list"></div>
-        </div>
-      </div>
-
-      <div id="little-fixtures" style="display:none">
-        <div class="board black">
-          <div id="fixtures-list"></div>
-        </div>
-      </div>
-
-      <div id="little-results" style="display:none">
-        <div class="board black">
-          <div id="results-list"></div>
-        </div>
-      </div>
-
-      <div id="little-table" style="display:none">
-        <div class="board black">
-          <h4 style="color:#fff">
-            Points Table - W3 D1 | GD&gt;H2H&gt;GF&gt;GA
-          </h4>
-          <div id="table-list"></div>
-        </div>
-      </div>
-      
-      <div id="little-gallery" style="display:none">
-        <div class="board black">
-          <h4 style="color:#fff">
-            HDF Little Sticks Championship 2026 — Gallery
-          </h4>
 
           <div id="gallery-filters"></div>
           <div id="gallery-list"></div>
@@ -5068,6 +5135,45 @@ function showLittle(t){
   if(t === 'gallery'){
     loadGallery();
   }
+}
+  function showTournamentPanel(t) {
+  ['teams','fixtures','results','table','gallery'].forEach(x => {
+    const section = document.getElementById('little-' + x);
+
+    if (section) {
+      section.style.setProperty(
+        'display',
+        x === t ? 'block' : 'none',
+        'important'
+      );
+    }
+  });
+
+  const menu = document.getElementById('tournament-quick-menu');
+  const back = document.getElementById('tournament-panel-back');
+
+  if (menu) menu.style.display = 'none';
+  if (back) back.style.display = 'block';
+
+  if (t === 'gallery') {
+    loadGallery();
+  }
+}
+
+function closeTournamentPanel() {
+  ['teams','fixtures','results','table','gallery'].forEach(x => {
+    const section = document.getElementById('little-' + x);
+
+    if (section) {
+      section.style.display = 'none';
+    }
+  });
+
+  const menu = document.getElementById('tournament-quick-menu');
+  const back = document.getElementById('tournament-panel-back');
+
+  if (menu) menu.style.display = 'block';
+  if (back) back.style.display = 'none';
 }
 async function loadGallery(category='All'){
   const list=document.getElementById('gallery-list');
