@@ -3341,6 +3341,34 @@ background: #eaf5fc;
     height: 190px;
   }
 }
+    /* MOBILE TOURNAMENT INFORMATION */
+@media (max-width: 600px) {
+  #page-tournaments .tournament-info-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 15px 30px;
+    padding: 18px 12px;
+  }
+
+  #page-tournaments .tournament-info-item {
+    padding: 12px 8px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  #page-tournaments .tournament-info-item span {
+    font-size: 10px;
+  }
+
+  #page-tournaments .tournament-info-item strong {
+    font-size: 13px;
+  }
+
+  #page-tournaments .tournament-info-item:nth-child(3),
+  #page-tournaments .tournament-info-item:nth-child(4) {
+    border-bottom: none;
+  }
+}
   </style>
 </head>
 
